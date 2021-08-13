@@ -12,7 +12,9 @@
 /.config/*
 !/.config/.Xmodmap
 !/.config/.Xmodmap-cn
-!/.config/vimium.txt
+!/.config/user-dirs.conf
+!/.config/user-dirs.dirs
+!/.config/user-dirs.locale
 
 ### fcitx5
 !/.config/fcitx5/

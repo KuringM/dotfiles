@@ -1,0 +1,149 @@
+# Zathura configuration file
+# See man `man zathurarc'
+
+# Open document in fit-width mode by default
+set adjust-open "width"
+
+# One page per row by default
+set pages-per-row 1
+
+#stop at page boundries
+set scroll-page-aware "true"
+set smooth-scroll "true"
+set scroll-full-overlap 0.01
+set scroll-step 100
+
+#zoom settings
+set zoom-min 10
+set guioptions ""
+
+# zathurarc-dark
+set font "Fira Code Nerd Font Mono:pixelsize=24:antialias=true:autohint=true"
+set default-bg rgba(0,0,0,0.8) #00
+set default-fg "#F7F7F6" #01
+
+set statusbar-fg "#B0B0B0" #04
+set statusbar-bg "#202020" #01
+
+set inputbar-bg "#151515" #00 currently not used
+set inputbar-fg "#FFFFFF" #02
+
+set notification-error-bg "#AC4142" #08
+set notification-error-fg "#151515" #00
+
+set notification-warning-bg "#AC4142" #08
+set notification-warning-fg "#151515" #00
+
+set highlight-color "#F4BF75" #0A
+set highlight-active-color "#6A9FB5" #0D
+
+set completion-highlight-fg "#151515" #02
+set completion-highlight-bg "#90A959" #0C
+
+set completion-bg "#303030" #02
+set completion-fg "#E0E0E0" #0C
+
+set notification-bg "#90A959" #0B
+set notification-fg "#151515" #00
+
+set recolor "true"
+set relor-lightcolor rgba(0,0,0,0) #00
+set recolor-darkcolor "#E0E0E0" #06
+set recolor-reverse-video "true"
+set recolor-keephue "true"
+
+set render-loading "false"
+set scroll-step 50
+
+
+#  _ __ ___   __ _ _ __
+# | '_ ` _ \ / _` | '_ \
+# | | | | | | (_| | |_) |
+# |_| |_| |_|\__,_| .__/
+#                 |_|
+#                   __ _                       _   _
+#   ___ ___  _ __  / _(_) __ _ _   _ _ __ __ _| |_(_) ___  _ __
+#  / __/ _ \| '_ \| |_| |/ _` | | | | '__/ _` | __| |/ _ \| '_ \
+# | (_| (_) | | | |  _| | (_| | |_| | | | (_| | |_| | (_) | | | |
+#  \___\___/|_| |_|_| |_|\__, |\__,_|_|  \__,_|\__|_|\___/|_| |_|
+#                        |___/
+
+
+# Normal mod
+unmap q
+map <C-q> quit
+map f toggle_fullscreen
+map p toggle_presentation
+
+map n scroll left
+map u scroll up
+map e scroll down
+map i scroll right
+
+map U navigate previous
+map E navigate next
+
+map = search forward
+map - search backward
+map + zoom in
+map _ zoom out
+map z zoom default
+
+map j follow
+map J display_link
+
+map k recolor
+map <C-k> jumplist forward
+
+
+# Fullscreen mode
+unmap [fullscreen] q
+map [fullscreen] <C-q> quit
+map [fullscreen] f toggle_fullscreen
+map [fullscreen] p toggle_presentation
+map [fullscreen] d oggle_page_mode
+
+map [fullscreen] n scroll left
+map [fullscreen] u scroll up
+map [fullscreen] e scroll down
+map [fullscreen] i scroll right
+
+map [fullscreen] U navigate previous
+map [fullscreen] E navigate next
+
+map [fullscreen] = search forward
+map [fullscreen] - search backward
+map [fullscreen] + zoom in
+map [fullscreen] _ zoom out
+map [fullscreen] z zoom default
+
+map [fullscreen] k recolor
+
+# Presentation mode
+unmap [presentation] q
+map [presentation] <C-q> quit
+map [presentation] f toggle_fullscreen
+map [presentation] p toggle_presentation
+map [presentation] d toggle_page_mode
+map [presentation] <Tab> toggle_index
+
+map [presentation] n scroll left
+map [presentation] u navigate previous
+map [presentation] e navigate next
+map [presentation] i scroll right
+
+map [presentation] = search forward
+map [presentation] - search backward
+map [presentation] + zoom in
+map [presentation] _ zoom out
+map [presentation] z zoom default
+
+map [presentation] k recolor
+
+# Index mode
+map [index] u navigate_index up
+map [index] e navigate_index down
+map [index] i navigate_index expand
+map [index] I navigate_index expand-all
+map [index] n navigate_index collapse
+map [index] N navigate_index collapse-all

@@ -5,6 +5,7 @@
 # ... but these:
 !/.pam_environment
 !/.gitignore
+!/README
 
 ## .config
 !/.config/
@@ -14,7 +15,9 @@
 !/.config/vimium.txt
 
 ### fcitx5
-!/.config/fcitx5
+!/.config/fcitx5/
+/.config/fcitx5/conf/cached_layouts
+/.config/fcitx5/crash.log
 /.config/fcitx5/crash.log
 
 ### neofetch
@@ -24,6 +27,7 @@
 !/.config/jesseduffield/
 /.config/jesseduffield/lazygit/*
 !/.config/jesseduffield/lazygit/config.yml
+/.config/jesseduffield/lazynpm/state.yml
 
 ### ranger
 !/.config/ranger/
@@ -41,4 +45,8 @@
 !/.config/zathura/
 !/.config/zathura/zathurarc
 
-
+### zsh
+!/.config/zsh/
+/.config/zsh/*
+!/.config/zsh/fzf
+!/.config/zsh/conf

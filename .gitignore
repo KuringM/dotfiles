@@ -5,7 +5,7 @@
 # ... but these:
 !/.pam_environment
 !/.gitignore
-!/README
+!/README.md
 
 ## .config
 !/.config/

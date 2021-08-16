@@ -22,6 +22,9 @@
 /.config/fcitx5/crash.log
 /.config/fcitx5/crash.log
 
+### fontconfig
+!/.config/fontconfig/
+
 ### neofetch
 !/.config/neofetch/
 
@@ -53,3 +56,12 @@
 !/.config/zsh/fzf
 !/.config/zsh/conf
 !/.config/zsh/init
+
+## .local
+!/.local/
+/.local/*
+!/.local/share/
+/.local/share/*
+!/.local/share/fonts/
+/.local/share/fonts/*
+!/.local/share/fonts/LxgwWenKai/

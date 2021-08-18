@@ -3,6 +3,10 @@ EDITOR          DEFAULT=nvim
 BROWSER         DEFAULT=google-chrome-stable
 MANPAGER        DEFAULT="nvim +Man! --cmd 'let $NVIM_AS_PAGER=1'"
 
+# chinese
+LANG            DEFAULT=zh_CN.UTF-8
+LANGUAGE        DEFAULT=zh_CN:en_US
+
 # xdg base directory
 XDG_CONFIG_HOME DEFAULT=@{HOME}/.config
 XDG_CACHE_HOME  DEFAULT=@{HOME}/.cache

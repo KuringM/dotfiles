@@ -16,9 +16,6 @@
 !/.config/user-dirs.dirs
 !/.config/user-dirs.locale
 
-### bin
-!/.config/bin/
-
 ### fcitx5
 !/.config/fcitx5/
 /.config/fcitx5/conf/cached_layouts
@@ -63,6 +60,9 @@
 ## .local
 !/.local/
 /.local/*
+
+### bin
+!/.local/bin/
 !/.local/share/
 /.local/share/*
 ### fonts

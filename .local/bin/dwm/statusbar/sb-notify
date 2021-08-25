@@ -2,7 +2,7 @@
 
 while getopts ":abc" o; do case "${o}" in
 	a) notify-send "This Month" "$(cal --color=always | sed "s/..7m/<b><span color=\"red\">/;s/..27m/<\/span><\/b>/")
-$(date "+%Y/%b/%d %I:%M%p")" && notify-send "Appointments" "$(calcurse -d3)" ;;
+$(date "+%Y/%b/%d %I:%M%p")" && notify-send "Appointments" "$(calcurse -d3 -t)" ;;
 	b) notify-send "🖥 CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)\\n(100% per core)" && notify-send "🧠 Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head)" && notify-send "💽 Disk space" "$(df -h --output=target,used,size)" ;;
-	c) setsid -f st -n sptermsst -g 80x24 -e gotop ;;
+	c) setsid -f st -e gotop ;;
 esac done

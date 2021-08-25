@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # random all
-feh --recursive --randomize --bg-fill ~/prog/wallpapers
+feh --recursive --randomize --bg-fill ~/prog/wallpapers/[a-zA-Z]*
 
 # random Ghibli
 #feh --recursive --randomize --bg-fill ~/prog/wallpapers/Ghibli

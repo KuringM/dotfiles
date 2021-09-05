@@ -68,7 +68,7 @@
 /.local/*
 
 ### bin
-!/.local/bin/
+!/.local/mbin/
 !/.local/share/
 /.local/share/*
 ### fonts

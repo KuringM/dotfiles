@@ -21,6 +21,8 @@ zmodule utility
 zmodule duration-info
 # Exposes git repository status information to prompts, used by asciiship.
 zmodule git-info
+# Formats the path to the current working directory to be used by prompts.
+zmodule prompt-pwd
 # A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
 zmodule asciiship
 # Enables and configures smart and extensive tab completion.
@@ -53,4 +55,6 @@ zmodule agkozak/zsh-z
 # Replace zsh's default completion selection menu with fzf!
 zmodule Aloxaf/fzf-tab
 # A Zim fork of shashankmehta's gitster prompt theme
-zmodule gitster
+#zmodule gitster
+# Adaption of subnixr's minimal zsh theme for zimfw
+zmodule minimal2

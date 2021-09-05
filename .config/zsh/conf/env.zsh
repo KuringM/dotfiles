@@ -1,11 +1,13 @@
 export LOCALPROG=$HOME/prog
-export GOPATH="$XDG_DATA_HOME"/go
+export GOPATH=$HOME/prog/go
+export GOROOT=$HOME/go
+export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOPATH/bin
 
 # path
 export PATH=$PATH:$LOCALBIN
 #export PATH=$PATH:$HOME/.gem/ruby/2.7.0
 export PATH=$PATH:/usr/local/bin
-#export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/sbin
 export PATH=$PATH:$HOME/.linuxbrew/bin
@@ -30,3 +32,5 @@ export EDITOR=nvim
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 
+# applicantion
+export W3M_DIR=$XDG_CONFIG_HOME/.w3m

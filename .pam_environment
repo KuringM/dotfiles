@@ -25,8 +25,8 @@ INPUT_METHOD    DEFAULT=fcitx
 SDL_IM_MODULE   DEFAULT=fcitx
 
 # path
-PATH            DEFAULT=@{HOME}/.local/bin:@{HOME}/.local/bin/dwm:@{HOME}/.local/bin/dwm/statusbar:@{HOME}/.local/bin/st:@{HOME}/.local/bin/dmenu:/usr/local/sbin:/usr/local/bin:/usr/bin
+PATH            DEFAULT=@{HOME}/.local/bin:@{HOME}/.local/mbin:@{HOME}/.local/mbin/dwm:@{HOME}/.local/mbin/dwm/statusbar:@{HOME}/.local/mbin/st:@{HOME}/.local/mbin/dmenu:/usr/local/sbin:/usr/local/bin:/usr/bin
 
 # sudo
-SUDO_ASKPASS    DEFAULT=@{HOME}/.local/bin/dmenu/dmenupass
+SUDO_ASKPASS    DEFAULT=@{HOME}/.local/mbin/dmenu/dmenupass
 

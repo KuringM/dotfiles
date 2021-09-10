@@ -46,7 +46,7 @@ set completion-fg "#E0E0E0" #0C
 set notification-bg "#90A959" #0B
 set notification-fg "#151515" #00
 
-set recolor "true"
+set recolor "false"
 set relor-lightcolor rgba(0,0,0,0) #00
 set recolor-darkcolor "#E0E0E0" #06
 set recolor-reverse-video "true"
@@ -55,6 +55,11 @@ set recolor-keephue "true"
 set render-loading "false"
 set scroll-step 50
 
+# enable copy to clipboard
+set selection-clipboard clipboard
+
+# side-by-side mode
+set first-page-column 1:1
 
 #  _ __ ___   __ _ _ __
 # | '_ ` _ \ / _` | '_ \

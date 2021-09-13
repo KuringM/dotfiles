@@ -55,6 +55,6 @@ zmodule agkozak/zsh-z
 # Replace zsh's default completion selection menu with fzf!
 zmodule Aloxaf/fzf-tab
 # A Zim fork of shashankmehta's gitster prompt theme
-#zmodule gitster
-# Adaption of subnixr's minimal zsh theme for zimfw
-zmodule minimal2
+# zmodule gitster
+# A Zim fork of the Powerline-inspired agnoster prompt theme.
+zmodule eriner

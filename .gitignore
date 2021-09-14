@@ -10,11 +10,10 @@
 ## .config
 !/.config/
 /.config/*
-!/.config/.Xmodmap
-!/.config/.Xmodmap-cn
 !/.config/user-dirs.conf
 !/.config/user-dirs.dirs
 !/.config/user-dirs.locale
+
 ### calcurse
 !/.config/calcurse/
 /.config/calcurse/hooks/
@@ -22,7 +21,7 @@
 ### dunst
 !/.config/dunst/
 
-### dunst
+### git
 !/.config/git/
 
 ### fcitx5

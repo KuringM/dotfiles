@@ -15,7 +15,7 @@ XDG_DATA_HOME   DEFAULT=@{HOME}/.local/share
 # zsh
 ZDOTDIR         DEFAULT=${XDG_CONFIG_HOME}/zsh
 HISTFILE        DEFAULT=${XDG_DATA_HOME}/zsh/history
-ZIM_HOME        DEFAULT=${XDG_CONFIG_HOME}/.zim
+ZIM_HOME        DEFAULT=${XDG_CONFIG_HOME}/zim
 
 ### fcitx5 ###
 GTK_IM_MODULE   DEFAULT=fcitx
@@ -24,8 +24,15 @@ XMODIFIERS      DEFAULT=\@im=fcitx
 INPUT_METHOD    DEFAULT=fcitx
 SDL_IM_MODULE   DEFAULT=fcitx
 
+# X11
+XINITRC         DEFAULT=${XDG_CONFIG_HOME}/X11/xinitrc
+XSERVERRC       DEFAULT=${XDG_CONFIG_HOME}/X11/xserverrc
+XAUTHORITY      DEFAULT=${XDG_RUNTIME_DIR}/Xauthority
+# z
+_Z_DATA         DEFAULT=${XDG_DATA_HOME}/z
+
 # path
-PATH            DEFAULT=@{HOME}/.local/bin:@{HOME}/.local/mbin:@{HOME}/.local/mbin/dwm:@{HOME}/.local/mbin/dwm/statusbar:@{HOME}/.local/mbin/st:@{HOME}/.local/mbin/dmenu:/usr/local/sbin:/usr/local/bin:/usr/bin
+PATH            DEFAULT=${PATH}:@{HOME}/.local/bin:@{HOME}/.local/mbin:@{HOME}/.local/mbin/dwm:@{HOME}/.local/mbin/dwm/statusbar:@{HOME}/.local/mbin/st:@{HOME}/.local/mbin/dmenu:/usr/local/sbin:/usr/local/bin:/usr/bin
 
 # sudo
 SUDO_ASKPASS    DEFAULT=@{HOME}/.local/mbin/dmenu/dmenupass

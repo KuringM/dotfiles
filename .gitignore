@@ -22,6 +22,9 @@
 ### dunst
 !/.config/dunst/
 
+### dunst
+!/.config/git/
+
 ### fcitx5
 !/.config/fcitx5/
 /.config/fcitx5/conf/cached_layouts
@@ -33,6 +36,9 @@
 
 ### neofetch
 !/.config/neofetch/
+
+### npm
+!/.config/npm/
 
 ### lazygit
 !/.config/jesseduffield/
@@ -51,6 +57,10 @@
 /.config/ranger/plugins/devicons.pyo
 /.config/ranger/plugins/devicons_linemode.pyo
 /.config/ranger/__pycache__/
+
+
+### X11
+!/.config/X11/
 
 ### zathura
 !/.config/zathura/

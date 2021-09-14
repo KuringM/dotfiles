@@ -6,14 +6,16 @@ export GOBIN=$HOME/prog/go/bin
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 
+#npm
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+
 # path
 export PATH=$PATH:$LOCALBIN
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:$HOME/.local/bin
 
 # applicantion
-export W3M_DIR=$XDG_CONFIG_HOME/.w3m
-export EDITOR=nvim
+export W3M_DIR=$XDG_CONFIG_HOME/w3m
 
 #zsh custom
 export TERM=xterm-256color

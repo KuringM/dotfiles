@@ -134,5 +134,5 @@ source ~/.config/zsh/conf/vi.zsh
 source ~/.config/zsh/conf/env.zsh
 source ~/.config/zsh/conf/fzf.zsh
 source ~/.config/zsh/conf/mappings.zsh
-source ~/.config/.zim/modules/fzf-tab/fzf-tab.plugin.zsh
+source ~/.config/zim/modules/fzf-tab/fzf-tab.plugin.zsh
 autopair-init

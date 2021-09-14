@@ -4,6 +4,6 @@
 #
 
 # Define Zim location
-: ${ZIM_HOME=${XDG_CONFIG_HOME}/.zim}
+: ${ZIM_HOME=${XDG_CONFIG_HOME}/zim}
 # }}} End configuration added by Zim install
 

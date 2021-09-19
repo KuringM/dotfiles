@@ -11,4 +11,5 @@ export IDENTIFIER="unicode"
 . "$DIR/statusbar/sb-memory"
 . "$DIR/statusbar/sb-volume"
 
-xsetroot -name "$(sb-nettraf) $(sb-backlight) $(sb-volume) $(sb-clock) $(sb-memory) $(sb-kernel)"
+#xsetroot -name "$(sb-nettraf) $(sb-backlight) $(sb-volume) $(sb-clock) $(sb-memory) $(sb-kernel)"
+xsetroot -name "$(sb-backlight) $(sb-volume) $(sb-clock) $(sb-memory) $(sb-kernel)"

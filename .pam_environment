@@ -37,3 +37,5 @@ PATH            DEFAULT=${PATH}:@{HOME}/.local/bin:@{HOME}/.local/mbin:@{HOME}/.
 # sudo
 SUDO_ASKPASS    DEFAULT=@{HOME}/.local/mbin/dmenu/dmenupass
 
+#app
+W3M_DIR         DEFAULT=${XDG_CONFIG_HOME}/w3m

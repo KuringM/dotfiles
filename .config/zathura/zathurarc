@@ -18,15 +18,17 @@ set zoom-min 10
 set guioptions ""
 
 # zathurarc-dark
-set font "Fira Code Nerd Font Mono:pixelsize=24:antialias=true:autohint=true"
+set font "FiraCode 16"
 set default-bg rgba(0,0,0,0.8) #00
 set default-fg "#F7F7F6" #01
 
-set statusbar-fg "#B0B0B0" #04
+# set statusbar-fg "#B0B0B0" #04
+set statusbar-fg "#7AE7B9" #04
 set statusbar-bg "#202020" #01
 
 set inputbar-bg "#151515" #00 currently not used
-set inputbar-fg "#FFFFFF" #02
+#set inputbar-fg "#FFFFFF" #02
+set inputbar-fg "#7AE7B9" #02
 
 set notification-error-bg "#AC4142" #08
 set notification-error-fg "#151515" #00
@@ -41,7 +43,8 @@ set completion-highlight-fg "#151515" #02
 set completion-highlight-bg "#90A959" #0C
 
 set completion-bg "#303030" #02
-set completion-fg "#E0E0E0" #0C
+#set completion-fg "#E0E0E0" #0C
+set completion-fg "##7AE7B9" #0C
 
 set notification-bg "#90A959" #0B
 set notification-fg "#151515" #00
@@ -60,6 +63,9 @@ set selection-clipboard clipboard
 
 # side-by-side mode
 set first-page-column 1:1
+
+# Enable Sandbox
+set sandbox none
 
 #  _ __ ___   __ _ _ __
 # | '_ ` _ \ / _` | '_ \
@@ -100,6 +106,7 @@ map J display_link
 map k recolor
 map <C-k> jumplist forward
 
+map <Button3> follow
 
 # Fullscreen mode
 unmap [fullscreen] q
@@ -124,6 +131,8 @@ map [fullscreen] z zoom default
 
 map [fullscreen] k recolor
 
+map [fullscreen] <Button3> follow
+
 # Presentation mode
 unmap [presentation] q
 map [presentation] <C-q> quit
@@ -144,6 +153,7 @@ map [presentation] _ zoom out
 map [presentation] z zoom default
 
 map [presentation] k recolor
+map [presentation] <Button3> follow
 
 # Index mode
 map [index] u navigate_index up

@@ -8,6 +8,7 @@ picom -b
 /bin/bash ~/.local/mbin/dwm/dwm-inverse_scroll.sh &
 /bin/bash ~/.local/mbin/dwm/setxmodmap-colemak.sh &
 nm-applet &
+blueman-applet &
 xfce4-power-manager &
 ~/.local/mbin/dwm/dwm-autostart_wait.sh &
 fcitx5 &

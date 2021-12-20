@@ -21,6 +21,8 @@ id=`xinput list | grep "Touchpad" | cut -d'=' -f2 | cut -d'[' -f1`
 status=`xinput --list-props $id | grep "Device Enabled" | cut -d':' -f2`
 if [ $status -eq 1 ]; then
 	xinput set-prop $id "Device Enabled" 0
+	notify-send touchpad Off
 else
 	xinput set-prop $id "Device Enabled" 1
+	notify-send touchpad On
 fi

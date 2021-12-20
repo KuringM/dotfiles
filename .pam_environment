@@ -39,3 +39,4 @@ SUDO_ASKPASS    DEFAULT=@{HOME}/.local/mbin/dmenu/dmenupass
 
 #app
 W3M_DIR         DEFAULT=${XDG_CONFIG_HOME}/w3m
+WINEPREFIX      DEFAULT=${XDG_DATA_HOME}/wineprefixes

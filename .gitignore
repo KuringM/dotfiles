@@ -14,6 +14,9 @@
 !/.config/user-dirs.dirs
 !/.config/user-dirs.locale
 
+### bspwm
+!/.config/bspwm/
+
 ### calcurse
 !/.config/calcurse/
 /.config/calcurse/hooks/
@@ -60,6 +63,8 @@
 /.config/ranger/plugins/devicons_linemode.pyo
 /.config/ranger/__pycache__/
 
+### sxhkd
+!/.config/sxhkd/
 
 ### X11
 !/.config/X11/
@@ -82,8 +87,11 @@
 ### bin
 !/.local/mbin/
 !/.local/share/
+
+### share
 /.local/share/*
-### fonts
+
+#### fonts
 !/.local/share/fonts/
 /.local/share/fonts/*
 !/.local/share/fonts/LxgwWenKai/

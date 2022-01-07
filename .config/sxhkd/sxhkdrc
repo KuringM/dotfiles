@@ -6,6 +6,30 @@
 ###  Launch
 ###
 
+# scratchpad
+super + r
+	scratchy 
+
+# filemanger nautilus
+super + n
+	nautilus
+
+# mute
+F8
+	pulsemixer --toggle-mute
+
+# volume -10
+F9
+	pulsemixer --change-volume -10
+
+# volume +10
+F10
+	pulsemixer --change-volume +10
+
+# flameshot screenshot
+Print
+	flameshot gui
+
 # terminal emulator
 super + Return
 	st
@@ -13,6 +37,10 @@ super + Return
 # program launcher
 super + @space
 	rofi -show run
+
+# desktop program launcher
+super + s
+	/bin/bash dmenu_drun
 
 # chrome launch
 super + c

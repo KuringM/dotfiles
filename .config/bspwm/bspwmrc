@@ -1,10 +1,12 @@
 #! /bin/sh
 
 ### --- startup --- ###
-/bin/bash ~/.local/mbin/setxmodmap-colemak.sh &
-/bin/bash ~/.local/mbin/onlyExternalDisplay.sh &
-/bin/bash ~/.local/mbin/wp_autochange.sh &
+/bin/bash ~/.local/mbin/general/setxmodmap-colemak.sh &
+/bin/bash ~/.local/mbin/general/onlyExternalDisplay.sh &
+/bin/bash ~/.local/mbin/general/wp_autochange.sh &
+/bin/bash ~/.config/polybar/lanuch_big.sh &
 
+killall dunst; dunst &
 killall picom; picom -b
 killall nm-applet; nm-applet &
 killall blueman-applet; blueman-applet &
@@ -12,15 +14,13 @@ killall fcitx5; fcitx5 &
 killall flameshot; flameshot &
 killall optimus-manager-qt; optimus-manager-qt &
 
-pkill 2bspwm ; 2bspwm &
-
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
 ### --- config --- ###
-bspc config border_width         2
-bspc config window_gap          12
+bspc config border_width         5
+bspc config window_gap           5
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -32,3 +32,5 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+
+

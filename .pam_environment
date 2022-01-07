@@ -31,8 +31,8 @@ XAUTHORITY      DEFAULT=${XDG_RUNTIME_DIR}/Xauthority
 # z
 _Z_DATA         DEFAULT=${XDG_DATA_HOME}/z
 
-# path
-PATH            DEFAULT=${PATH}:@{HOME}/.local/bin:@{HOME}/.local/mbin:@{HOME}/.local/mbin/dwm:@{HOME}/.local/mbin/dwm/statusbar:@{HOME}/.local/mbin/st:@{HOME}/.local/mbin/dmenu:@{HOME}/.local/mbin/bspwm:@{HOME}/.local/mbin/funny:/usr/local/sbin:/usr/local/bin:/usr/bin
+# bin path
+PATH            DEFAULT=${PATH}:@{HOME}/.local/bin:@{HOME}/.local/mbin:@{HOME}/.local/mbin/dwm:@{HOME}/.local/mbin/dwm/statusbar:@{HOME}/.local/mbin/st:@{HOME}/.local/mbin/dmenu:@{HOME}/.local/mbin/bspwm:@{HOME}/.local/mbin/funny:@{HOME}/.local/mbin/general:/usr/local/sbin:/usr/local/bin:/usr/bin
 
 # sudo
 SUDO_ASKPASS    DEFAULT=@{HOME}/.local/mbin/dmenu/dmenupass

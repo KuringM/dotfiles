@@ -51,6 +51,12 @@
 !/.config/jesseduffield/lazygit/config.yml
 /.config/jesseduffield/lazynpm/state.yml
 
+### picom
+!/.config/picom/
+
+### polybar
+!/.config/polybar/
+
 ### ranger
 !/.config/ranger/
 /.config/ranger/plugins/__pycache__/*

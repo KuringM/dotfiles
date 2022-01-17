@@ -37,6 +37,15 @@ PATH            DEFAULT=${PATH}:@{HOME}/.local/bin:@{HOME}/.local/mbin:@{HOME}/.
 # sudo
 SUDO_ASKPASS    DEFAULT=@{HOME}/.local/mbin/dmenu/dmenupass
 
-#app
+#w3m
 W3M_DIR         DEFAULT=${XDG_CONFIG_HOME}/w3m
+
+#wine
 WINEPREFIX      DEFAULT=${XDG_DATA_HOME}/wineprefixes
+
+#gtk
+GTK_RC_FILES    DEFAULT=${XDG_CONFIG_HOME}/gtk-1.0/gtkrc
+GTK2_RC_FILES   DEFAULT=${XDG_CONFIG_HOME}/gtk-2.0/gtkrc
+
+#CUDA
+CUDA_CACHE_PATH DEFAULT=${XDG_CONFIG_HOME}/nv

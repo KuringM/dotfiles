@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+#feh --recursive --randomize --bg-fill ~/.local/src/wallpapers/Cartoon/astronaut_01.jpg
+
 # random all
 feh --recursive --randomize --bg-fill ~/.local/src/wallpapers/[a-zA-Z]*
 
@@ -15,5 +18,5 @@ feh --recursive --randomize --bg-fill ~/.local/src/wallpapers/[a-zA-Z]*
 # random Reality
 #feh --recursive --randomize --bg-fill ~/.local/src/wallpapers/Reality
 
-#feh --recursive --randomize --bg-fill ~/.local/src/wallpapers/Cartoon/astronaut_01.jpg
-
+# random 2k
+#feh --recursive --randomize --bg-fill ~/.local/src/wallpapers/2k

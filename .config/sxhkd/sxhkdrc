@@ -6,12 +6,8 @@
 ###  Launch
 ###
 
-# scratchpad
-super + r
-	scratchy 
-
 # filemanger nautilus
-super + n
+super + r
 	nautilus
 
 # mute
@@ -40,7 +36,7 @@ super + @space
 
 # desktop program launcher
 super + s
-	/bin/bash dmenu_drun
+	/bin/bash ~/.config/rofi/launchers/ribbon/launcher.sh
 
 # chrome launch
 super + c
@@ -86,23 +82,27 @@ alt + y
 alt + g
 	bspc node -s biggest.window
 
-#
-# state/flags
-#
+###
+### state/flags
+###
 
 # set the window state
 alt + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
+# set the fullscreen window state
+F11
+	bspc node -t fullscreen
+
 # set the node flags
-super + ctrl + {m,x,y,z}
-	bspc node -g {marked,locked,sticky,private}
+super + ctrl + {m,x,y,z,u}
+	bspc node -g {marked,locked,sticky,private,urgent,hidden}
 
-#
-# focus/swap
-#
+###
+### focus/swap
+###
 
-# focus the node in the given direction
+# focus/swap the node in the given direction
 super + {_,shift + }{n,e,u,i}
 	bspc node -{f,s} {west,south,north,east}
 
@@ -132,9 +132,9 @@ alt + {o,i}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-#
-# preselect
-#
+###
+### preselect
+###
 
 # preselect the direction
 super + ctrl + {n,e,u,i}
@@ -152,9 +152,9 @@ super + ctrl + space
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-#
-# move/resize
-#
+###
+### move/resize
+###
 
 # expand a window by moving one of its side outward
 super + alt + {n,e,u,i}

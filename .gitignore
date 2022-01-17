@@ -69,6 +69,9 @@
 /.config/ranger/plugins/devicons_linemode.pyo
 /.config/ranger/__pycache__/
 
+### rofi
+!/.config/rofi/
+
 ### sxhkd
 !/.config/sxhkd/
 

@@ -34,7 +34,6 @@
 !/.config/fcitx5/
 /.config/fcitx5/conf/cached_layouts
 /.config/fcitx5/crash.log
-/.config/fcitx5/crash.log
 
 ### fontconfig
 !/.config/fontconfig/

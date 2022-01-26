@@ -5,6 +5,9 @@
 ###
 ###  Launch
 ###
+# power menu
+super + shift + BackSpace
+	/bin/bash ~/.config/rofi/powermenu/powermenu.sh
 
 # filemanger nautilus
 super + r
@@ -62,6 +65,10 @@ super + Escape
 ###  bspwm hotkeys
 ###
 
+# toggle polybar
+super + g
+ /bin/bash ~/.local/mbin/polybar/tglbar
+
 # quit/restart bspwm
 super + ctrl + {q,r}
 	bspc {quit,wm -r}
@@ -89,10 +96,6 @@ alt + g
 # set the window state
 alt + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
-
-# set the fullscreen window state
-F11
-	bspc node -t fullscreen
 
 # set the node flags
 super + ctrl + {m,x,y,z,u}
@@ -131,6 +134,10 @@ alt + {o,i}
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# send to the next/previous desktop
+super + shift + bracket{left,right}
+	bspc node -d {prev,next}.local --follow
 
 ###
 ### preselect

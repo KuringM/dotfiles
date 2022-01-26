@@ -1,3 +1,8 @@
+# bin path
+PATH            DEFAULT=${PATH}:@{HOME}/.local/bin:@{HOME}/.local/mbin:@{HOME}/.local/mbin/dwm:@{HOME}/.local/mbin/dwm/statusbar:@{HOME}/.local/mbin/st:@{HOME}/.local/mbin/dmenu:@{HOME}/.local/mbin/bspwm:@{HOME}/.local/mbin/funny:@{HOME}/.local/mbin/general:@{HOME}/.local/mbin/polybar
+
+PATH            DEFAULT=${PATH}:/usr/local/sbin:/usr/local/bin:/usr/bin
+
 # default
 EDITOR          DEFAULT=nvim
 BROWSER         DEFAULT=google-chrome-stable
@@ -30,9 +35,6 @@ XSERVERRC       DEFAULT=${XDG_CONFIG_HOME}/X11/xserverrc
 XAUTHORITY      DEFAULT=${XDG_RUNTIME_DIR}/Xauthority
 # z
 _Z_DATA         DEFAULT=${XDG_DATA_HOME}/z
-
-# bin path
-PATH            DEFAULT=${PATH}:@{HOME}/.local/bin:@{HOME}/.local/mbin:@{HOME}/.local/mbin/dwm:@{HOME}/.local/mbin/dwm/statusbar:@{HOME}/.local/mbin/st:@{HOME}/.local/mbin/dmenu:@{HOME}/.local/mbin/bspwm:@{HOME}/.local/mbin/funny:@{HOME}/.local/mbin/general:/usr/local/sbin:/usr/local/bin:/usr/bin
 
 # sudo
 SUDO_ASKPASS    DEFAULT=@{HOME}/.local/mbin/dmenu/dmenupass

@@ -11,6 +11,7 @@
 ;
 ;==========================================================
 
+
 [section/base]
 include-directory = ~/.config/polybar/modules
 include-file = ~/.config/polybar/colors.ini
@@ -64,7 +65,7 @@ font-1 = feather:size=16:antialias=true:autohint=true;3
 font-2 = Noto Serif CJK SC:style=Regular
 font-3 = SauceCodePro Nerd Font Mono:size=20;+6
 
-modules-left = powermenu_2 cpu memory temperature wlan eth xwindow
+modules-left = powermenu_2 cpu memory temperature_1 wlan eth xwindow
 modules-center = bspwm_1
 modules-right = pulseaudio_2 date_1 backlight-acpi daily-poem
 
@@ -81,29 +82,30 @@ cursor-scroll = ns-resize
 width = 100%
 height = 24
 
-enable-ipc = true
+#radius = 10
 
+enable-ipc = true
 fixed-center = true
 
-background = #2e3440
-foreground = #eceff4
+background = #81A1C1
+foreground = #2e3440
 
-padding-left = 2
-padding-right = 0
+padding-left = 1
+padding-right = 1
 
 miodule-margin-left = 2
 module-margin-right = 2
 
-font-0 = FiraCode Nerd Font Mono:size=12:antialias=true:autohint=true;1
-font-1 = LXGW WenKai Mono:size=16:antialias=true:autohint=true;3
+font-0 = FiraCode Nerd Font:size=12:antialias=true:autohint=true;1
+font-1 = LXGW WenKai:size=16:antialias=true:autohint=true;4
 font-2 = feather:size=16:antialias=true:autohint=true;3
-font-3 = FiraCode Nerd Font Mono:size=20;4
+font-3 = FiraCode Nerd Font:size=20;4
 
-modules-left = powermenu_2 bspwm_2
+modules-left = powermenu_2 bspwm_4
 modules-center = daily-poem
-modules-right = date_1 cpu memory temperature pulseaudio_2
+modules-right = date_1 cpu memory filesystem temperature_2 pulseaudio_2
 
-tray-position = none
+tray-position = right
 tray-padding = 2
 tray-background = ${root.background}
 
@@ -111,5 +113,6 @@ wm-restack = bspwm
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
 
 ; vim:ft=dosini

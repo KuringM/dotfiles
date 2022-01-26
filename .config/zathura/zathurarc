@@ -113,7 +113,7 @@ unmap [fullscreen] q
 map [fullscreen] <C-q> quit
 map [fullscreen] f toggle_fullscreen
 map [fullscreen] p toggle_presentation
-map [fullscreen] d oggle_page_mode
+map [fullscreen] d toggle_page_mode
 
 map [fullscreen] n scroll left
 map [fullscreen] u scroll up

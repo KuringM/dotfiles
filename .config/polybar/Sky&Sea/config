@@ -11,14 +11,11 @@
 ;
 ;==========================================================
 
-
-[section/base]
-include-directory = ~/.config/polybar/modules
-include-file = ~/.config/polybar/colors.ini
-
 [global/wm]
 margin-top = 1
 margin-bottom = 1
+include-directory = ~/.config/polybar/Sky&Sea/modules
+include-file = ~/.config/polybar/Sky&Sea/colors.ini
 
 [settings]
 screenchange-reload = true
@@ -31,88 +28,66 @@ screenchange-reload = true
 [bar]
 ;fill = 
 ;empty = 
-fill = ▮
-empty = ▮
-
+fill = 
+empty = 
 indicator = 
 
-[bar/big]
-width = 100%
-height = 25
+[bar/ss]
 
-;radius = 6
-enable-ipc = true
-
-fixed-center = true
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #f00
-
-border-size = 2
-border-color = #00000000
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = SauceCodePro Nerd Font Mono:size=10:antialias=true:autohint=true
-font-1 = feather:size=16:antialias=true:autohint=true;3
-font-2 = Noto Serif CJK SC:style=Regular
-font-3 = SauceCodePro Nerd Font Mono:size=20;+6
-
-modules-left = powermenu_2 cpu memory temperature_1 wlan eth xwindow
-modules-center = bspwm_1
-modules-right = pulseaudio_2 date_1 backlight-acpi daily-poem
-
-tray-position = right
-tray-padding = 2
-tray-background = ${root.background}
-
+locale = 
+wm-name =
 wm-restack = bspwm
-
+dpi-x = 96
+dpi-y = 96
+monitor = ${env:MONITOR:DP-0}
+monitor-fallback =
+monitor-strict = false
+override-redirect = false
+bottom = false
+fixed-center = true
+enable-ipc = true
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[bar/mini]
 width = 100%
 height = 24
-
-#radius = 10
-
-enable-ipc = true
-fixed-center = true
-
-background = #81A1C1
-foreground = #2e3440
-
+offset-x = 0
+offset-y = 0
+#background = #abcdef
+background = #65c2f5
+#foreground = #2a3a4a
+foreground = #ffffff
+line-size = 0
+line-color = #f00
 padding-left = 1
 padding-right = 1
+separator =
+spacing = 0
+radius = 0.0
+dim-value = 1.0
 
-miodule-margin-left = 2
-module-margin-right = 2
-
-font-0 = FiraCode Nerd Font:size=12:antialias=true:autohint=true;1
+# font
+font-0 = FiraCode Nerd Font:size=12:antialias=true:autohint=true;2
 font-1 = LXGW WenKai:size=16:antialias=true:autohint=true;4
-font-2 = feather:size=16:antialias=true:autohint=true;3
-font-3 = FiraCode Nerd Font:size=20;4
+font-2 = FiraCode Nerd Font:size=20;4
 
-modules-left = powermenu_2 bspwm_4
+# modules
+module-margin-left = 1
+module-margin-right = 1
+modules-left = powermenu_2 bspwm_4 xwindow
 modules-center = daily-poem
-modules-right = date_1 cpu memory filesystem temperature_2 pulseaudio_2
+modules-right = date cpu memory filesystem temperature pulseaudio_2
 
+
+# system tray
 tray-position = right
+tray-detached = false
+tray-maxsize = 16
+tray-transparent = false
 tray-padding = 2
 tray-background = ${root.background}
-
-wm-restack = bspwm
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
+tray-offset-x = 0
+tray-offset-y = 0
+tray-scale = 1.0
 
 ; vim:ft=dosini

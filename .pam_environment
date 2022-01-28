@@ -51,3 +51,6 @@ GTK2_RC_FILES   DEFAULT=${XDG_CONFIG_HOME}/gtk-2.0/gtkrc
 
 #CUDA
 CUDA_CACHE_PATH DEFAULT=${XDG_CONFIG_HOME}/nv
+
+#browser
+BROWSER         DEFAULT=/usr/bin/google-chrome-stable

@@ -21,9 +21,6 @@
 !/.config/calcurse/
 /.config/calcurse/hooks/
 
-### cutefish
-!/.config/cutefishos/
-
 ### dunst
 !/.config/dunst/
 

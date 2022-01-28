@@ -18,7 +18,7 @@
     text_icon_padding = 0
 
     frame_width = 2
-    outer_frame_width = 4
+    outer_frame_width = 2
     frame_color = "#bf616a"
     outer_frame_color = "#222222"
     separator_color = "#4c566a"
@@ -85,15 +85,23 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background =  "#81a1c1"
-    foreground = "#2e3440"
-    frame_color = "#282828"
+#   background =  "#81a1c1"
+#   foreground = "#2e3440"
+#    frame_color = "#282828"
+
+    background = "#65c2f5"
+    foreground = "#ffffff"
+    frame_color = "#abcdef"
     timeout = 10
 
 [urgency_normal]
-    background =  "#81a1c1"
-    foreground = "#2e3440"
-    frame_color = "#282828"
+#    background = "#81a1c1"
+#    foreground = "#2e3440"
+#    frame_color = "#282828"
+
+    background = "#65c2f5"
+    foreground = "#ffffff"
+    frame_color = "#abcdef"
     timeout = 10
 
 [urgency_critical]

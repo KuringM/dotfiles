@@ -93,6 +93,8 @@ map i scroll right
 
 map U navigate previous
 map E navigate next
+map <Up> navigate previous
+map <Down> navigate next
 
 map = search forward
 map - search backward
@@ -122,6 +124,9 @@ map [fullscreen] i scroll right
 
 map [fullscreen] U navigate previous
 map [fullscreen] E navigate next
+map [fullscreen] <Up> navigate previous
+map [fullscreen] <Down> navigate next
+
 
 map [fullscreen] = search forward
 map [fullscreen] - search backward

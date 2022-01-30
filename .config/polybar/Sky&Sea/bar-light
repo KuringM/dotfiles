@@ -1,0 +1,88 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;==========================================================
+
+#include-file = ~/.config/polybar/Sky&Sea/colors-light.ini
+include-file = ~/.config/polybar/Sky&Sea/colors.ini
+include-file = ~/.config/polybar/Sky&Sea/config
+
+[bar/base]
+inherit = config
+
+theme = light
+monitor = ${config.monitor}
+width = ${config.width}
+height = ${config.height}
+offset-x = ${config.offset-x}
+offset-y = ${config.offset-y}
+radius = ${config.radius}
+
+fixed-center = ${config.fixed-center}
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = ${config.line-size}
+
+padding = 0
+override-redirect = ${config.override-redirect}
+wm-restack = ${config.wm-restack}
+
+tray-padding = 3
+tray-detached = false
+tray-maxsize = 22
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+enable-ipc = true
+
+[bar/top]
+inherit = bar/base
+
+height = 3%
+
+module-margin = 1
+modules-left = powermenu_2 bspwm_4 xwindow
+modules-center = none
+modules-right = date cpu memory filesystem pulseaudio_2 
+
+tray-position = none
+
+[bar/down]
+inherit = bar/base
+
+bottom = true
+
+module-margin = 1
+modules-left = powermenu_2 wlan eth
+modules-center = daily-poem
+modules-right = temperature
+
+tray-position = right
+
+[bar/light]
+inherit = bar/base
+
+height = 3%
+padding-left = 2
+padding-right = 1
+
+# modules
+module-margin-left = 1
+module-margin-right = 0
+modules-left = powermenu_2 bspwm_4 xwindow
+modules-center = daily-poem
+modules-right = date cpu memory filesystem temperature pulseaudio_2
+
+
+; vim:ft=dosini

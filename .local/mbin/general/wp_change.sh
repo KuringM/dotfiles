@@ -21,3 +21,4 @@ feh --recursive --randomize --bg-fill ~/.local/src/wallpapers/[a-zA-Z]*
 
 # random 2k
 #feh --recursive --randomize --bg-fill ~/.local/src/wallpapers/2k
+

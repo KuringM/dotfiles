@@ -3,9 +3,7 @@
 /bin/bash ~/.local/mbin/general/setxmodmap-colemak.sh &
 /bin/bash ~/.local/mbin/general/onlyExternalDisplay.sh &
 /bin/bash ~/.local/mbin/general/wp_autochange.sh &
-#/bin/bash ~/.local/mbin/polybar/launch_big.sh &
-#/bin/bash ~/.local/mbin/polybar/launch_mini.sh &
-/bin/bash ~/.local/mbin/polybar/launch_ss.sh &
+/bin/bash ~/.local/mbin/polybar/launch-polybar.sh &
 
 killall dunst; dunst &
 killall picom; picom -b

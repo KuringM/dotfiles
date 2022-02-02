@@ -11,8 +11,7 @@
 ;
 ;==========================================================
 
-#include-file = ~/.config/polybar/Sky&Sea/colors-light.ini
-include-file = ~/.config/polybar/Sky&Sea/colors.ini
+include-file = ~/.config/polybar/Sky&Sea/colors-light.ini
 include-file = ~/.config/polybar/Sky&Sea/config
 
 [bar/base]
@@ -52,11 +51,10 @@ inherit = bar/base
 height = 3%
 
 module-margin = 1
-modules-left = powermenu_2 bspwm_4 xwindow
-modules-center = none
-modules-right = date cpu memory filesystem pulseaudio_2 
-
-tray-position = none
+modules-left = ${config.top-left}
+modules-center = ${config.top-center}
+modules-right = ${config.top-right}
+tray-position = ${config.systray-top}
 
 [bar/down]
 inherit = bar/base
@@ -64,11 +62,10 @@ inherit = bar/base
 bottom = true
 
 module-margin = 1
-modules-left = powermenu_2 wlan eth
-modules-center = daily-poem
-modules-right = temperature
-
-tray-position = right
+modules-left = ${config.bottom-left}
+modules-center = ${config.bottom-center}
+modules-right = ${config.bottom-right}
+tray-position = ${config.systray-bottom}
 
 [bar/light]
 inherit = bar/base
@@ -80,9 +77,9 @@ padding-right = 1
 # modules
 module-margin-left = 1
 module-margin-right = 0
-modules-left = powermenu_2 bspwm_4 xwindow
-modules-center = daily-poem
-modules-right = date cpu memory filesystem temperature pulseaudio_2
 
+modules-left = ${config.modules-left}
+modules-center = ${config.modules-center}
+modules-right = ${config.modules-right}
 
 ; vim:ft=dosini

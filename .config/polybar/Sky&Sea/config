@@ -208,6 +208,7 @@ dim-value = 1.0
 font-0 = FiraCode Nerd Font:size=12:antialias=true:autohint=true;2
 font-1 = LXGW WenKai:size=16:antialias=true:autohint=true;4
 font-2 = FiraCode Nerd Font:size=20;4
+font-3 = JoyPixels:size=12
 
 ; Number of spaces to add before/after each module
 ; Individual side values can be defined using:
@@ -218,9 +219,20 @@ module-margin = 0
 ;   modules-left = cpu ram
 ;   modules-center = xwindow xbacklight
 ;   modules-right = ipc clock
-modules-left =
-modules-center =
-modules-right =
+modules-left = powermenu_2 bspwm_4 xwindow
+#modules-center = daily-poem
+modules-center = spotify spotify-prev spotify-play-pause spotify-next
+modules-right = date cpu memory filesystem temperature pulseaudio_2
+
+# Top modelines
+top-left = rofi-run bspwm title
+top-center = none
+top-right = date cpu memory filesystem pulseaudio_2 
+
+# Botton modules
+bottom-left = powermenu_2 wlan eth
+bottom-center = daily-poem
+bottom-right = temperature
 
 # system tray
 ; Position of the system tray window
@@ -233,6 +245,10 @@ modules-right =
 ;   right
 ;   none
 tray-position = right
+
+# systray position
+systray-top = none
+systray-bottom = right
 
 ; If true, the bar will not shift its
 ; contents when the tray changes

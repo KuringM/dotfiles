@@ -14,17 +14,17 @@ then
 	polybar -c $HOME/.config/polybar/Sky\&Sea/bar-test test 2>&1 | tee -a /tmp/polybar_test.log & disown
 elif [ "$1" == "light-td" ]
 then
-	polybar -c $HOME/.config/polybar/Sky\&Sea/bar-light top 2>&1 | tee -a /tmp/polybar_ss.log & disown
-	polybar -c $HOME/.config/polybar/Sky\&Sea/bar-light down 2>&1 | tee -a /tmp/polybar_ss.log & disown
+	polybar -c $HOME/.config/polybar/Sky\&Sea/bar-light top 2>&1 | tee -a /tmp/polybar.log & disown
+	polybar -c $HOME/.config/polybar/Sky\&Sea/bar-light down 2>&1 | tee -a /tmp/polybar.log & disown
 elif [ "$1" == "dark-td" ]
 then
-	polybar -c $HOME/.config/polybar/Sky\&Sea/bar-dark top 2>&1 | tee -a /tmp/polybar_ss.log & disown
-	polybar -c $HOME/.config/polybar/Sky\&Sea/bar-dark down 2>&1 | tee -a /tmp/polybar_ss.log & disown
+	polybar -c $HOME/.config/polybar/Sky\&Sea/bar-dark top 2>&1 | tee -a /tmp/polybar.log & disown
+	polybar -c $HOME/.config/polybar/Sky\&Sea/bar-dark down 2>&1 | tee -a /tmp/polybar.log & disown
 elif [ "$1" == "dark" ]
 then
-	polybar -c $HOME/.config/polybar/Sky\&Sea/bar-dark dark 2>&1 | tee -a /tmp/polybar_ss.log & disownfi
+	polybar -c $HOME/.config/polybar/Sky\&Sea/bar-dark dark 2>&1 | tee -a /tmp/polybar.log & disown
 else 
-	polybar -c $HOME/.config/polybar/Sky\&Sea/bar-light light 2>&1 | tee -a /tmp/polybar_ss.log & disownfi
+	polybar -c $HOME/.config/polybar/Sky\&Sea/bar-light light 2>&1 | tee -a /tmp/polybar.log & disown
 fi
 
 echo "Bars launched..."

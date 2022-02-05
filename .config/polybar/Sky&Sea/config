@@ -208,7 +208,7 @@ dim-value = 1.0
 font-0 = FiraCode Nerd Font:size=12:antialias=true:autohint=true;2
 font-1 = LXGW WenKai:size=16:antialias=true:autohint=true;4
 font-2 = FiraCode Nerd Font:size=20;4
-font-3 = JoyPixels:size=12
+font-3 = JoyPixels:scale=5;4
 
 ; Number of spaces to add before/after each module
 ; Individual side values can be defined using:
@@ -221,7 +221,7 @@ module-margin = 0
 ;   modules-right = ipc clock
 modules-left = powermenu_2 bspwm_4 xwindow
 #modules-center = daily-poem
-modules-center = spotify spotify-prev spotify-play-pause spotify-next
+modules-center = daily-poem spotify spotify-prev spotify-play-pause spotify-next
 modules-right = date cpu memory filesystem temperature pulseaudio_2
 
 # Top modelines

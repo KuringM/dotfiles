@@ -27,6 +27,9 @@
 ### git
 !/.config/git/
 
+### git
+!/.config/glava/
+
 ### fcitx5
 !/.config/fcitx5/
 /.config/fcitx5/conf/cached_layouts

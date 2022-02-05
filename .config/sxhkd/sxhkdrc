@@ -5,6 +5,11 @@
 ###
 ###  Launch
 ###
+
+# screenkey
+super + ctrl + s
+	$(killall screenkey && notify-send Screenkey Off) || $(notify-send Screenkey On && screenkey)
+
 # power menu
 super + shift + BackSpace
 	/bin/bash ~/.config/rofi/powermenu/powermenu.sh

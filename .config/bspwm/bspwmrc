@@ -1,7 +1,8 @@
 #! /bin/sh
 
 ### --- startup --- ###
-sleep 1 ; /bin/bash ~/.local/mbin/bspwm/bspwm-autostart.sh &
+#sleep 1 ; /bin/bash ~/.local/mbin/bspwm/bspwm-autostart.sh &
+pgrep -f bspwm-autostart.sh || /bin/bash ~/.local/mbin/bspwm/bspwm-autostart.sh &
 
 ### --- config --- ###
 bspc monitor -d I II III IV V VI VII VIII IX X

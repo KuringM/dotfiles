@@ -11,7 +11,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Launch bar1 and bar2
 if [ "$1" == "test" ]
 then
-	polybar -c $HOME/.config/polybar/Sky\&Sea/bar-test test 2>&1 | tee -a /tmp/polybar_test.log & disown
+	polybar -c $HOME/.config/polybar/test/bar main 2>&1 | tee -a /tmp/polybar_test.log & disown
 elif [ "$1" == "light-td" ]
 then
 	polybar -c $HOME/.config/polybar/Sky\&Sea/bar-light top 2>&1 | tee -a /tmp/polybar.log & disown

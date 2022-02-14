@@ -13,6 +13,7 @@
 
 include-file = ~/.config/polybar/Sky&Sea/colors-dark.ini
 include-file = ~/.config/polybar/Sky&Sea/config
+include-directory = ~/.config/polybar/Sky&Sea/modules
 
 [bar/base]
 inherit = config

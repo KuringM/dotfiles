@@ -14,10 +14,13 @@
    
    See documentation for more details. */
 /* #request mod bars */
-#request mod radial
-/* #request mod graph */
-/* #request mod wave */
 /* #request mod circle */
+/* #request mod graph */
+#request mod radial
+/* #request mod util */
+/* #request mod wave */
+/* #request mod env_Openbox */
+
 
 /* Window hints */
 #request setfloating  false

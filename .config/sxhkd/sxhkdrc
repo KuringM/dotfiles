@@ -72,7 +72,7 @@ super + Escape
 
 # toggle polybar
 super + g
- /bin/bash ~/.local/mbin/polybar/tglbar
+ /bin/bash ~/.local/mbin/polybar/toggle_polybar.sh
 
 # quit/restart bspwm
 super + ctrl + {q,r}
@@ -103,8 +103,8 @@ alt + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
-super + ctrl + {m,x,y,z,u}
-	bspc node -g {marked,locked,sticky,private,urgent,hidden}
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
 
 ###
 ### focus/swap

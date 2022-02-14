@@ -1,0 +1,62 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;==========================================================
+
+include-file = ~/.config/polybar/Sky&Sea/colors.ini
+include-file = ~/.config/polybar/Sky&Sea/config
+include-directory = ~/.config/polybar/Sky&Sea/modules
+
+[bar/base]
+inherit = config
+
+monitor = ${config.monitor}
+width = ${config.width}
+height = ${config.height}
+offset-x = ${config.offset-x}
+offset-y = ${config.offset-y}
+radius = ${config.radius}
+
+fixed-center = ${config.fixed-center}
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = ${config.line-size}
+
+padding-left = 0
+padding-right = 0
+
+module-margin = 1
+
+override-redirect = ${config.override-redirect}
+wm-restack = ${config.wm-restack}
+
+tray-padding = 3
+tray-detached = false
+tray-maxsize = 22
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+enable-ipc = true
+
+
+[bar/main]
+inherit = bar/base
+
+height = 2%
+
+modules-left = ${config.modules-left}
+modules-center = ${config.modules-center}
+modules-right = ${config.modules-right}
+
+; vim:ft=dosini

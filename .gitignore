@@ -94,9 +94,11 @@
 
 ### bin
 !/.local/mbin/
-!/.local/share/
+/.local/mbin/polybar/poem.json
+/.local/mbin/polybar/token
 
 ### share
+!/.local/share/
 /.local/share/*
 
 #### fonts

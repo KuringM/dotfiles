@@ -1,9 +1,9 @@
 export LOCALPROG=$HOME/prog
 # go 
-export GOROOT=/usr/lib/go
+export GOROOT=/usr/local/go
 export GOPATH=$HOME/prog/go
 export GOBIN=$HOME/prog/go/bin
-export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 
 #npm

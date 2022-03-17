@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-# scripts
-/bin/bash ~/.local/mbin/polybar/launch-polybar.sh dark
+## scripts
+/home/kuring/.local/mbin/eww/eww_autoupdate.sh
 pgrep -f wp_autochange.sh || /bin/bash ~/.local/mbin/general/wp_autochange.sh &
+#/bin/bash ~/.local/mbin/polybar/launch-polybar.sh dark
+sleep 1s; /bin/bash ~/.config/eww/arin/launch_bar
 /bin/bash ~/.local/mbin/general/setxmodmap-colemak.sh
 #/bin/bash ~/.local/mbin/general/onlyExternalDisplay.sh
-/bin/bash ~/.local/mbin/polybar/polybar_toggle.sh
+#/bin/bash ~/.local/mbin/polybar/polybar_toggle.sh
 
 # application
 pgrep dunst || dunst &

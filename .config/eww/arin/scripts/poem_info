@@ -1,0 +1,55 @@
+#!/bin/bash
+
+##
+BIN_PHAT=/home/kuring/.local/mbin/funny/daily-poem
+
+## Collect date
+cache_file=/tmp/poem.json
+
+## Creat poem.json
+if [[ ! -f "$cache_file" ]]; then
+	touch ${cache_file}
+fi
+
+# Update data
+update_poem_data(){
+	$BIN_PHAT -p jrsc --save-path $cache_file -u
+}
+
+## Get data
+get_poem_data(){
+	poem_data=$(cat ${cache_file})
+
+	if [ ! -z "$poem_data" ]; then
+		poem_content=`echo "$poem_data" | jq -r ".data.content" | head -1`
+		poem_title=`echo "$poem_data" | jq -r ".data.origin.title" | head -1`
+		poem_dynasty=`echo "$poem_data" | jq -r ".data.origin.dynasty" | head -1`
+		poem_author=`echo "$poem_data" | jq -r ".data.origin.author" | head -1`
+		poem_matchTags=`echo "$poem_data" | jq -r ".data.matchTags[]" | head -1`
+		poem_full_content_lines=`echo "$poem_data" | jq -r ".data.origin.content[]" | wc -l`
+		while(( $poem_full_content_lines > 0 ))
+		do
+			index=`expr $poem_full_content_lines - 1`
+			poem_full_content[$index]=`echo "$poem_data" | jq -r ".data.origin.content[]" | sed -n "${poem_full_content_lines}p"`
+			let "poem_full_content_lines--"
+		done
+	fi
+}
+
+get_poem_data
+
+if [[ "$1" == "--update" ]]; then
+	update_poem_data
+elif [[ "$1" == "--content" ]]; then
+	echo $poem_content
+elif [[ "$1" == "--title" ]]; then
+	echo $poem_title
+elif [[ "$1" == "--dynasty" ]]; then
+	echo $poem_dynasty
+elif [[ "$1" == "--author" ]]; then
+	echo $poem_author
+elif [[ "$1" == "--matchTags" ]]; then
+	echo $poem_matchTags
+else
+	echo ${poem_full_content[@]}
+fi

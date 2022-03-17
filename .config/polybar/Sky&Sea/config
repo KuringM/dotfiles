@@ -90,7 +90,7 @@ dpi-y = 96
 ; $ polybar -M | cut -d ':' -f 1
 ; $ xrandr -q | grep " connected" | cut -d ' ' -f1
 ; If no monitor is given, the primary monitor is used if it exists
-monitor = ${env:MONITOR:DP-0}
+monitor = ${env:MONITOR}
 
 ; Use the specified monitor as a fallback if the main one is not found.
 monitor-fallback =

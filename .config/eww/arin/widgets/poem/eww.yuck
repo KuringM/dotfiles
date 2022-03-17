@@ -1,0 +1,40 @@
+;; **
+;; ** Widgets config for EWW
+;; ** Created by : @adi1090x
+;; **
+
+;; ** Variables ***********************************************************************
+
+;; System vars
+(defpoll TI :interval "5m" `../../scripts/poem_info --title`)
+(defpoll DY :interval "5m" `../../scripts/poem_info --dynasty`)
+(defpoll AU :interval "5m" `../../scripts/poem_info --author`)
+(defpoll CON :interval "5m" `../../scripts/poem_info`)
+
+
+;; ** Widgets *************************************************************************
+
+;; quotes
+(defwidget poem [] 
+		(box :class "winbox"
+			(box :class "poem_box" :orientation "v" :valign "center" :halign "center" :spacing 10 :space-evenly "false"
+		  	(box :style "margin: 20px 20px 0px 20px;" :orientation "h" :valign "center" :halign "center" :spacing 10 :space-evenly "false"
+				  (label :class "poem_head" :valign "center" :halign "center" :text TI :wrap true :limit-width 90 )
+				  (label :class "poem_head" :valign "center" :halign "center" :text DY :wrap true :limit-width 90 )
+				  (label :class "poem_head" :valign "center" :halign "center" :text AU :wrap true :limit-width 90 ))
+			  (box :class "poem_box" :orientation "v" :valign "center" :halign "center" :spacing 10 :space-evenly "false"
+				  (label :class "poem_content" :valign "center" :halign "center" :text CON :wrap true)))))
+
+;; ** Windows *************************************************************************
+
+;; full peom
+(defwindow poem
+           :monitor 0
+           :geometry (geometry :x "960px"
+                               :y "100px"
+                               :width "500px"
+                               :height "100px"
+                               :anchor "top left")
+           :stacking "fg"
+           :wm-ignore false
+(poem))

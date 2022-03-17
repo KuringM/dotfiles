@@ -48,7 +48,8 @@ super + s
 
 # chrome launch
 super + c
-	google-chrome-stable
+	firefox
+#	google-chrome-stable
 
 # wallpaper change
 super + b

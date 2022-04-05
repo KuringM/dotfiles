@@ -1,6 +1,13 @@
 # bin path
-PATH            DEFAULT=${PATH}:@{HOME}/.local/bin:@{HOME}/.local/mbin:@{HOME}/.local/mbin/dwm:@{HOME}/.local/mbin/dwm/statusbar:@{HOME}/.local/mbin/st:@{HOME}/.local/mbin/dmenu:@{HOME}/.local/mbin/bspwm:@{HOME}/.local/mbin/funny:@{HOME}/.local/mbin/general:@{HOME}/.local/mbin/polybar
-
+PATH            DEFAULT=${PATH}:@{HOME}/.local/bin
+PATH            DEFAULT=${PATH}:@{HOME}/MK/mbin
+PATH            DEFAULT=${PATH}:@{HOME}/MK/mbin/dwm:@{HOME}/MK/mbin/dwm/statusbar
+PATH            DEFAULT=${PATH}:@{HOME}/MK/mbin/st
+PATH            DEFAULT=${PATH}:@{HOME}/MK/mbin/dmenu
+PATH            DEFAULT=${PATH}:@{HOME}/MK/mbin/bspwm
+PATH            DEFAULT=${PATH}:@{HOME}/MK/mbin/funny
+PATH            DEFAULT=${PATH}:@{HOME}/MK/mbin/general
+PATH            DEFAULT=${PATH}:@{HOME}/MK/mbin/polybar
 PATH            DEFAULT=${PATH}:/usr/local/sbin:/usr/local/bin:/usr/bin
 
 # default
@@ -55,5 +62,14 @@ CUDA_CACHE_PATH DEFAULT=${XDG_CONFIG_HOME}/nv
 #Leiningen
 LEIN_HOME       DEFAULT=${XDG_DATA_HOME}/lein
 
-#browser
-#BROWSER         DEFAULT=/usr/bin/google-chrome-stable
+#Gnupg
+GNUPGHOME       DEFAULT=${XDG_DATA_HOME}/gnupg
+
+#CARGO
+CARGO_HOME      DEFAULT=${XDG_DATA_HOME}/cargo
+
+#Parallel
+PARALLEL_HOME   DEFAULT=${XDG_CONFIG_HOME}/parallel
+
+#Rustup
+RUSTUP_HOME     DEFAULT=${XDG_DATA_HOME}/rustup

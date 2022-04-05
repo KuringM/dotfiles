@@ -1,4 +1,4 @@
 #!/bin/bash
 
 /usr/bin/amixer set Master toggle
-bash ~/.local/mbin/dwm/dwm-statusbar.sh
+bash ~/MK/mbin/dwm/dwm-statusbar.sh

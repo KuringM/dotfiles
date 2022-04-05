@@ -87,12 +87,12 @@
 	  	  (label :class "poemtext" :text POEM)))))
 
 ;; music
-(defwidget music [] 
+(defwidget music []
 		(box :class "dockbox"
 			(box :orientation "h" :spacing 0 :valign "center" :halign "start" :space-evenly "false" :vexpand "false" :hexpand "false"
 				(box :class "album_art" :vexpand "false" :hexpand "false" :style "background-image: url('${COVER}');")
 				(box :class "musicbox" :orientation "v" :spacing 0 :valign "center" :halign "start" :space-evenly "false" :vexpand "false" :hexpand "false"
-					(label :class "song" :halign "start" :wrap "false" :limit-width 20 :text SONG)
+					(label :class "song" :halign "start" :wrap "true" :limit-width 20 :text SONG)
 					(label :class "artist" :halign "start" :wrap "false" :limit-width 20 :text ARTIST)))
 			(box :class "musicbuttons" :orientation "h" :spacing 10 :valign "center" :halign "end" :space-evenly "false" :vexpand "false" :hexpand "false"
 				(button :style "background-image: url('images/icons/music/previous-button.png');" :class "trackbutton" :onclick "scripts/music_info --prev")
@@ -134,7 +134,7 @@
                                :width "180px"
                                :height "60px"
                                :anchor "top left")
-           :stacking "fg"
+           :stacking "bg"
            :reserve (struts :distance "80px" :side "top")
            :windowtype "dock"
            :wm-ignore false
@@ -176,7 +176,7 @@
                                :width "500px"
                                :height "60px"
                                :anchor "top left")
-           :stacking "fg"
+           :stacking "bg"
            :reserve (struts :distance "80px" :side "top")
            :windowtype "dock"
            :wm-ignore false

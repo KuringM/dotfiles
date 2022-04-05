@@ -14,6 +14,9 @@
 !/.config/user-dirs.dirs
 !/.config/user-dirs.locale
 
+### awesome
+#!/.config/awesome/
+
 ### alacritty
 !/.config/alacritty/
 
@@ -98,10 +101,6 @@
 !/.local/
 /.local/*
 
-### bin
-!/.local/mbin/
-/.local/mbin/polybar/poem.json
-/.local/mbin/polybar/token
 
 ### share
 !/.local/share/
@@ -114,3 +113,8 @@
 !/.local/share/fonts/Windows/
 !/.local/share/karbs/
 
+
+# MK
+!/MK/
+/MK/*
+!/MK/mbin/

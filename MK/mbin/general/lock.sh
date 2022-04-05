@@ -12,7 +12,7 @@
 CLOCK_FONT="Sarasa UI HC"
 FONT="Sarasa Mono K"
 
-quote="$(~/.local/mbin/polybar/daily-poem -p jrsc -u content)"
+quote="$(~/MK/mbin/funny/daily-poem -p jrsc -u content)"
 status=$(playerctl status || true)
 music_paused_on_lock=false
 

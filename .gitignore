@@ -111,6 +111,7 @@
 /.local/share/fonts/*
 !/.local/share/fonts/LxgwWenKai/
 !/.local/share/fonts/Windows/
+!/.local/share/fonts/FiraCode Nerd Font/
 !/.local/share/karbs/
 
 

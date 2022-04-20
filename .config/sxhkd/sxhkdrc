@@ -44,7 +44,7 @@ super + @space
 
 # desktop program launcher
 super + s
-	/bin/bash ~/.config/rofi/launchers/ribbon/launcher.sh
+	/bin/bash ~/.config/rofi/launchers/misc/launcher.sh
 
 # chrome launch
 super + c

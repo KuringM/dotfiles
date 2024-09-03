@@ -119,4 +119,5 @@
 # MK
 !/MK/
 /MK/*
-!/MK/mbin/
+!/MK/script/
+!/MK/prog/

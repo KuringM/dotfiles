@@ -84,10 +84,10 @@ handle_extension() {
             elinks -dump "${FILE_PATH}" && exit 5
             ;; # Continue with next handler on failure
         # JSON
-        #json)
-            #jq --color-output . "${FILE_PATH}" && exit 5
-            #python -m json.tool -- "${FILE_PATH}" && exit 5
-            #;;
+        json)
+            jq --color-output . "${FILE_PATH}" && exit 5
+            python -m json.tool -- "${FILE_PATH}" && exit 5
+            ;;
     esac
 }
 
@@ -231,8 +231,8 @@ handle_mime() {
     case "${mimetype}" in
         # Text
         text/* | */xml)
-            if  command -v ccat &>/dev/null; then
-                ccat --color=always ${FILE_PATH}
+            if  command -v bat &>/dev/null; then
+                bat --color=always ${FILE_PATH}
                 exit 0
             fi
             exit 2;;

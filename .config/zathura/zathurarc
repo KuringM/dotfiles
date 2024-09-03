@@ -9,7 +9,7 @@ set pages-per-row 1
 
 #stop at page boundries
 set scroll-page-aware "true"
-set smooth-scroll "true"
+#set smooth-scroll "true"
 set scroll-full-overlap 0.01
 set scroll-step 100
 
@@ -50,7 +50,7 @@ set notification-bg "#90A959" #0B
 set notification-fg "#151515" #00
 
 set recolor "false"
-set relor-lightcolor rgba(0,0,0,0) #00
+#set relor-lightcolor rgba(0,0,0,0) #00
 set recolor-darkcolor "#E0E0E0" #06
 set recolor-reverse-video "true"
 set recolor-keephue "true"

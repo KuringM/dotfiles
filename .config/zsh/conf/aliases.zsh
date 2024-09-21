@@ -36,5 +36,6 @@ alias ta='tmux a'
 alias t='tmux'
 alias lo='lsof -p $(fps) +w'
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' && compdef config=git
+alias cf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' && compdef config=git
+alias cfg='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias kk='nvim .gitignore'

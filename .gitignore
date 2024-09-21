@@ -96,7 +96,7 @@
 /.config/zsh/*
 !/.config/zsh/fzf
 !/.config/zsh/conf
-!/.config/zsh/init
+!/.config/zsh/.zshrc
 
 
 # MK

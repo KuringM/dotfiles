@@ -1,0 +1,13 @@
+# 域名后缀匹配
+# DOMAIN,app.biliapi.net
+# 域名后缀匹配
+# DOMAIN-SUFFIX,time.windows.com
+# 域名关键字匹配
+# DOMAIN-KEYWORD,baidu
+# IP段匹配
+# IP-CIDR,219.146.1.66/32,no-resolve
+# GEOIP匹配
+# GEOIP,CN
+
+# 直连补充列表
+DOMAIN-KEYWORD,rsshub.app

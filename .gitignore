@@ -10,61 +10,6 @@
 
 ## .config
 !/.config/
-/.config/*
-!/.config/user-dirs.conf
-!/.config/user-dirs.dirs
-!/.config/user-dirs.locale
-
-### awesome
-#!/.config/awesome/
-
-### alacritty
-!/.config/alacritty/
-
-### bspwm
-!/.config/bspwm/
-
-### calcurse
-!/.config/calcurse/
-/.config/calcurse/hooks/
-
-### dunst
-!/.config/dunst/
-
-### eww
-!/.config/eww/
-
-### git
-!/.config/git/
-
-### git
-!/.config/glava/
-
-### fcitx5
-!/.config/fcitx5/
-/.config/fcitx5/conf/cached_layouts
-/.config/fcitx5/crash.log
-
-### fontconfig
-!/.config/fontconfig/
-
-### neofetch
-!/.config/neofetch/
-
-### npm
-!/.config/npm/
-
-### lazygit
-!/.config/jesseduffield/
-/.config/jesseduffield/lazygit/*
-!/.config/jesseduffield/lazygit/config.yml
-/.config/jesseduffield/lazynpm/state.yml
-
-### picom
-!/.config/picom/
-
-### polybar
-!/.config/polybar/
 
 ### ranger
 !/.config/ranger/
@@ -78,18 +23,6 @@
 /.config/ranger/plugins/devicons_linemode.pyo
 /.config/ranger/__pycache__/
 
-### rofi
-!/.config/rofi/
-
-### sxhkd
-!/.config/sxhkd/
-
-### X11
-!/.config/X11/
-
-### zathura
-!/.config/zathura/
-!/.config/zathura/zathurarc
 
 ### zsh
 !/.config/zsh/
@@ -98,27 +31,6 @@
 !/.config/zsh/conf
 !/.config/zsh/init
 
-## .local
-!/.local/
-/.local/*
-
-
-### share
-!/.local/share/
-/.local/share/*
-
-#### fonts
-!/.local/share/fonts/
-/.local/share/fonts/*
-!/.local/share/fonts/LxgwWenKai/
-!/.local/share/fonts/Windows/
-!/.local/share/fonts/FiraCode Nerd Font/
-!/.local/share/karbs/
-
 
 # MK
-!/MK/
-/MK/*
-!/MK/script/
-!/MK/prog/
-!/MK/NW/
+!/.mk/

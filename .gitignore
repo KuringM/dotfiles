@@ -4,7 +4,6 @@
 .DS_Store
 
 # ... but these:
-!/.pam_environment
 !/.gitignore
 !/README.md
 
@@ -14,6 +13,7 @@
 !/.config/user-dirs.conf
 !/.config/user-dirs.dirs
 !/.config/user-dirs.locale
+!/.config/.pam_environment
 
 ### awesome
 #!/.config/awesome/

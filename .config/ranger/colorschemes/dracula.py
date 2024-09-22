@@ -18,7 +18,11 @@ from ranger.gui.color import (
     default,
     normal,
     bold,
+    blink,
     reverse,
+    underline,
+    invisible,
+    dim,
     default_colors,
 )
 
@@ -76,8 +80,10 @@ class Dracula(ColorScheme):
             else:
                 fg = 15
         if not context.selected and (context.cut or context.copied):
-            fg = 8
-            attr |= bold
+            # fg = 8
+            # attr |= bold
+            fg = 160
+            attr |= reverse
         if context.main_column:
             if context.selected:
                 attr |= bold

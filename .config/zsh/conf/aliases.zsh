@@ -38,4 +38,5 @@ alias lo='lsof -p $(fps) +w'
 
 alias cf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias cfg='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias cfs='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME status -u -s'
 alias kk='nvim .gitignore'

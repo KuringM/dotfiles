@@ -40,6 +40,8 @@
 ### git
 !/.config/glava/
 
+!/.config/kitty/
+
 ### fcitx5
 !/.config/fcitx5/
 /.config/fcitx5/conf/cached_layouts

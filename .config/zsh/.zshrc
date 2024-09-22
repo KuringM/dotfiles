@@ -1,10 +1,13 @@
-source ~/.config/zsh/conf/aliases.zsh
-source ~/.config/zsh/conf/vi.zsh
 source ~/.config/zsh/conf/env.zsh
-source ~/.config/zsh/conf/fzf.zsh
+source ~/.config/zsh/conf/aliases.zsh
 source ~/.config/zsh/conf/mappings.zsh
+source ~/.config/zsh/conf/vi.zsh
+source ~/.config/zsh/conf/fzf.zsh
 
-# setup zim
+###############
+#  setup zim  #
+###############
+
 ZIM_CONFIG_FILE=~/.config/zsh/conf/zimrc
 ZIM_HOME=~/.config/zim
 # Download zimfw plugin manager if missing.
@@ -18,26 +21,20 @@ if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} 
 fi
 source ${ZIM_HOME}/init.zsh
 
-# 
+# Remove older command from the history if a duplicate is to be added.
 setopt HIST_IGNORE_ALL_DUPS
-# bindkey -e
+
 # Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-
-# Bind up and down keys
-zmodload -F zsh/terminfo +p:terminfo
-if [[ -n ${terminfo[kcuu1]} && -n ${terminfo[kcud1]} ]]; then
-  bindkey ${terminfo[kcuu1]} history-substring-search-up
-  bindkey ${terminfo[kcud1]} history-substring-search-down
-fi
+bindkey -M vicmd 'u' history-substring-search-up
+bindkey -M vicmd 'e' history-substring-search-down
 
 bindkey '^P' history-substring-search-up
 bindkey '^N' history-substring-search-down
-bindkey -M vicmd 'u' history-substring-search-up
-bindkey -M vicmd 'e' history-substring-search-down
-# }}} End configuration added by Zim install
-#
+
+
 source ~/.config/zim/modules/fzf-tab/fzf-tab.plugin.zsh
 autopair-init
-
+#自定义欢迎语
+neofetch

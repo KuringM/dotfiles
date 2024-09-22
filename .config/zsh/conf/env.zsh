@@ -29,7 +29,21 @@ export PATH=$PATH:$LOCALBIN
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:$HOME/.local/bin
 
-# zsh custom
+# zsh env
+ZSH_CACHE="$HOME/.cache/zsh/"
+if [[ ! -d "$ZSH_CACHE" ]]; then
+	mkdir -p $ZSH_CACHE
+fi
+
+HISTFILE=$ZSH_CACHE/zsh_history
+if [[ ! -f "$HISFILE" ]]; then
+	touch $HISTFILE
+fi
+
+ZSH_COMPDUMP="$ZSH_CACHE/zcompdump"
+zstyle ':zim:completion' dumpfile $ZSH_COMPDUMP
+zstyle ':completion::complete:*' $ZSH_CACHE/zcompcache
+
 # export TERM=xterm-256color
 # export TERM=xterm-kitty
 export TERM_ITALICS=true

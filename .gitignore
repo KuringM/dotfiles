@@ -70,15 +70,7 @@
 
 ### ranger
 !/.config/ranger/
-/.config/ranger/plugins/__pycache__/*
-/.config/ranger/colorschemes/__pycache__/*
-/.config/ranger/folders.conf
-/.config/ranger/colorschemes/__init__.pyo
-/.config/ranger/colorschemes/default.pyo
-/.config/ranger/plugins/__init__.pyo
-/.config/ranger/plugins/devicons.pyo
-/.config/ranger/plugins/devicons_linemode.pyo
-/.config/ranger/__pycache__/
+/.config/ranger/**/*.pyc
 
 ### rofi
 !/.config/rofi/

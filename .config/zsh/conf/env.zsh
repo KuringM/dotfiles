@@ -1,4 +1,4 @@
-# go 
+# go
 #export GOROOT=/usr/local/go
 export GOPATH=$HOME/Workspaces/prog/go
 export GOBIN=$HOME/Workspaces/prog/go/bin
@@ -35,7 +35,7 @@ if [[ ! -d "$ZSH_CACHE" ]]; then
 	mkdir -p $ZSH_CACHE
 fi
 
-HISTFILE=$ZSH_CACHE/zsh_history
+export HISTFILE=$ZSH_CACHE/zsh_history
 if [[ ! -f "$HISFILE" ]]; then
 	touch $HISTFILE
 fi
@@ -53,7 +53,6 @@ export ZFM_BOOKMARKS_FILE=$ZSH_CACHE/zfm.txt
 if [[ ! -f "$ZFM_BOOKMARKS_FILE" ]]; then
 	touch $ZFM_BOOKMARKS_FILE
 fi
-
 
 # export TERM=xterm-256color
 # export TERM=xterm-kitty

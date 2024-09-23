@@ -90,6 +90,7 @@
 /.config/zsh/*
 !/.config/zsh/fzf
 !/.config/zsh/conf
+!/.config/zsh/.zshenv
 !/.config/zsh/.zshrc
 
 

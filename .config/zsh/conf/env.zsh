@@ -30,7 +30,7 @@ export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:$HOME/.local/bin
 
 # zsh env
-ZSH_CACHE="$HOME/.cache/zsh/"
+ZSH_CACHE="$HOME/.cache/zsh"
 if [[ ! -d "$ZSH_CACHE" ]]; then
 	mkdir -p $ZSH_CACHE
 fi
@@ -43,6 +43,17 @@ fi
 ZSH_COMPDUMP="$ZSH_CACHE/zcompdump"
 zstyle ':zim:completion' dumpfile $ZSH_COMPDUMP
 zstyle ':completion::complete:*' $ZSH_CACHE/zcompcache
+
+ZSHZ_DATA=$ZSH_CACHE/z
+if [[ ! -f "$ZSHZ_DATA" ]]; then
+	touch $ZSHZ_DATA
+fi
+
+export ZFM_BOOKMARKS_FILE=$ZSH_CACHE/zfm.txt
+if [[ ! -f "$ZFM_BOOKMARKS_FILE" ]]; then
+	touch $ZFM_BOOKMARKS_FILE
+fi
+
 
 # export TERM=xterm-256color
 # export TERM=xterm-kitty

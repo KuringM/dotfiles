@@ -19,7 +19,7 @@ export CPPFLAGS="-I/opt/homebrew/opt/lua@5.3/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/lua@5.3/lib/pkgconfig"
 
 # yarn
-# alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
+# alias yarn='yarn --use-yarnrc "$HOME/.config/yarn/config"'
 
 # homebrew
 export PATH=$PATH:/opt/homebrew/bin

@@ -37,4 +37,4 @@ bindkey '^N' history-substring-search-down
 source ~/.config/zim/modules/fzf-tab/fzf-tab.plugin.zsh
 autopair-init
 #自定义欢迎语
-neofetch
+neofetch --kitty ~/MK/Wallpaper

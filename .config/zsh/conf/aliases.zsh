@@ -21,7 +21,7 @@ alias ra='ranger'
 		#exit
 	#fi
 #}
-alias s='neofetch'
+alias s='neofetch --kitty ~/MK/Wallpaper'
 alias g='onefetch'
 alias sra='sudo -E ranger'
 alias sudo='sudo -E'

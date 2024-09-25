@@ -24,6 +24,7 @@ source ${ZIM_HOME}/init.zsh
 # Remove older command from the history if a duplicate is to be added.
 setopt HIST_IGNORE_ALL_DUPS
 
+## Plugins
 # Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -33,6 +34,13 @@ bindkey -M vicmd 'e' history-substring-search-down
 bindkey '^P' history-substring-search-up
 bindkey '^N' history-substring-search-down
 
+# use Kitty shell_intergration feature: mouse move cursor...
+if test -n "$KITTY_INSTALLATION_DIR"; then
+	export KITTY_SHELL_INTEGRATION="enabled"
+	autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
+	kitty-integration
+	unfunction kitty-integration
+fi
 
 source ~/.config/zim/modules/fzf-tab/fzf-tab.plugin.zsh
 autopair-init

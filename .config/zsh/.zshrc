@@ -31,8 +31,8 @@ bindkey '^[[B' history-substring-search-down
 bindkey -M vicmd 'u' history-substring-search-up
 bindkey -M vicmd 'e' history-substring-search-down
 
-bindkey '^P' history-substring-search-up
-bindkey '^N' history-substring-search-down
+bindkey '^u' history-substring-search-up
+bindkey '^e' history-substring-search-down
 
 # use Kitty shell_intergration feature: mouse move cursor...
 if test -n "$KITTY_INSTALLATION_DIR"; then

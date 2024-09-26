@@ -12,15 +12,8 @@ alias ms='mailsync'
 alias mt='neomutt'
 alias r='echo $RANGER_LEVEL'
 alias pu='python3 -m pudb'
-alias ra='ranger'
-# ra() {
-	#if [ -z "$RANGER_LEVEL" ]
-	#then
-		#ranger
-	#else
-		#exit
-	#fi
-#}
+# alias ra='ranger'
+alias ra='yazi'
 alias s='neofetch --kitty ~/MK/Wallpaper'
 alias g='onefetch'
 alias sra='sudo -E ranger'

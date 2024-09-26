@@ -83,6 +83,14 @@
 
 ### yazi
 !/.config/yazi/
+/.config/yazi/*
+!/.config/yazi/keymap.toml
+!/.config/yazi/theme.toml
+!/.config/yazi/yazi.toml
+!/.config/yazi/init.lua
+!/.config/yazi/plugins/
+/.config/yazi/plugins/*
+!/.config/yazi/plugins/smart-enter.yazi
 
 ### zathura
 !/.config/zathura/
@@ -91,6 +99,7 @@
 ### zsh
 !/.config/zsh/
 /.config/zsh/*
+!/.config/zsh/cli
 !/.config/zsh/fzf
 !/.config/zsh/conf
 !/.config/zsh/.zshenv

@@ -4,6 +4,9 @@ source ~/.config/zsh/conf/mappings.zsh
 source ~/.config/zsh/conf/vi.zsh
 source ~/.config/zsh/conf/fzf.zsh
 
+# Remove older command from the history if a duplicate is to be added.
+setopt HIST_IGNORE_ALL_DUPS
+
 ###############
 #  setup zim  #
 ###############
@@ -21,28 +24,20 @@ if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} 
 fi
 source ${ZIM_HOME}/init.zsh
 
-# Remove older command from the history if a duplicate is to be added.
-setopt HIST_IGNORE_ALL_DUPS
 
-## Plugins
 # Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey -M vicmd 'u' history-substring-search-up
 bindkey -M vicmd 'e' history-substring-search-down
-
 bindkey '^u' history-substring-search-up
 bindkey '^e' history-substring-search-down
 
-# use Kitty shell_intergration feature: mouse move cursor...
-if test -n "$KITTY_INSTALLATION_DIR"; then
-	export KITTY_SHELL_INTEGRATION="enabled"
-	autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
-	kitty-integration
-	unfunction kitty-integration
-fi
-
-source ~/.config/zim/modules/fzf-tab/fzf-tab.plugin.zsh
+# source ~/.config/zim/modules/fzf-tab/fzf-tab.plugin.zsh
 autopair-init
-#自定义欢迎语
-neofetch --kitty ~/MK/Wallpaper
+
+source ~/.config/zsh/cli/kitty.zsh
+source ~/.config/zsh/cli/yazi.zsh
+
+# Welcome zsh in neofetch
+# neofetch --kitty ~/MK/Wallpaper

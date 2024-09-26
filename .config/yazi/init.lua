@@ -8,7 +8,9 @@ require("yaziline"):setup {
 require("starship"):setup {
 	config_file = "~/.config/starship/starship.toml",
 }
-require("git"):setup {}
+require("git"):setup {
+	show_branch = true
+}
 
 
 require("yamb"):setup {

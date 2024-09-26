@@ -78,6 +78,9 @@
 ### sxhkd
 !/.config/sxhkd/
 
+### sxhkd
+!/.config/starship/
+
 ### X11
 !/.config/X11/
 

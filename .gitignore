@@ -81,6 +81,9 @@
 ### X11
 !/.config/X11/
 
+### yazi
+!/.config/yazi/
+
 ### zathura
 !/.config/zathura/
 !/.config/zathura/zathurarc

@@ -12,7 +12,7 @@ if [[ ! -d "$YAZI_DATA" ]]; then
 fi
 
 # Install yazi plugins
-if [[ ! -f "$HOME/.config/yazi/plugins/git.yazi/init.lua" ]]; then
+if [[ ! -e "$HOME/.config/yazi/plugins/git.yazi/init.lua" ]]; then
 	rm -f ~/.config/yazi/package.toml
 	ya pack -a Rolv-Apneseth/starship
 #  ya pack -a yazi-rs/plugins:git
@@ -21,14 +21,14 @@ if [[ ! -f "$HOME/.config/yazi/plugins/git.yazi/init.lua" ]]; then
 	ya pack -a h-hg/yamb
 fi
 
-# auto install starship
+# auto install starship for yazi
 if ! where starship > /dev/null 2>&1; then
 	brew install starship
 fi
 
 ## configuration starship env variable
-export STARSHIP_CONFIG='$HOME/.config/starship/starship.toml'
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 export STARSHIP_CACHE="$HOME/.cache/starship"
 
-## Set up zsh to use starship
-eval "$(starship init zsh)"
+## Set up zsh to use starship "Theme"
+# eval "$(starship init zsh)"

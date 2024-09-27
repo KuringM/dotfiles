@@ -5,7 +5,6 @@ if [[ ! -d "$ZSH_CACHE" ]]; then
 	mkdir -p $ZSH_CACHE
 fi
 
-
 export HISTFILE=$ZSH_CACHE/zsh_history
 if [[ ! -f "$HISFILE" ]]; then
 	touch $HISTFILE
@@ -16,11 +15,6 @@ setopt HIST_IGNORE_ALL_DUPS
 ###############
 #  setup zim  #
 ###############
-
-export ZFM_BOOKMARKS_FILE=$ZSH_CACHE/zfm.txt
-if [[ ! -f "$ZFM_BOOKMARKS_FILE" ]]; then
-	touch $ZFM_BOOKMARKS_FILE
-fi
 
 # define zim evn
 ZIM_CONFIG_FILE=~/.config/zsh/cli/zimrc
@@ -36,17 +30,13 @@ if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} 
 fi
 
 ## zmoudles: completion Settings
-##############################################################################
-# Add the zstyles to your ~/.zshrc before where the modules are initialized. #
-##############################################################################
-
+# Add those zstyles to your ~/.zshrc before where the modules are initialized.
 ZSH_COMPDUMP="$ZSH_CACHE/zcompdump"
 zstyle ':zim:completion' dumpfile $ZSH_COMPDUMP
 zstyle ':completion::complete:*' $ZSH_CACHE/zcompcache
 
 # Initialize modules.
 source ${ZIM_HOME}/init.zsh
-
 
 ## zmoudles: zsh-history-substring-search
 # Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
@@ -64,9 +54,21 @@ source ${ZIM_HOME}/modules/fast-syntax-highlighting/F-Sy-H.plugin.zsh
 if  ! which numfmt > /dev/null 2>&1; then
 	brew install coreutils
 fi
+## zmoudles: zfm
+export ZFM_BOOKMARKS_FILE=$ZSH_CACHE/zfm.txt
+if [[ ! -f "$ZFM_BOOKMARKS_FILE" ]]; then
+	touch $ZFM_BOOKMARKS_FILE
+fi
+bindkey -r '^P'
 
 ## zmoudles: zsh-z
 ZSHZ_DATA=$ZSH_CACHE/z
 if [[ ! -f "$ZSHZ_DATA" ]]; then
 	touch $ZSHZ_DATA
 fi
+
+## zmoudles: fzf-tab
+# use input as query string when completing zlua
+zstyle ':fzf-tab:complete:_zlua:*' query-string input
+bindkey '^h' _complete_help
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup

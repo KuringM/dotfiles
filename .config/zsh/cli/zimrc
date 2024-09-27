@@ -40,6 +40,8 @@ zmodule prompt-pwd
 
 # Replace zsh's default completion selection menu with fzf!
 zmodule Aloxaf/fzf-tab
+# a collection of fzf-tab completion sources.
+# zmodule Freed-Wu/fzf-tab-source
 # Fish-like autosuggestions for Zsh.
 zmodule zsh-users/zsh-autosuggestions
 # Fish-like syntax highlighting for Zsh.

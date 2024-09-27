@@ -70,5 +70,17 @@ fi
 ## zmoudles: fzf-tab
 # use input as query string when completing zlua
 zstyle ':fzf-tab:complete:_zlua:*' query-string input
-bindkey '^h' _complete_help
+
+# bindkey '^h' _complete_help
+# use tmux popup (require tmux 3.2) to show results.
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+
+# append custom keybindings to fzf, "Will not modify fzf configuration"
+zstyle ':fzf-tab:*' fzf-bindings 'ctrl-e:down' 'ctrl-u:up' 'ctrl-l:clear-query'
+
+# use of fzf's --preview option when using fzf-tab
+if  ! which eza > /dev/null 2>&1; then
+	brew install eza
+fi
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath' # remember to use single quote here!!!
+zstyle ':fzf-tab:*' query-string prefix input first

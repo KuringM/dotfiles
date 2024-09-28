@@ -1,16 +1,8 @@
-# zsh env
-# use `zsh --sourcetrace --verbose` check configuration
+# make dir for zsh cache
 ZSH_CACHE="$HOME/.cache/zsh"
 if [[ ! -d "$ZSH_CACHE" ]]; then
 	mkdir -p $ZSH_CACHE
 fi
-
-export HISTFILE=$ZSH_CACHE/zsh_history
-if [[ ! -f "$HISFILE" ]]; then
-	touch $HISTFILE
-fi
-# Remove older command from the history if a duplicate is to be added.
-setopt HIST_IGNORE_ALL_DUPS
 
 ###############
 #  setup zim  #
@@ -29,7 +21,10 @@ if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} 
   source ${ZIM_HOME}/zimfw.zsh init -q
 fi
 
-## zmoudles: completion Settings
+###################################
+#  zmoudles: completion Settings  #
+###################################
+
 # Add those zstyles to your ~/.zshrc before where the modules are initialized.
 ZSH_COMPDUMP="$ZSH_CACHE/zcompdump"
 zstyle ':zim:completion' dumpfile $ZSH_COMPDUMP
@@ -38,7 +33,33 @@ zstyle ':completion::complete:*' $ZSH_CACHE/zcompcache
 # Initialize modules.
 source ${ZIM_HOME}/init.zsh
 
-## zmoudles: zsh-history-substring-search
+###########################
+#  zmoudles: environment  #
+###########################
+
+export HISTFILE=$ZSH_CACHE/zsh_history
+if [[ ! -f "$HISFILE" ]]; then
+	touch $HISTFILE
+fi
+# Remove older command from the history if a duplicate is to be added.
+setopt HIST_IGNORE_ALL_DUPS
+
+#############################
+#  zmoudles: duration_info  #
+#############################
+
+setopt nopromptbang prompt{cr,percent,sp,subst}
+zstyle ':zim:duration-info' threshold 0.5
+zstyle ':zim:duration-info' format '%.4d s'
+autoload -Uz add-zsh-hook
+add-zsh-hook preexec duration-info-preexec
+add-zsh-hook precmd duration-info-precmd
+RPS1='${duration_info}'
+
+############################################
+#  zmoudles: zsh-history-substring-search  #
+############################################
+
 # Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -47,27 +68,43 @@ bindkey -M vicmd 'e' history-substring-search-down
 bindkey '^u' history-substring-search-up
 bindkey '^e' history-substring-search-down
 
-## zmoudles: fast-syntax-highlighting "zimfw not autoload this plugin"
+########################################
+#  zmoudles: fast-syntax-highlighting  #
+########################################
+##  "zimfw not autoload this plugin"
 source ${ZIM_HOME}/modules/fast-syntax-highlighting/F-Sy-H.plugin.zsh
 
-## zmoudles: k
+#################
+#  zmoudles: k  #
+#################
+
 if  ! which numfmt > /dev/null 2>&1; then
 	brew install coreutils
 fi
-## zmoudles: zfm
+
+###################
+#  zmoudles: zfm  #
+###################
+
 export ZFM_BOOKMARKS_FILE=$ZSH_CACHE/zfm.txt
 if [[ ! -f "$ZFM_BOOKMARKS_FILE" ]]; then
 	touch $ZFM_BOOKMARKS_FILE
 fi
 bindkey -r '^P'
 
-## zmoudles: zsh-z
+#####################
+#  zmoudles: zsh-z  #
+#####################
+
 ZSHZ_DATA=$ZSH_CACHE/z
 if [[ ! -f "$ZSHZ_DATA" ]]; then
 	touch $ZSHZ_DATA
 fi
 
-## zmoudles: fzf-tab
+#######################
+#  zmoudles: fzf-tab  #
+#######################
+
 # use input as query string when completing zlua
 zstyle ':fzf-tab:complete:_zlua:*' query-string input
 

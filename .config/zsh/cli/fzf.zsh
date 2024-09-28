@@ -1,9 +1,19 @@
 # Install fzf and other cli progs
 if ! which fzf > /dev/null 2>&1; then
-	brew install fzf fd ripgrep bat
+	# brew install fzf fd ripgrep bat
 fi
 
-# set fzf default opts
+################################
+#  FZF Envirronment Variables  #
+################################
+
+_fzf_default_command=(
+	# "fd --type f --type l --hidden"
+	# "fd --type f --strip-cwd-prefix"
+	"fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
+)
+export FZF_DEFAULT_COMMAND="$_fzf_default_command"
+
 _fzf_default_opts=(
 	"--height 80%"
 	"--tmux center,100%,50%"
@@ -20,16 +30,14 @@ _fzf_default_opts=(
 )
 export FZF_DEFAULT_OPTS="${_fzf_default_opts}"
 
-_fzf_default_command=(
-	# "fd --type f --type l --hidden"
-	# "fd --type f --strip-cwd-prefix"
-	"fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
-)
-export FZF_DEFAULT_COMMAND="$_fzf_default_command"
+###################################
+#  Key bindings for command-line  #
+###################################
 
 # Set up fzf three key bindings and fuzzy completion "CTRL_T, CRTL_R, ALT_C"
 source <(fzf --zsh)
 
+## fzf-file-widget ##
 # Paste the selected files and directories onto the command-line
 _fzf_ctrl_t_opts=(
   "--walker-skip .git,node_modules,target"
@@ -38,6 +46,7 @@ _fzf_ctrl_t_opts=(
 )
 export FZF_CTRL_T_OPTS="$_fzf_ctrl_t_opts"
 
+## fzf-history-widget ##
 # Paste the selected command from history onto the command-line
 _fzf_ctrl_r_opts=(
   "--bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'"
@@ -48,6 +57,7 @@ _fzf_ctrl_r_opts=(
 )
 export FZF_CTRL_R_OPTS="$_fzf_ctrl_r_opts"
 
+# fzf-cd-widget ##
 # cd into the selected directory
 _fzf_alt_c_opts=(
   "--walker-skip .git,node_modules,target"
@@ -60,10 +70,8 @@ export FZF_ALT_C_OPTS="$_fzf_alt_c_opts"
 setopt IGNORE_EOF
 bindkey '^d' fzf-cd-widget
 
-# 1. Search for text in files using Ripgrep
-# 2. Interactively narrow down the list using fzf
-# 3. Open the file in Vim
-findchar-in-file() {
+## Advanced fzf examples: Search for text in files
+text-in-file() {
 	rm -f /tmp/rg-fzf-{r,f}
 	local RG_PREFIX="rg --hidden --column --line-number --no-heading --color=always --smart-case "
 	local INITIAL_QUERY="${*:-}"
@@ -81,8 +89,12 @@ findchar-in-file() {
 			--preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
 			--bind 'enter:become(nvim {1} +{2})'
 }
-zle -N findchar-in-file
-bindkey '^f' findchar-in-file
+zle -N text-in-file
+bindkey '^f' text-in-file
+
+##############################
+#  Fuzzy completion for zsh  #
+##############################
 
 # Use \ as the trigger sequence instead of the default **
 export FZF_COMPLETION_TRIGGER='\'

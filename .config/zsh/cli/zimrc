@@ -11,6 +11,8 @@ zmodule completion
 zmodule environment
 # Applies correct bindkeys for input events.
 zmodule input
+# Figures out where to get the best help, and gets it.
+zmodule run-help
 
 ##################
 #  Productivity  #

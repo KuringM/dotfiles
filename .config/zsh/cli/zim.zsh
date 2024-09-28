@@ -1,9 +1,3 @@
-# make dir for zsh cache
-ZSH_CACHE="$HOME/.cache/zsh"
-if [[ ! -d "$ZSH_CACHE" ]]; then
-	mkdir -p $ZSH_CACHE
-fi
-
 ###############
 #  setup zim  #
 ###############
@@ -21,9 +15,15 @@ if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} 
   source ${ZIM_HOME}/zimfw.zsh init -q
 fi
 
-###################################
-#  zmoudles: completion Settings  #
-###################################
+##########################
+#  zmoudles: completion  #
+##########################
+
+# make dir for zsh cache
+ZSH_CACHE="$HOME/.cache/zsh"
+if [[ ! -d "$ZSH_CACHE" ]]; then
+	mkdir -p $ZSH_CACHE
+fi
 
 # Add those zstyles to your ~/.zshrc before where the modules are initialized.
 ZSH_COMPDUMP="$ZSH_CACHE/zcompdump"

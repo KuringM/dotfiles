@@ -41,6 +41,8 @@ export HISTFILE=$ZSH_CACHE/zsh_history
 if [[ ! -f "$HISFILE" ]]; then
 	touch $HISTFILE
 fi
+HISTSIZE=20000
+SAVEHIST=10000
 # Remove older command from the history if a duplicate is to be added.
 setopt HIST_IGNORE_ALL_DUPS
 
@@ -121,3 +123,10 @@ if  ! which eza > /dev/null 2>&1; then
 fi
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath' # remember to use single quote here!!!
 zstyle ':fzf-tab:*' query-string prefix input first
+
+###################################
+#  zmoudles: zsh-autosuggestions  #
+###################################
+
+export ZSH_AUTOSUGGEST_USE_ASYNC=1
+export ZSH_AUTOSUGGEST_MANUAL_REBIND=1

@@ -1,6 +1,6 @@
 # Install fzf and other cli progs
 if ! which fzf > /dev/null 2>&1; then
-	# brew install fzf fd ripgrep bat
+	brew install fzf fd ripgrep bat
 fi
 
 ################################

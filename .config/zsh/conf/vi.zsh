@@ -1,5 +1,6 @@
-bindkey '^v' edit-command-line
+# Selects keymap ‘vicmd’ for any operations by the current command, use `bindkey -a` to show all keymap
 bindkey -v
+bindkey '^v' edit-command-line
 bindkey -M vicmd "k" vi-insert
 bindkey -M vicmd "K" vi-insert-bol
 bindkey -M vicmd "n" vi-backward-char

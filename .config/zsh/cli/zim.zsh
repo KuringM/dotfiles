@@ -65,8 +65,8 @@ RPS1='${duration_info}'
 # Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-bindkey -M vicmd 'u' history-substring-search-up
-bindkey -M vicmd 'e' history-substring-search-down
+bindkey -M vicmd '^u' history-substring-search-up
+bindkey -M vicmd '^e' history-substring-search-down
 bindkey '^u' history-substring-search-up
 bindkey '^e' history-substring-search-down
 
@@ -84,6 +84,8 @@ if  ! which numfmt > /dev/null 2>&1; then
 	brew install coreutils
 fi
 
+alias k="k -a"
+
 ###################
 #  zmoudles: zfm  #
 ###################
@@ -92,7 +94,8 @@ export ZFM_BOOKMARKS_FILE=$ZSH_CACHE/zfm.txt
 if [[ ! -f "$ZFM_BOOKMARKS_FILE" ]]; then
 	touch $ZFM_BOOKMARKS_FILE
 fi
-bindkey -r '^P'
+# unbind "^p"
+# bindkey -r '^P'
 
 #####################
 #  zmoudles: zsh-z  #

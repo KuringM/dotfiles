@@ -2,9 +2,14 @@
 #                               ZIM:FW                                #
 #######################################################################
 
+# make dir for zsh cache
+ZSH_CACHE="$HOME/.cache/zsh"
+if [[ ! -d "$ZSH_CACHE" ]] mkdir -p $ZSH_CACHE
+
 # define zim evn
-ZIM_CONFIG_FILE=~/.config/zsh/cli/zimrc
-ZIM_HOME=~/.config/zim
+ZIM_CONFIG_FILE="$XDG_CONFIG_HOME/zsh/cli/zimrc"
+ZIM_HOME="$XDG_DATA_HOME/zsh/zim"
+
 # Download zimfw plugin manager if missing.
 if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
   curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
@@ -19,12 +24,6 @@ fi
 #                        zmoudles: completion                         #
 #######################################################################
 
-# make dir for zsh cache
-ZSH_CACHE="$HOME/.cache/zsh"
-if [[ ! -d "$ZSH_CACHE" ]]; then
-	mkdir -p $ZSH_CACHE
-fi
-
 # Add those zstyles to your ~/.zshrc before where the modules are initialized.
 ZSH_COMPDUMP="$ZSH_CACHE/zcompdump"
 zstyle ':zim:completion' dumpfile $ZSH_COMPDUMP
@@ -38,9 +37,7 @@ source ${ZIM_HOME}/init.zsh
 #######################################################################
 
 export HISTFILE=$ZSH_CACHE/zsh_history
-if [[ ! -f "$HISFILE" ]]; then
-	touch $HISTFILE
-fi
+if [[ ! -f "$HISFILE" ]] touch $HISTFILE
 HISTSIZE=20000
 SAVEHIST=10000
 # Remove older command from the history if a duplicate is to be added.
@@ -81,10 +78,7 @@ source ${ZIM_HOME}/modules/fast-syntax-highlighting/F-Sy-H.plugin.zsh
 #                             zmoudles: k                             #
 #######################################################################
 
-if  ! which numfmt > /dev/null 2>&1; then
-	brew install coreutils
-fi
-
+if  (! which numfmt > /dev/null 2>&1) brew install coreutils
 alias k="k -a"
 
 #######################################################################
@@ -92,9 +86,7 @@ alias k="k -a"
 #######################################################################
 
 export ZFM_BOOKMARKS_FILE=$ZSH_CACHE/zfm.txt
-if [[ ! -f "$ZFM_BOOKMARKS_FILE" ]]; then
-	touch $ZFM_BOOKMARKS_FILE
-fi
+if [[ ! -f "$ZFM_BOOKMARKS_FILE" ]] touch $ZFM_BOOKMARKS_FILE
 # unbind "^p"
 # bindkey -r '^P'
 
@@ -103,9 +95,7 @@ fi
 #######################################################################
 
 ZSHZ_DATA=$ZSH_CACHE/z
-if [[ ! -f "$ZSHZ_DATA" ]]; then
-	touch $ZSHZ_DATA
-fi
+if [[ ! -f "$ZSHZ_DATA" ]] touch $ZSHZ_DATA
 
 #######################################################################
 #                          zmoudles: fzf-tab                          #
@@ -122,9 +112,7 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 zstyle ':fzf-tab:*' fzf-bindings 'ctrl-e:down' 'ctrl-u:up' 'ctrl-l:clear-query'
 
 # use of fzf's --preview option when using fzf-tab
-if  ! which eza > /dev/null 2>&1; then
-	brew install eza
-fi
+if  (! which eza > /dev/null 2>&1) brew install eza
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath' # remember to use single quote here!!!
 zstyle ':fzf-tab:*' query-string prefix input first
 

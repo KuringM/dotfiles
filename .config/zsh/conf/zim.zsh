@@ -7,7 +7,7 @@ ZSH_CACHE="$HOME/.cache/zsh"
 if [[ ! -d "$ZSH_CACHE" ]] mkdir -p $ZSH_CACHE
 
 # define zim evn
-ZIM_CONFIG_FILE="$XDG_CONFIG_HOME/zsh/cli/zimrc"
+ZIM_CONFIG_FILE="$XDG_CONFIG_HOME/zsh/conf/zimrc"
 ZIM_HOME="$XDG_DATA_HOME/zsh/zim"
 
 # Download zimfw plugin manager if missing.
@@ -124,3 +124,9 @@ export ZSH_AUTOSUGGEST_USE_ASYNC=1
 export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 # Use with kitty 'map ctrl+i send_text application \033[105;5u' and zimfw/input
 bindkey "^[[105;5u" forward-char # same as bindkey "\033[105;5u" forward-char
+
+#######################################################################
+#                           zmoudles: input                           #
+#######################################################################
+
+bindkey "^v" edit-command-line

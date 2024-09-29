@@ -22,7 +22,7 @@ _fzf_default_opts=(
 	"--multi"
 	"--wrap"
 	"--info=inline-right"
-	"--preview='$HOME/.config/zsh/cli/fzf/fzf-preview.sh {}'"
+	"--preview='$HOME/.config/zsh/conf/fzf/fzf-preview.sh {}'"
 	"--preview-window='right:60%:wrap'"
 	"--bind=change:top,ctrl-e:down,ctrl-u:up,ctrl-l:clear-query,'ctrl-y:execute-silent(echo {+} | pbcopy)'"
 	"--bind='f1:execute(man fzf),f2:toggle-preview,f3:execute(bat --style=numbers {} || less -f {}),f4:execute($EDITOR {})'"

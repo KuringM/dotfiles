@@ -1,14 +1,9 @@
-# for cf in ~/.config/zsh/include/*.zsh ; do
-# 	source $cf
-# done
+#######################################################################
+#                        Loading Configuration                        #
+#######################################################################
 
-source ~/.config/zsh/conf/aliases.zsh
-source ~/.config/zsh/conf/mappings.zsh
-source ~/.config/zsh/conf/vi.zsh
-
-source ~/.config/zsh/cli/zim.zsh
-source ~/.config/zsh/cli/fzf.zsh
-source ~/.config/zsh/cli/kitty.zsh
-source ~/.config/zsh/cli/yazi.zsh
+for cf in $HOME/.config/zsh/conf/*.zsh ; do
+	source $cf
+done
 
 neofetch --kitty ~/MK/Wallpaper

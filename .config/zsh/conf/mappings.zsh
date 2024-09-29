@@ -15,4 +15,3 @@ function openlazynpm {
 }
 
 zle -N openlazynpm; bindkey "^N" openlazynpm
-

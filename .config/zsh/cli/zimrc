@@ -62,6 +62,8 @@ zmodule hlissner/zsh-autopair
 zmodule pabloariasal/zfm
 # Jump quickly to directories that you have visited "frecently." A native ZSH port of z.sh.
 zmodule agkozak/zsh-z
+# A better and friendly vi(vim) mode plugin for ZSH.
+# zmodule jeffreytse/zsh-vi-mode
 
 ############
 #  Themes  #

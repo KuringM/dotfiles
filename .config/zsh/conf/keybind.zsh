@@ -18,7 +18,6 @@ bindkey -M vicmd "r" redo
 bindkey -M vicmd "=" vi-repeat-search
 bindkey -M vicmd "h" vi-forward-word-end
 
-
 #######################################################################
 #                         key binding for CLI                         #
 #######################################################################

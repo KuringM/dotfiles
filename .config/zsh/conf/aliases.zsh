@@ -27,7 +27,6 @@ alias gc='git config credential.helper store'
 alias gg='git clone'
 alias gs='git config credential.helper store'
 
-
 #######################################################################
 #           Tracking dotfiles directly with Git and Lazygit           #
 #######################################################################

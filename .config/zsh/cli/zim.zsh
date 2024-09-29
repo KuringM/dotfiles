@@ -1,6 +1,6 @@
-###############
-#  setup zim  #
-###############
+#######################################################################
+#                               ZIM:FW                                #
+#######################################################################
 
 # define zim evn
 ZIM_CONFIG_FILE=~/.config/zsh/cli/zimrc
@@ -15,9 +15,9 @@ if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} 
   source ${ZIM_HOME}/zimfw.zsh init -q
 fi
 
-##########################
-#  zmoudles: completion  #
-##########################
+#######################################################################
+#                        zmoudles: completion                         #
+#######################################################################
 
 # make dir for zsh cache
 ZSH_CACHE="$HOME/.cache/zsh"
@@ -33,9 +33,9 @@ zstyle ':completion::complete:*' $ZSH_CACHE/zcompcache
 # Initialize modules.
 source ${ZIM_HOME}/init.zsh
 
-###########################
-#  zmoudles: environment  #
-###########################
+#######################################################################
+#                        zmoudles: environment                        #
+#######################################################################
 
 export HISTFILE=$ZSH_CACHE/zsh_history
 if [[ ! -f "$HISFILE" ]]; then
@@ -46,9 +46,9 @@ SAVEHIST=10000
 # Remove older command from the history if a duplicate is to be added.
 setopt HIST_IGNORE_ALL_DUPS
 
-#############################
-#  zmoudles: duration_info  #
-#############################
+#######################################################################
+#                       zmoudles: duration_info                       #
+#######################################################################
 
 setopt nopromptbang prompt{cr,percent,sp,subst}
 zstyle ':zim:duration-info' threshold 0.5
@@ -58,9 +58,9 @@ add-zsh-hook preexec duration-info-preexec
 add-zsh-hook precmd duration-info-precmd
 RPS1='${duration_info}'
 
-############################################
-#  zmoudles: zsh-history-substring-search  #
-############################################
+#######################################################################
+#               zmoudles: zsh-history-substring-search                #
+#######################################################################
 
 # Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
 bindkey '^[[A' history-substring-search-up
@@ -70,15 +70,16 @@ bindkey -M vicmd '^e' history-substring-search-down
 bindkey '^u' history-substring-search-up
 bindkey '^e' history-substring-search-down
 
-########################################
-#  zmoudles: fast-syntax-highlighting  #
-########################################
+#######################################################################
+#                 zmoudles: fast-syntax-highlighting                  #
+#######################################################################
+
 ##  "zimfw not autoload this plugin"
 source ${ZIM_HOME}/modules/fast-syntax-highlighting/F-Sy-H.plugin.zsh
 
-#################
-#  zmoudles: k  #
-#################
+#######################################################################
+#                             zmoudles: k                             #
+#######################################################################
 
 if  ! which numfmt > /dev/null 2>&1; then
 	brew install coreutils
@@ -86,9 +87,9 @@ fi
 
 alias k="k -a"
 
-###################
-#  zmoudles: zfm  #
-###################
+#######################################################################
+#                            zmoudles: zfm                            #
+#######################################################################
 
 export ZFM_BOOKMARKS_FILE=$ZSH_CACHE/zfm.txt
 if [[ ! -f "$ZFM_BOOKMARKS_FILE" ]]; then
@@ -97,18 +98,18 @@ fi
 # unbind "^p"
 # bindkey -r '^P'
 
-#####################
-#  zmoudles: zsh-z  #
-#####################
+#######################################################################
+#                           zmoudles: zsh-z                           #
+#######################################################################
 
 ZSHZ_DATA=$ZSH_CACHE/z
 if [[ ! -f "$ZSHZ_DATA" ]]; then
 	touch $ZSHZ_DATA
 fi
 
-#######################
-#  zmoudles: fzf-tab  #
-#######################
+#######################################################################
+#                          zmoudles: fzf-tab                          #
+#######################################################################
 
 # use input as query string when completing zlua
 zstyle ':fzf-tab:complete:_zlua:*' query-string input
@@ -127,11 +128,11 @@ fi
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath' # remember to use single quote here!!!
 zstyle ':fzf-tab:*' query-string prefix input first
 
-###################################
-#  zmoudles: zsh-autosuggestions  #
-###################################
+#######################################################################
+#                    zmoudles: zsh-autosuggestions                    #
+#######################################################################
 
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 # Use with kitty 'map ctrl+i send_text application \033[105;5u' and zimfw/input
-bindkey "\033[105;5u" forward-char
+bindkey "^[[105;5u" forward-char # same as bindkey "\033[105;5u" forward-char

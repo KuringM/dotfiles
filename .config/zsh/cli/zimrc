@@ -1,77 +1,45 @@
-###############
-#  Behaviour  #
-###############
+#######################################################################
+#                              Behaviour                              #
+#######################################################################
 
-# Additional completion definitions for Zsh.
-zmodule zsh-users/zsh-completions
-# Enables and configures smart and extensive tab completion.
-# completion must be sourced after zsh-users/zsh-completions
-zmodule completion
-# Sets sane Zsh built-in environment options.
-zmodule environment
-# Applies correct bindkeys for input events.
-zmodule input
-# Figures out where to get the best help, and gets it.
-zmodule run-help
+zmodule zsh-users/zsh-completions #  Additional completion definitions for Zsh.
+zmodule completion                #  Enables and configures smart and extensive tab completion, must be sourced after zsh-users/zsh-completions
+zmodule environment               #  Sets sane Zsh built-in environment options.
+zmodule input                     #  Applies correct bindkeys for input events.
+zmodule run-help                  #  Figures out where to get the best help, and gets it.
 
-##################
-#  Productivity  #
-##################
+#######################################################################
+#                            Productivity                             #
+#######################################################################
 
-# Provides handy git aliases and functions.
-zmodule git
-# Sets a custom terminal title.
-zmodule termtitle
-# Utility aliases and functions. Adds colour to ls, grep and less.
-zmodule utility
+zmodule git       #  Provides handy git aliases and functions.
+zmodule termtitle #  Sets a custom terminal title.
+zmodule utility   #  Utility aliases and functions. Adds colour to ls, grep and less.
 
-########################
-#  Prompt enhancement  #
-########################
+#######################################################################
+#                          Prompt enhancement                         #
+#######################################################################
 
-# Exposes to prompts how long the last command took to execute, used by asciiship.
-zmodule duration-info
-# Exposes git repository status information to prompts, used by asciiship.
-zmodule git-info
-# Formats the path to the current working directory to be used by prompts.
-zmodule prompt-pwd
+zmodule duration-info #  Exposes to prompts how long the last command took to execute, used by asciiship.
+zmodule git-info      #  Exposes git repository status information to prompts, used by asciiship.
+zmodule prompt-pwd    #  Formats the path to the current working directory to be used by prompts.
 
-#######################
-#  Community modules  #
-#######################
+#######################################################################
+#                          Community modules                          #
+#######################################################################
 
-# Replace zsh's default completion selection menu with fzf!
-zmodule Aloxaf/fzf-tab
-# a collection of fzf-tab completion sources.
-# zmodule Freed-Wu/fzf-tab-source
-# Fish-like autosuggestions for Zsh.
-zmodule zsh-users/zsh-autosuggestions
-# Fish-like syntax highlighting for Zsh.
-# zsh-users/zsh-syntax-highlighting must be sourced after completion
-zmodule zsh-users/zsh-syntax-highlighting
-# Fish-like history search (up arrow) for Zsh.
-# zsh-users/zsh-history-substring-search must be sourced after zsh-users/zsh-syntax-highlighting
-zmodule zsh-users/zsh-history-substring-search
-# Feature rich syntax highlighting for Zsh.
-zmodule zdharma/fast-syntax-highlighting
-# Directory listings for zsh with git features
-zmodule supercrabtree/k
-# Auto-close and delete matching delimiters in zsh
-zmodule hlissner/zsh-autopair
-# Zsh Fuzzy Marks
-zmodule pabloariasal/zfm
-# Jump quickly to directories that you have visited "frecently." A native ZSH port of z.sh.
-zmodule agkozak/zsh-z
-# A better and friendly vi(vim) mode plugin for ZSH.
-# zmodule jeffreytse/zsh-vi-mode
+zmodule Aloxaf/fzf-tab                         #  Replace zsh's default completion selection menu with fzf!
+zmodule zsh-users/zsh-autosuggestions          #  Fish-like autosuggestions for Zsh.
+zmodule zsh-users/zsh-syntax-highlighting      #  Fish-like syntax highlighting for Zsh, must be sourced after completion
+zmodule zsh-users/zsh-history-substring-search #  Fish-like history search (up arrow) for Zsh, must be sourced after zsh-users/zsh-syntax-highlighting
+zmodule zdharma/fast-syntax-highlighting       #  Feature rich syntax highlighting for Zsh.
+zmodule supercrabtree/k                        #  Directory listings for zsh with git features
+zmodule hlissner/zsh-autopair                  #  Auto-close and delete matching delimiters in zsh
+zmodule pabloariasal/zfm                       #  Zsh Fuzzy Marks
+zmodule agkozak/zsh-z                          #  Jump quickly to directories that you have visited "frecently." A native ZSH port of z.sh.
 
-############
-#  Themes  #
-############
+#######################################################################
+#                               Themes                                #
+#######################################################################
 
-# A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
-# zmodule asciiship
-# A Zim fork of shashankmehta's gitster prompt theme
-zmodule gitster
-# A Zim fork of the Powerline-inspired agnoster prompt theme.
-#zmodule eriner
+zmodule gitster # A Zim fork of shashankmehta's gitster prompt theme

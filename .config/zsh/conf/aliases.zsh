@@ -1,6 +1,6 @@
-##########################
-#  Aliase some commands  #
-##########################
+#######################################################################
+#                        Aliase some commands                         #
+#######################################################################
 
 alias c='clear'
 alias cs='calcurse'
@@ -19,17 +19,18 @@ alias t='tmux'
 alias ta='tmux a'
 alias vim='nvim'
 
-#########
-#  Git  #
-#########
+#######################################################################
+#                                 Git                                 #
+#######################################################################
 
 alias gc='git config credential.helper store'
 alias gg='git clone'
 alias gs='git config credential.helper store'
 
-#####################################################
-#  Tracking dotfiles directly with Git and Lazygit  #
-#####################################################
+
+#######################################################################
+#           Tracking dotfiles directly with Git and Lazygit           #
+#######################################################################
 
 alias cf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias cfg='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

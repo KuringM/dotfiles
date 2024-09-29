@@ -1,11 +1,10 @@
-####################
-#  Kitty terminal  #
-####################
+#######################################################################
+#                           Kitty terminal                            #
+#######################################################################
 
 # use Kitty shell_intergration feature: mouse move cursor...
-if test -n "$KITTY_INSTALLATION_DIR"; then
-	export KITTY_SHELL_INTEGRATION="enabled"
-	autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
-	kitty-integration
-	unfunction kitty-integration
+if [[ -n $KITTY_INSTALLATION_DIR ]]; then
+  KITTY_SHELL_INTEGRATION=enabled
+  source -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty.zsh
 fi
+# unset KITTY_SHELL_INTEGRATION

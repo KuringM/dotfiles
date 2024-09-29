@@ -1,3 +1,7 @@
+# for cf in ~/.config/zsh/include/*.zsh ; do
+# 	source $cf
+# done
+
 source ~/.config/zsh/conf/aliases.zsh
 source ~/.config/zsh/conf/mappings.zsh
 source ~/.config/zsh/conf/vi.zsh

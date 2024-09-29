@@ -5,18 +5,18 @@
 # functions[compinit]=$'print -u2 \'compinit being called at \'${funcfiletrace[1]}
 # '${functions[compinit]}
 
-#############################
-#  zsh builtin environment  #
-#############################
+#######################################################################
+#                       zsh builtin environment                       #
+#######################################################################
 
 export SHELL_SESSIONS_DISABLE=1
 export EDITOR=nvim
 export MANPAGER="nvim +Man!"
 export TERM_ITALICS=true
 
-##################################
-#  Append environment variables  #
-##################################
+#######################################################################
+#                    Append environment variables                     #
+#######################################################################
 
 # XDG Base Direcotry
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -58,9 +58,9 @@ export PATH=$PATH:/opt/homebrew/bin
 # ranger
 export RANGER_LOAD_DEFAULT_RC="false"
 
-###################
-#  $HOME CLEANUP  #
-###################
+#######################################################################
+#                            $HOME CLEANUP                            #
+#######################################################################
 
 export CONFIG_DIR="$HOME/.config/jesseduffield/lazygit/"
 export LESSHISTFILE="$XDG_CACHE_HOME/less/history"

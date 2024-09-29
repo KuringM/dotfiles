@@ -3,9 +3,9 @@ if ! which fzf > /dev/null 2>&1; then
 	brew install fzf fd ripgrep bat
 fi
 
-################################
-#  FZF Envirronment Variables  #
-################################
+#######################################################################
+#                      FZF Envirronment Variables                     #
+#######################################################################
 
 _fzf_default_command=(
 	# "fd --type f --type l --hidden"
@@ -30,9 +30,9 @@ _fzf_default_opts=(
 )
 export FZF_DEFAULT_OPTS="${_fzf_default_opts}"
 
-###################################
-#  Key bindings for command-line  #
-###################################
+#######################################################################
+#                    Key bindings for command-line                    #
+#######################################################################
 
 # Set up fzf three key bindings and fuzzy completion "CTRL_T, CRTL_R, ALT_C"
 source <(fzf --zsh)
@@ -92,9 +92,10 @@ text-in-file() {
 zle -N text-in-file
 bindkey '^f' text-in-file
 
-##############################
-#  Fuzzy completion for zsh  #
-##############################
+
+#######################################################################
+#                      Fuzzy completion for zsh                       #
+#######################################################################
 
 # Use \ as the trigger sequence instead of the default **
 export FZF_COMPLETION_TRIGGER='\'

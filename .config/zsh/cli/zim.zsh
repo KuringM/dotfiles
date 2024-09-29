@@ -133,3 +133,5 @@ zstyle ':fzf-tab:*' query-string prefix input first
 
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+# Use with kitty 'map ctrl+i send_text application \033[105;5u' and zimfw/input
+bindkey "\033[105;5u" forward-char

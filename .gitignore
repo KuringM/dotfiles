@@ -102,8 +102,6 @@
 ### zsh
 !/.config/zsh/
 /.config/zsh/*
-!/.config/zsh/cli
-!/.config/zsh/fzf
 !/.config/zsh/conf
 !/.config/zsh/.zshenv
 !/.config/zsh/.zshrc

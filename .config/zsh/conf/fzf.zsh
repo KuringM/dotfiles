@@ -71,7 +71,7 @@ setopt IGNORE_EOF
 bindkey '^d' fzf-cd-widget
 
 ## Advanced fzf examples: Search for text in files
-text-in-file() {
+fzf-text-in-file() {
 	rm -f /tmp/rg-fzf-{r,f}
 	local RG_PREFIX="rg --hidden --column --line-number --no-heading --color=always --smart-case "
 	local INITIAL_QUERY="${*:-}"
@@ -89,8 +89,8 @@ text-in-file() {
 			--preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
 			--bind 'enter:become(nvim {1} +{2})'
 }
-zle -N text-in-file
-bindkey '^f' text-in-file
+zle -N fzf-text-in-file
+bindkey '^f' fzf-text-in-file
 
 #######################################################################
 #                      Fuzzy completion for zsh                       #

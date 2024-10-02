@@ -68,13 +68,6 @@ bindkey '^u' history-substring-search-up
 bindkey '^e' history-substring-search-down
 
 #######################################################################
-#                 zmoudles: fast-syntax-highlighting                  #
-#######################################################################
-
-##  "zimfw not autoload this plugin"
-source ${ZIM_HOME}/modules/fast-syntax-highlighting/F-Sy-H.plugin.zsh
-
-#######################################################################
 #                             zmoudles: k                             #
 #######################################################################
 

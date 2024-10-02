@@ -281,7 +281,7 @@ proxy-groups:
       include-all: true,
       tolerance: 20,
       interval: 300,
-      filter: "^((?!(直连)).)*$",
+      filter: "^((?!(直连|到期|剩余流量)).)*$",
     }
   - { name: 🌐 全部节点, type: select, include-all: true }
 rules:

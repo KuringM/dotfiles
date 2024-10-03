@@ -87,6 +87,7 @@
 ### yazi
 !/.config/yazi/
 /.config/yazi/*
+!/.config/yazi/README.md
 !/.config/yazi/keymap.toml
 !/.config/yazi/theme.toml
 !/.config/yazi/yazi.toml

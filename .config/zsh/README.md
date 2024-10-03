@@ -1,4 +1,4 @@
-# My [zsh](https://zsh.sourceforge.io/)configuration
+# My [zsh](https://zsh.sourceforge.io/) configuration
 
 - [zshguide](https://zsh.sourceforge.io/Guide/zshguide.html)
 - [Archlinux zsh](https://wiki.archlinux.org/index.php/Zsh)

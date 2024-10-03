@@ -44,6 +44,12 @@ SAVEHIST=10000
 setopt HIST_IGNORE_ALL_DUPS
 
 #######################################################################
+#                           zmoudles: input                           #
+#######################################################################
+
+bindkey "^v" edit-command-line
+
+#######################################################################
 #                       zmoudles: duration_info                       #
 #######################################################################
 
@@ -54,6 +60,36 @@ autoload -Uz add-zsh-hook
 add-zsh-hook preexec duration-info-preexec
 add-zsh-hook precmd duration-info-precmd
 RPS1='${duration_info}'
+
+#######################################################################
+#                          zmoudles: fzf-tab                          #
+#######################################################################
+
+# use tmux popup (require tmux 3.2) to show results.
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+
+# switch group using `[` and `]`
+zstyle ':fzf-tab:*' switch-group '[' ']'
+
+# append custom keybindings to fzf, "Will not modify fzf configuration"
+zstyle ':fzf-tab:*' fzf-bindings 'ctrl-e:down' 'ctrl-u:up' 'ctrl-l:clear-query' 'tab:select' 'shift-tab:deselect'
+
+# get possible context for a command
+bindkey '^h' _complete_help
+
+# Preview gallery
+# use of fzf's --preview option when using fzf-tab
+if  (! which eza > /dev/null 2>&1) brew install eza
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath' # remember to use single quote here!!!
+
+#######################################################################
+#                    zmoudles: zsh-autosuggestions                    #
+#######################################################################
+
+export ZSH_AUTOSUGGEST_USE_ASYNC=1
+export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+# Use with kitty 'map ctrl+i send_text application \033[105;5u' and zimfw/input
+bindkey "^[[105;5u" forward-char # same as bindkey "\033[105;5u" forward-char
 
 #######################################################################
 #               zmoudles: zsh-history-substring-search                #
@@ -89,37 +125,3 @@ if [[ ! -f "$ZFM_BOOKMARKS_FILE" ]] touch $ZFM_BOOKMARKS_FILE
 
 ZSHZ_DATA=$ZSH_CACHE/z
 if [[ ! -f "$ZSHZ_DATA" ]] touch $ZSHZ_DATA
-
-#######################################################################
-#                          zmoudles: fzf-tab                          #
-#######################################################################
-
-# use input as query string when completing zlua
-zstyle ':fzf-tab:complete:_zlua:*' query-string input
-
-# bindkey '^h' _complete_help
-# use tmux popup (require tmux 3.2) to show results.
-zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
-
-# append custom keybindings to fzf, "Will not modify fzf configuration"
-zstyle ':fzf-tab:*' fzf-bindings 'ctrl-e:down' 'ctrl-u:up' 'ctrl-l:clear-query'
-
-# use of fzf's --preview option when using fzf-tab
-if  (! which eza > /dev/null 2>&1) brew install eza
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath' # remember to use single quote here!!!
-zstyle ':fzf-tab:*' query-string prefix input first
-
-#######################################################################
-#                    zmoudles: zsh-autosuggestions                    #
-#######################################################################
-
-export ZSH_AUTOSUGGEST_USE_ASYNC=1
-export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
-# Use with kitty 'map ctrl+i send_text application \033[105;5u' and zimfw/input
-bindkey "^[[105;5u" forward-char # same as bindkey "\033[105;5u" forward-char
-
-#######################################################################
-#                           zmoudles: input                           #
-#######################################################################
-
-bindkey "^v" edit-command-line

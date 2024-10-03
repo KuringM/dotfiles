@@ -1,6 +1,5 @@
 # My [yazi](https://github.com/sxyazi/yazi) configuration
 
-
 ## Plugins
 
 - [git](https://gitee.com/DreamMaoMao/git.yazi.git) -- git message prompt plugin for Yazi.

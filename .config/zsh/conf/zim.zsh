@@ -72,8 +72,7 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 zstyle ':fzf-tab:*' switch-group '[' ']'
 
 # append custom keybindings to fzf, "Will not modify fzf configuration"
-zstyle ':fzf-tab:*' fzf-bindings 'ctrl-e:down' 'ctrl-u:up' 'ctrl-l:clear-query' 'tab:select' 'shift-tab:deselect'
-
+zstyle ':fzf-tab:*' fzf-bindings 'ctrl-e:down' 'ctrl-u:up' 'ctrl-l:clear-query' 'ctrl-n:toggle' 
 # get possible context for a command
 bindkey '^h' _complete_help
 

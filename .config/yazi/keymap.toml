@@ -230,21 +230,19 @@ keymap = [
 	{ on = "i",       run = "move 1",  desc = "Move forward a character" },
 	{ on = "<Left>",  run = "move -1", desc = "Move back a character" },
 	{ on = "<Right>", run = "move 1",  desc = "Move forward a character" },
-	{ on = "<C-b>",   run = "move -1", desc = "Move back a character" },
-	{ on = "<C-f>",   run = "move 1",  desc = "Move forward a character" },
+	{ on = "<C-n>",   run = "move -1", desc = "Move back a character" },
+	{ on = "<C-i>",   run = "move 1",  desc = "Move forward a character" },
 
 	# Word-wise movement
 	{ on = "b",     run = "backward",              desc = "Move back to the start of the current or previous word" },
 	{ on = "w",     run = "forward",               desc = "Move forward to the start of the next word" },
 	{ on = "h",     run = "forward --end-of-word", desc = "Move forward to the end of the current or next word" },
-	{ on = "<A-b>", run = "backward",              desc = "Move back to the start of the current or previous word" },
-	{ on = "<A-f>", run = "forward --end-of-word", desc = "Move forward to the end of the current or next word" },
 
 	# Line-wise movement
 	{ on = "N",      run = "move -999", desc = "Move to the BOL" },
 	{ on = "I",      run = "move 999",  desc = "Move to the EOL" },
 	{ on = "<C-a>",  run = "move -999", desc = "Move to the BOL" },
-	{ on = "<C-e>",  run = "move 999",  desc = "Move to the EOL" },
+	{ on = "<C-o>",  run = "move 999",  desc = "Move to the EOL" },
 	{ on = "<Home>", run = "move -999", desc = "Move to the BOL" },
 	{ on = "<End>",  run = "move 999",  desc = "Move to the EOL" },
 
@@ -257,8 +255,8 @@ keymap = [
 	# Kill
 	{ on = "<C-u>", run = "kill bol",      desc = "Kill backwards to the BOL" },
 	{ on = "<C-k>", run = "kill eol",      desc = "Kill forwards to the EOL" },
-	{ on = "<C-w>", run = "kill backward", desc = "Kill backwards to the start of the current word" },
-	{ on = "<A-d>", run = "kill forward",  desc = "Kill forwards to the end of the current word" },
+	{ on = "<C-l>", run = "kill backward", desc = "Kill backwards to the start of the current word" },
+	{ on = "<C-w>", run = "kill forward",  desc = "Kill forwards to the end of the current word" },
 
 	# Cut/Yank/Paste
 	{ on = "d", run = "delete --cut",                            desc = "Cut the selected characters" },

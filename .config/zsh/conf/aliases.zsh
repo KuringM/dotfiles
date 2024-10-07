@@ -18,6 +18,7 @@ alias sudo='sudo -E'
 alias t='tmux'
 alias ta='tmux a'
 alias vim='nvim'
+alias nu='nvim --headless "+Lazy! sync" +qa'
 
 #######################################################################
 #                                 Git                                 #

@@ -40,31 +40,33 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.10/bin
 export PATH=$PATH:$HOME/Library/Python/3.10/bin
 
-# npm
-export NPM_CONFIG_USERCONFIG=$HOME/.config/npm/npmrc
-
 # lua
 export PATH="/opt/homebrew/opt/lua@5.3/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/lua@5.3/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/lua@5.3/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/lua@5.3/lib/pkgconfig"
 
-# yarn
-# alias yarn='yarn --use-yarnrc "$HOME/.config/yarn/config"'
-
 # homebrew
 export PATH=$PATH:/opt/homebrew/bin
-
-# ranger
-export RANGER_LOAD_DEFAULT_RC="false"
 
 #######################################################################
 #                            $HOME CLEANUP                            #
 #######################################################################
 
+# lazygit
 export CONFIG_DIR="$HOME/.config/jesseduffield/lazygit/"
+
+# less
 export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
-if [[ ! -f "$LESSHISTFILE" ]];then
-	mkdir -p $XDG_CACHE_HOME/less
-	touch $LESSHISTFILE
-fi
+if [[ ! -f "$LESSHISTFILE" ]] mkdir -p $XDG_CACHE_HOME/less && touch $LESSHISTFILE
+
+# npm
+export NPM_CONFIG_USERCONFIG=$HOME/.config/npm/npmrc
+
+# yarn
+YARNRC="$HOME/.config/yarn/yarnrc"
+if [[ ! -f "$YARNRC" ]] mkdir -p $XDG_CONFIG_HOME/yarn && touch $YARNRC
+alias yarn='yarn --use-yarnrc "$YARNRC"'
+
+# ranger
+export RANGER_LOAD_DEFAULT_RC="false"

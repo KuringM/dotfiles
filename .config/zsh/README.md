@@ -42,6 +42,8 @@
 | `ctrl` `t` | `fzf-text-in-file`: Search for text in files                                                                                                                                                        |
 | `ctrl` `g` | run `lazygit`                                                                                                                                                                                       |
 | `ctrl` `n` | run `lazynpm`                                                                                                                                                                                       |
+| `ctrl` `o` | enter a bookmark into the current command line buffer                                                                                                                                               |
+| `ctrl` `p` | cd into a bookmarked directory                                                                                                                                                                      |
 
 ## Keyboard Shortcuts in `VI mode`
 

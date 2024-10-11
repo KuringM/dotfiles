@@ -81,6 +81,13 @@ bindkey '^h' _complete_help
 if  (! which eza > /dev/null 2>&1) brew install eza
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath' # remember to use single quote here!!!
 
+# Generate rg complet-zsh
+if [[ ! -e /usr/local/share/zsh/site-functions/_rg ]]; then
+	echo "### Generate rg complet-zsh ###"
+	sudo mkdir -p /usr/local/share/zsh/site-functions
+	sudo sudo sh -c "rg --generate=complete-zsh > /usr/local/share/zsh/site-functions/_rg"
+fi
+
 #######################################################################
 #                    zmoudles: zsh-autosuggestions                    #
 #######################################################################

@@ -19,7 +19,28 @@ border_style  = { fg = "gray" }
 # Highlighting
 syntect_theme = ""
 
+# Hovered
+hovered         = { fg = "#66F859", bg = "#0E0D11" }
+preview_hovered = { underline = true }
+
+
 [status]
 mode_normal = { bg = "blue", bold = true }
 mode_select = { bg = "red", bold = true }
 mode_unset  = { bg = "yellow", bold = true }
+
+[filetype]
+
+rules = [
+	# Media
+	{ mime = "image/*", fg = "#179299" },
+	{ mime = "{audio,video}/*", fg = "#df8e1d" },
+
+	# Archives
+  { mime = "application/{,g}zip", fg = "#ea76cb" },
+	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#ea76cb" },
+
+	# Fallback
+	{ name = "*", fg = "#f8f8f8" },
+	{ name = "*/", fg = "#bd93f9" }
+]

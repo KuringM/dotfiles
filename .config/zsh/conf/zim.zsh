@@ -74,7 +74,8 @@ zstyle ':fzf-tab:*' switch-group '[' ']'
 # append custom keybindings to fzf, "Will not modify fzf configuration"
 zstyle ':fzf-tab:*' fzf-bindings 'ctrl-e:down' 'ctrl-u:up' 'ctrl-l:clear-query' 'ctrl-n:toggle' 
 # get possible context for a command
-bindkey '^h' _complete_help
+# bindkey '^h' _complete_help
+bindkey '^h' run-help
 
 # Preview gallery
 # use of fzf's --preview option when using fzf-tab

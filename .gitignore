@@ -40,7 +40,9 @@
 ### git
 !/.config/glava/
 
+### kitty
 !/.config/kitty/
+/.config/kitty/kitty.app.icns
 
 ### fcitx5
 !/.config/fcitx5/

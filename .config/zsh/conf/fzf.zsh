@@ -27,6 +27,7 @@ _fzf_default_opts=(
 	"--bind=change:top,ctrl-e:down,tab:down,ctrl-u:up,ctrl-l:clear-query,ctrl-n:toggle,'ctrl-y:execute-silent(echo {+} | pbcopy)'"
 	"--bind='f1:execute(man fzf),f2:toggle-preview,f3:execute(bat --style=numbers {} || less -f {}),f4:execute($EDITOR {})'"
   "--bind 'ctrl-/:change-preview-window(right|down|hidden|right)'"
+	"--bind 'ctrl-y:replace-query'"
 )
 export FZF_DEFAULT_OPTS="${_fzf_default_opts}"
 
@@ -64,7 +65,7 @@ _fzf_alt_c_opts=(
   # "--preview 'tree -C {}'"
 	"--preview 'eza -1 --color=always {}'"
 	"--prompt 'cd '"
-  "--header 'cd into the selected directory\nPress CTRL-Y to copy command into clipboard'"
+  "--header 'Press ENTER to copy dir name into readline'"
 )
 export FZF_ALT_C_OPTS="$_fzf_alt_c_opts"
 # Do not exit on end-of-file. "^d default colse terminal in zsh"

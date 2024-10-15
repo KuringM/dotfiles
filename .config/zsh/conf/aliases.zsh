@@ -20,6 +20,7 @@ alias ta='tmux a'
 alias vim='nvim'
 alias nu='nvim --headless "+Lazy! sync" +qa'
 alias cman="man -M ~/Workspaces/manpages-zh/build/zh_CN"
+alias icat="kitten icat"
 
 #######################################################################
 #                                 Git                                 #

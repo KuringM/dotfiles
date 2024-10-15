@@ -24,10 +24,11 @@ _fzf_default_opts=(
 	"--info=inline-right"
 	"--preview='$HOME/.config/zsh/conf/fzf/fzf-preview.sh {}'"
 	"--preview-window='right:60%:wrap'"
-	"--bind=change:top,ctrl-e:down,tab:down,ctrl-u:up,ctrl-l:clear-query,ctrl-n:toggle,'ctrl-y:execute-silent(echo {+} | pbcopy)'"
+	"--bind=change:top,ctrl-n:toggle,ctrl-u:up,ctrl-e:down,tab:down,ctrl-l:clear-query,ctrl-y:replace-query"
 	"--bind='f1:execute(man fzf),f2:toggle-preview,f3:execute(bat --style=numbers {} || less -f {}),f4:execute($EDITOR {})'"
   "--bind 'ctrl-/:change-preview-window(right|down|hidden|right)'"
-	"--bind 'ctrl-y:replace-query'"
+	"--bind 'alt-up:preview-page-up,alt-down:preview-page-down'"
+	"--bind 'ctrl-c:execute-silent(echo {+} | pbcopy)+abort'"
 )
 export FZF_DEFAULT_OPTS="${_fzf_default_opts}"
 

@@ -17,6 +17,13 @@ file=${1/#\~\//$HOME/}
 type=$(file --dereference --mime -- "$file")
 
 if [[ ! $type =~ image/ ]]; then
+	# use `eza`/`tree` to preview directory
+	if [[ $type =~ /directory ]]; then
+		eza -1 --color=always "$file"
+		# tree -C "$file"
+		exit
+	fi
+
   if [[ $type =~ =binary ]]; then
     file "$1"
     exit

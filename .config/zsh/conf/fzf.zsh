@@ -24,7 +24,7 @@ _fzf_default_opts=(
 	"--info=inline-right"
 	"--preview='$HOME/.config/zsh/conf/fzf/fzf-preview.sh {}'"
 	"--preview-window='right:60%:wrap'"
-	"--bind=change:top,ctrl-e:down,ctrl-u:up,ctrl-l:clear-query,'ctrl-y:execute-silent(echo {+} | pbcopy)'"
+	"--bind=change:top,ctrl-e:down,tab:down,ctrl-u:up,ctrl-l:clear-query,ctrl-n:toggle,'ctrl-y:execute-silent(echo {+} | pbcopy)'"
 	"--bind='f1:execute(man fzf),f2:toggle-preview,f3:execute(bat --style=numbers {} || less -f {}),f4:execute($EDITOR {})'"
   "--bind 'ctrl-/:change-preview-window(right|down|hidden|right)'"
 )
@@ -57,11 +57,12 @@ _fzf_ctrl_r_opts=(
 )
 export FZF_CTRL_R_OPTS="$_fzf_ctrl_r_opts"
 
-# fzf-cd-widget ##
+## fzf-cd-widget ##
 # cd into the selected directory
 _fzf_alt_c_opts=(
   "--walker-skip .git,node_modules,target"
-  "--preview 'tree -C {}'"
+  # "--preview 'tree -C {}'"
+	"--preview 'eza -1 --color=always {}'"
 	"--prompt 'cd '"
   "--header 'cd into the selected directory\nPress CTRL-Y to copy command into clipboard'"
 )

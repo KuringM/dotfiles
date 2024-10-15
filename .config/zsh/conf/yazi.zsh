@@ -14,7 +14,7 @@ if [[ ! -d "$YAZI_DATA" ]]; then
 fi
 
 # Install yazi plugins
-if [[ ! "$(ls -A $HOME/.config/yazi/plugins)" ]]; then
+if [[  "$(ls -l $HOME/.config/yazi/plugins | grep "^d" | wc -l)" -le 1 ]]; then
 	rm -f ~/.config/yazi/package.toml
 	ya pack -a Rolv-Apneseth/starship # Starship prompt plugin for yazi
 	#  ya pack -a yazi-rs/plugins:git # Show the status of Git file changes as linemode in the file list.

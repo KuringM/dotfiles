@@ -1,8 +1,19 @@
 #######################################################################
+#                   key binding for zsh insert mode                   #
+#######################################################################
+
+# `binding -L` output in form of bindkey commands
+
+bindkey "^l" backward-delete-word
+bindkey "^n" backward-kill-line
+
+#######################################################################
 #                     Key binding for zsh VI mode                     #
 #######################################################################
 
-bindkey -v # Selects keymap ‘vicmd’ for any operations by the current command, use `bindkey -a` to show all keymap
+# `bindkey -a` to show all vicmd keymap
+
+bindkey -v # Selects keymap ‘vicmd’ for any operations by the current command
 bindkey -M vicmd "k" vi-insert
 bindkey -M vicmd "K" vi-insert-bol
 bindkey -M vicmd "n" vi-backward-char
@@ -33,9 +44,3 @@ function openlazygit {
 }
 
 zle -N openlazygit; bindkey "^G" openlazygit
-
-function openlazynpm {
-    zle_eval lazynpm
-}
-
-zle -N openlazynpm; bindkey "^N" openlazynpm

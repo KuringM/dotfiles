@@ -101,7 +101,7 @@ zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview \
 if [[ ! -e /usr/local/share/zsh/site-functions/_rg ]]; then
 	echo "### Generate rg complet-zsh ###"
 	sudo mkdir -p /usr/local/share/zsh/site-functions
-	sudo sudo sh -c "rg --generate=complete-zsh > /usr/local/share/zsh/site-functions/_rg"
+	sudo sh -c "rg --generate=complete-zsh > /usr/local/share/zsh/site-functions/_rg"
 fi
 
 #######################################################################

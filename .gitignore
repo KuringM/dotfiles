@@ -106,7 +106,7 @@
 !/.config/zsh/
 /.config/zsh/*
 !/.config/zsh/conf
-!/.config/zsh/.zshenv
+!/.config/zsh/.zprofile
 !/.config/zsh/.zshrc
 !/.config/zsh/README.md
 

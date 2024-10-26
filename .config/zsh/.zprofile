@@ -23,6 +23,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_RUNTIME_DIR=$XDG_CACHE_HOME
 
 # path
 export PATH=$PATH:$LOCALBIN
@@ -47,7 +48,7 @@ export CPPFLAGS="-I/opt/homebrew/opt/lua@5.3/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/lua@5.3/lib/pkgconfig"
 
 # homebrew
-export PATH=$PATH:/opt/homebrew/bin
+export PATH="/opt/homebrew/bin:$PATH"
 eval "$(brew shellenv)" # homebrew Completion
 
 #######################################################################
@@ -75,3 +76,10 @@ export RANGER_LOAD_DEFAULT_RC="false"
 # Rush#cargo
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export PATH=$PATH:$CARGO_HOME/bin
+
+# wget
+# export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
+
+# prettierd
+# export PRETTIERD_DEFAULT_CONFIG="$XDG_CONFIG_HOME/prettierrc.yaml"

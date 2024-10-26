@@ -27,7 +27,7 @@ fi
 # Add those zstyles to your ~/.zshrc before where the modules are initialized.
 ZSH_COMPDUMP="$ZSH_CACHE/zcompdump"
 zstyle ':zim:completion' dumpfile $ZSH_COMPDUMP
-zstyle ':completion::complete:*' $ZSH_CACHE/zcompcache
+zstyle ':completion::complete:*' cache-path $ZSH_CACHE/zcompcache
 
 # Initialize modules.
 source ${ZIM_HOME}/init.zsh
@@ -72,7 +72,7 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 zstyle ':fzf-tab:*' switch-group '[' ']'
 
 # append custom keybindings to fzf, "Will not modify fzf configuration"
-zstyle ':fzf-tab:*' fzf-bindings 'ctrl-e:down' 'ctrl-u:up' 'ctrl-l:clear-query' 'ctrl-n:toggle'
+zstyle ':fzf-tab:*' fzf-bindings 'ctrl-e:down' 'ctrl-u:up' 'ctrl-l:clear-query' 'ctrl-n:toggle' 'f2:toggle-preview'
 # get possible context for a command
 # bindkey '^h' _complete_help
 bindkey '^h' run-help

@@ -51,6 +51,11 @@ export PKG_CONFIG_PATH="/opt/homebrew/opt/lua@5.3/lib/pkgconfig"
 export PATH="/opt/homebrew/bin:$PATH"
 eval "$(brew shellenv)" # homebrew Completion
 
+# clang
+# export PATH=$PATH:/Library/Developer/CommandLineTools/usr/bin
+export CPATH="/opt/homebrew/include"
+export LIBRARY_PATH="/opt/homebrew/lib"
+
 #######################################################################
 #                            $HOME CLEANUP                            #
 #######################################################################

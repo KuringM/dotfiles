@@ -4,8 +4,8 @@
 
 [manager]
 prepend_keymap = [
-	{ on = "i",         run = 'plugin --sync smart-enter' },
-	{ on = "<Enter>",   run = 'plugin --sync smart-enter' },
+	{ on = "i",         run = 'plugin smart-enter' },
+	{ on = "<Enter>",   run = 'plugin smart-enter' },
 	{ on = "S",         run = 'shell "$SHELL" --block --confirm' },
 	{ on = ["'", "a",], run = "plugin yamb --args=save",          desc = "Add bookmark" },
 	{ on = ["'", "'",], run = "plugin yamb --args=jump_by_fzf",   desc = "Jump bookmark by fzf" },

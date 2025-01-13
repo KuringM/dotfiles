@@ -33,8 +33,8 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 Direct
-    url: "订阅"
-  # Airport_02:
+    url: ""
+  # Airport:
   #   type: http
   #   interval: 1800
   #   health-check:
@@ -215,7 +215,7 @@ proxy-groups:
       name: 🇨🇳 Taiwan,
       type: select,
       include-all: true,
-      filter: "(?i)港|hk|hongkong|hong kong",
+      filter: "(?i)台湾|台灣|臺灣|TW|(?i)Taiwan",
     }
   - {
       name: 🇯🇵 Japan,

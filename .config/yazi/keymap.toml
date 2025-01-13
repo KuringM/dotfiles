@@ -6,7 +6,7 @@
 prepend_keymap = [
 	{ on = "i",         run = 'plugin smart-enter' },
 	{ on = "<Enter>",   run = 'plugin smart-enter' },
-	{ on = "S",         run = 'shell "$SHELL" --block --confirm' },
+	{ on = "S",         run = 'shell "$SHELL" --block' },
 	{ on = ["'", "a",], run = "plugin yamb --args=save",          desc = "Add bookmark" },
 	{ on = ["'", "'",], run = "plugin yamb --args=jump_by_fzf",   desc = "Jump bookmark by fzf" },
 	{ on = ["'", "r",], run = "plugin yamb --args=delete_by_key", desc = "Delete bookmark by key" },
@@ -42,51 +42,29 @@ keymap = [
 	{ on = "N",       run = "back",    desc = "Go back to the previous directory" },
 	{ on = "I",       run = "forward", desc = "Go forward to the next directory" },
 
-	# Selection
-	{ on = "<Space>", run = ["select --state=none", "arrow 1"], desc = "Toggle the current selection state" },
+	# Toggle
+	{ on = "<Space>", run = ["toggle", "arrow 1"],              desc = "Toggle the current selection state" },
+	{ on = "<C-a>",   run = "toggle --state=true",              desc = "Select all files" },
+	{ on = "<C-r>",   run = "toggle --state=none",              desc = "Inverse selection of all files" },
+
+  # Visual mode
 	{ on = "v",       run = "visual_mode",                      desc = "Enter visual mode (selection mode)" },
 	{ on = "V",       run = "visual_mode --unset",              desc = "Enter visual mode (unset mode)" },
-	{ on = "<C-a>",   run = "select_all --state=true",          desc = "Select all files" },
-	{ on = "<C-r>",   run = "select_all --state=none",          desc = "Inverse selection of all files" },
 
-	# Find
-	{ on = "<C-f>",    run = "shell --block --confirm ${XDG_CONFIG_HOME}/zsh/conf/fzf/rfv",              desc = "Jump to a directory or reveal a file using fzf" },
-	{ on = "<C-p>",    run = "plugin fzf",              desc = "Jump to a directory or reveal a file using fzf" },
-	{ on = ["z", "o"], run = "plugin zoxide",           desc = "Jump to a directory using zoxide" },
-	# { on = "f",      run = "search fd",               desc = "Search files by name using fd" },
-	{ on = "F",        run = "search rg",               desc = "Search files by content using ripgrep" },
-	{ on = "<C-s>",    run = "escape --search",         desc = "Cancel the ongoing search" },
-	{ on = "f",        run = "filter --smart",          desc = "Filter files" },
-	{ on = "/",        run = "find --smart",            desc = "Find next file" },
-	{ on = "?",        run = "find --previous --smart", desc = "Find previous file" },
-	{ on = "=",        run = "find_arrow",              desc = "Go to the next found" },
-	{ on = "-",        run = "find_arrow --previous",   desc = "Go to the previous found" },
+	# Seeking
+	{ on = "K", run = "seek -5", desc = "Seek up 5 units in the preview" },
+	{ on = "J", run = "seek 5",  desc = "Seek down 5 units in the preview" },
 
-	# Shell
-	{ on = "<C-g>", run = "shell --confirm --block lazygit", desc = "Lazygit" },
-	{ on = ";",     run = "shell --interactive",             desc = "Run a shell command" },
-	{ on = ":",     run = "shell --block --interactive",     desc = "Run a shell command (block until finishes)" },
-
-	# Hidden files
-	{ on = ["z", "h"], run = "hidden toggle", desc = "Toggle the visibility of hidden files" },
-
-	# Open
-	{ on = "r", run = "open --interactive", desc = "Open selected files interactively" },
-
-	# Create
-	{ on = "T", run = "create",       desc = "Create a file (ends with / for directories)" },
-	{ on = "M", run = "create --dir", desc = "Create a directory" },
-
-	# Rename
-	{ on = ["c", "w"], run = "rename --empty=all",         desc = "Rename selected file(s)" },
-	{ on = "k",        run = "rename --cursor=start",      desc = "Rename selected file(s)" },
-	{ on = "a",        run = "rename --cursor=before_ext", desc = "Rename selected file(s)" },
-	{ on = "A",        run = "rename --cursor=end",        desc = "Rename selected file(s)" },
+	# Spotting
+	{ on = "<Tab>", run = "spot", desc = "Spot hovered file" },
 
 	# Operation: D
 	{ on = ["d", "d"], run = "yank --cut",           desc = "Yank selected files (cut)" },
 	# { on = ["d"],    run = "remove",               desc = "Trash selected files" },
 	{ on = ["d", "D"], run = "remove --permanently", desc = "Permanently delete selected files" },
+
+	# Open
+	{ on = "r", run = "open --interactive", desc = "Open selected files interactively" },
 
 	# Operation: Y
 	{ on = ["y", "y"], run = "yank",                  desc = "Yank selected files (copy)" },
@@ -106,17 +84,31 @@ keymap = [
 	# Linemode
 	{ on = ["m", "s"], run = "linemode size",        desc = "Set linemode to size" },
 	{ on = ["m", "p"], run = "linemode permissions", desc = "Set linemode to permissions" },
-	{ on = ["m", "c"], run = "linemode ctime",       desc = "Set linemode to ctime" },
+	{ on = ["m", "b"], run = "linemode btime",       desc = "Set linemode to btime" },
 	{ on = ["m", "m"], run = "linemode mtime",       desc = "Set linemode to mtime" },
 	{ on = ["m", "o"], run = "linemode owner",       desc = "Set linemode to owner" },
 	{ on = ["m", "n"], run = "linemode none",        desc = "Set linemode to none" },
 
+  # Filter
+	{ on = "f",        run = "filter --smart",          desc = "Filter files" },
+	
+	# Find
+	{ on = "<C-f>",    run = "shell --block ${XDG_CONFIG_HOME}/zsh/conf/fzf/rfv",              desc = "Jump to a directory or reveal a file using fzf" },
+	{ on = "<C-p>",    run = "plugin fzf",              desc = "Jump to a directory or reveal a file using fzf" },
+	{ on = ["z", "o"], run = "plugin zoxide",           desc = "Jump to a directory using zoxide" },
+	# { on = "f",      run = "search fd",               desc = "Search files by name using fd" },
+	{ on = "F",        run = "search rg",               desc = "Search files by content using ripgrep" },
+	{ on = "<C-s>",    run = "escape --search",         desc = "Cancel the ongoing search" },
+	{ on = "/",        run = "find --smart",            desc = "Find next file" },
+	{ on = "?",        run = "find --previous --smart", desc = "Find previous file" },
+	{ on = "=",        run = "find_arrow",              desc = "Go to the next found" },
+	{ on = "-",        run = "find_arrow --previous",   desc = "Go to the previous found" },
 
 	# Sorting
 	{ on = ["o", "M"], run = ["sort modified --reverse=no", "linemode mtime"], desc = "Sort by modified time" },
 	{ on = ["o", "m"], run = ["sort modified --reverse", "linemode mtime"],    desc = "Sort by modified time (reverse)" },
-	{ on = ["o", "C"], run = ["sort created --reverse=no", "linemode ctime"],  desc = "Sort by created time" },
-	{ on = ["o", "c"], run = ["sort created --reverse", "linemode ctime"],     desc = "Sort by created time (reverse)" },
+	{ on = ["o", "B"], run = ["sort btime --reverse=no", "linemode btime"],    desc = "Sort by birth time" },
+	{ on = ["o", "b"], run = ["sort bitme --reverse", "linemode btime"],       desc = "Sort by birth time (reverse)" },
 	{ on = ["o", "E"], run = "sort extension --reverse=no",                    desc = "Sort by extension" },
 	{ on = ["o", "e"], run = "sort extension --reverse",                       desc = "Sort by extension (reverse)" },
 	{ on = ["o", "a"], run = "sort alphabetical --reverse=no",                 desc = "Sort alphabetically" },
@@ -143,7 +135,7 @@ keymap = [
 	{ on = ["g", "i"],       run = "cd '~/Library/Mobile Documents'",    desc = "Go to the iCloud directory" },
 	{ on = ["g", "k"],       run = "cd ~/.mk",                           desc = "Go to the iCloud directory" },
 	{ on = ["g", "l"],       run = "cd ~/.local",                        desc = "Go to the .local directory" },
-	{ on = ["g", "m"],       run = "cd ~/MK",                        desc = "Go to the Mk directory" },
+	{ on = ["g", "m"],       run = "cd ~/MK",                            desc = "Go to the Mk directory" },
 	{ on = ["g", "o"],       run = "cd '~/Library/Mobile Documents/iCloud~md~obsidian/Documents'", desc = "Go to the iCloud/obsidian directory" },
 	{ on = ["g", "r"],       run = "cd /",                               desc = "Go to the root directory" },
 	{ on = ["g", "u"],       run = "cd /usr",                            desc = "Go to the /usr directory" },
@@ -172,6 +164,25 @@ keymap = [
 	# Help
 	{ on = "~", run = "help",    desc = "Open help" },
 	{ on = "<F1>", run = "help", desc = "Open help" },
+
+	# Shell
+	{ on = "<C-g>", run = "shell --block lazygit", desc = "Lazygit" },
+	{ on = ";",     run = "shell --interactive",             desc = "Run a shell command" },
+	{ on = ":",     run = "shell --block --interactive",     desc = "Run a shell command (block until finishes)" },
+
+	# Hidden files
+	{ on = ["z", "h"], run = "hidden toggle", desc = "Toggle the visibility of hidden files" },
+
+	# Create
+	{ on = "T", run = "create",       desc = "Create a file (ends with / for directories)" },
+	{ on = "M", run = "create --dir", desc = "Create a directory" },
+
+	# Rename
+	{ on = ["c", "w"], run = "rename --empty=all",         desc = "Rename selected file(s)" },
+	{ on = "k",        run = "rename --cursor=start",      desc = "Rename selected file(s)" },
+	{ on = "a",        run = "rename --cursor=before_ext", desc = "Rename selected file(s)" },
+	{ on = "A",        run = "rename --cursor=end",        desc = "Rename selected file(s)" },
+
 ]
 
 [tasks]
@@ -193,13 +204,39 @@ keymap = [
 	{ on = "<F1>", run = "help", desc = "Open help" },
 ]
 
-[select]
+[spot]
 
 keymap = [
-	{ on = "<Esc>",   run = "close",          desc = "Cancel selection" },
-	{ on = "<C-[>",   run = "close",          desc = "Cancel selection" },
-	{ on = "<C-c>",   run = "close",          desc = "Cancel selection" },
-	{ on = "<Enter>", run = "close --submit", desc = "Submit the selection" },
+	{ on = "<Esc>", run = "close", desc = "Close the spot" },
+	{ on = "<C-[>", run = "close", desc = "Close the spot" },
+	{ on = "<C-c>", run = "close", desc = "Close the spot" },
+	{ on = "<Tab>", run = "close", desc = "Close the spot" },
+
+	{ on = "k", run = "arrow -1", desc = "Move cursor up" },
+	{ on = "j", run = "arrow 1",  desc = "Move cursor down" },
+	{ on = "h", run = "swipe -1", desc = "Swipe to the next file" },
+	{ on = "l", run = "swipe 1",  desc = "Swipe to the previous file" },
+
+	{ on = "<Up>",    run = "arrow -1", desc = "Move cursor up" },
+	{ on = "<Down>",  run = "arrow 1",  desc = "Move cursor down" },
+	{ on = "<Left>",  run = "swipe -1", desc = "Swipe to the next file" },
+	{ on = "<Right>", run = "swipe 1",  desc = "Swipe to the previous file" },
+
+	# Copy
+	{ on = [ "c", "c" ], run = "copy cell", desc = "Copy selected cell" },
+
+	# Help
+	{ on = "~",    run = "help", desc = "Open help" },
+	{ on = "<F1>", run = "help", desc = "Open help" },
+]
+
+[pick]
+
+keymap = [
+	{ on = "<Esc>",   run = "close",          desc = "Cancel pick" },
+	{ on = "<C-[>",   run = "close",          desc = "Cancel pick" },
+	{ on = "<C-c>",   run = "close",          desc = "Cancel pick" },
+	{ on = "<Enter>", run = "close --submit", desc = "Submit the pick" },
 	{ on = "u",       run = "arrow -1",       desc = "Move cursor up" },
 	{ on = "e",       run = "arrow 1",        desc = "Move cursor down" },
 	{ on = "<Up>",    run = "arrow -1",       desc = "Move cursor up" },
@@ -272,6 +309,28 @@ keymap = [
 	# Undo/Redo
 	{ on = "l",     run = "undo", desc = "Undo the last operation" },
 	{ on = "<C-r>", run = "redo", desc = "Redo the last operation" },
+
+	# Help
+	{ on = "~",    run = "help", desc = "Open help" },
+	{ on = "<F1>", run = "help", desc = "Open help" },
+]
+
+[confirm]
+
+keymap = [
+	{ on = "<Esc>",   run = "close",          desc = "Cancel the confirm" },
+	{ on = "<C-[>",   run = "close",          desc = "Cancel the confirm" },
+	{ on = "<C-c>",   run = "close",          desc = "Cancel the confirm" },
+	{ on = "<Enter>", run = "close --submit", desc = "Submit the confirm" },
+
+	{ on = "n", run = "close",          desc = "Cancel the confirm" },
+	{ on = "y", run = "close --submit", desc = "Submit the confirm" },
+
+	{ on = "k", run = "arrow -1", desc = "Move cursor up" },
+	{ on = "j", run = "arrow 1",  desc = "Move cursor down" },
+
+	{ on = "<Up>",   run = "arrow -1", desc = "Move cursor up" },
+	{ on = "<Down>", run = "arrow 1",  desc = "Move cursor down" },
 
 	# Help
 	{ on = "~",    run = "help", desc = "Open help" },

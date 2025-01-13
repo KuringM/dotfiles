@@ -21,7 +21,6 @@ if [[  "$(ls -l $HOME/.config/yazi/plugins | grep "^d" | wc -l)" -le 1 ]]; then
 	git clone https://gitee.com/DreamMaoMao/git.yazi.git ~/.config/yazi/plugins/git.yazi # git message prompt plugin for Yazi,
 	ya pack -a llanosrocas/yaziline # Simple lualine-like status line for yazi.
 	ya pack -a h-hg/yamb # Yet another bookmarks plugins. It supports persistence, jumping by a key, jumping by fzf.
-	ya pack -a 'Tyarel8/video-ffmpeg' # Yazi plugin to preview videos using ffmpeg
 	ya pack -a "Sonico98/exifaudio" # Preview audio files metadata on yazi
 fi
 

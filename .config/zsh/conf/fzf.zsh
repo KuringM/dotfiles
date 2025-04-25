@@ -10,11 +10,12 @@ fi
 _fzf_default_command=(
 	# "fd --type f --type l --hidden"
 	# "fd --type f --strip-cwd-prefix"
-	"fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
+	"fd --type f --strip-cwd-prefix --hidden --follow --exclude .git -l"
 )
 export FZF_DEFAULT_COMMAND="$_fzf_default_command"
 
 _fzf_default_opts=(
+	"--tiebreak=index"
 	"--height 80%"
 	"--tmux center,100%,50%"
 	"--layout reverse"
@@ -29,6 +30,7 @@ _fzf_default_opts=(
   "--bind 'ctrl-/:change-preview-window(right|down|hidden|right)'"
 	"--bind 'alt-up:preview-page-up,alt-down:preview-page-down'"
 	"--bind 'ctrl-c:execute-silent(echo {+} | pbcopy)+abort'"
+	"--bind 'ctrl-s:toggle-sort'"
 )
 export FZF_DEFAULT_OPTS="${_fzf_default_opts}"
 
@@ -81,11 +83,11 @@ fzf-text-in-file() {
 	fzf --ansi --disabled --query "$INITIAL_QUERY" \
 			--bind "start:reload:$RG_PREFIX {q}" \
 			--bind "change:reload:sleep 0.1; $RG_PREFIX {q} || true" \
-			--bind 'ctrl-t:transform:[[ ! $FZF_PROMPT =~ ripgrep ]] &&
-				echo "rebind(change)+change-prompt(1. ripgrep> )+disable-search+transform-query:echo \{q} > /tmp/rg-fzf-f; cat /tmp/rg-fzf-r" ||
-				echo "unbind(change)+change-prompt(2. fzf> )+enable-search+transform-query:echo \{q} > /tmp/rg-fzf-r; cat /tmp/rg-fzf-f"' \
+			--bind 'ctrl-t:transform:[[ ! $FZF_PROMPT =~ fzf ]] &&
+				echo "unbind(change)+change-prompt(1. fzf> )+enable-search+transform-query:echo \{q} > /tmp/rg-fzf-r; cat /tmp/rg-fzf-f" ||
+				echo "rebind(change)+change-prompt(2. ripgrep> )+disable-search+transform-query:echo \{q} > /tmp/rg-fzf-f; cat /tmp/rg-fzf-r"' \
 			--color "hl:-1:underline,hl+:-1:underline:reverse" \
-			--prompt '1. ripgrep> ' \
+			--prompt '1. fzf> ' \
 			--delimiter : \
 			--header 'CTRL-T: Switch between ripgrep/fzf' \
 			--preview 'bat --color=always {1} --highlight-line {2}' \

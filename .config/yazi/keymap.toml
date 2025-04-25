@@ -135,6 +135,7 @@ keymap = [
 	{ on = ["g", "i"],       run = "cd '~/Library/Mobile Documents'",    desc = "Go to the iCloud directory" },
 	{ on = ["g", "k"],       run = "cd ~/.mk",                           desc = "Go to the iCloud directory" },
 	{ on = ["g", "l"],       run = "cd ~/.local",                        desc = "Go to the .local directory" },
+	{ on = ["g", "s", "n"],  run = "cd ~/.local/share/nvim",             desc = "Go to the .local/stare/nvim directory" },
 	{ on = ["g", "m"],       run = "cd ~/MK",                            desc = "Go to the Mk directory" },
 	{ on = ["g", "o"],       run = "cd '~/Library/Mobile Documents/iCloud~md~obsidian/Documents'", desc = "Go to the iCloud/obsidian directory" },
 	{ on = ["g", "r"],       run = "cd /",                               desc = "Go to the root directory" },

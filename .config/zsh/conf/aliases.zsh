@@ -18,6 +18,7 @@ alias sudo='sudo -E'
 alias t='tmux'
 alias ta='tmux a'
 alias vim='nvim'
+alias n='nvim'
 alias nu='nvim --headless "+Lazy! sync" +qa'
 alias cman="man -M ~/Workspaces/manpages-zh/build/zh_CN"
 alias icat="kitten icat"

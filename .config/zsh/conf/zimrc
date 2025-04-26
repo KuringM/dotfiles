@@ -36,6 +36,7 @@ zmodule supercrabtree/k                        #  Directory listings for zsh wit
 zmodule hlissner/zsh-autopair                  #  Auto-close and delete matching delimiters in zsh
 zmodule pabloariasal/zfm                       #  Zsh Fuzzy Marks
 zmodule agkozak/zsh-z                          #  Jump quickly to directories that you have visited "frecently." A native ZSH port of z.sh.
+zmodule kutsan/zsh-system-clipboard            #  System clipboard key bindings for Zsh Line Editor with vi mode. It is similar to what `set clipboard=unnamed` does for vim.
 
 #######################################################################
 #                               Themes                                #

@@ -1,7 +1,7 @@
 # 机场订阅
 proxy-providers:
   Airport1:
-    url: "https://hongxingdl.love/hxyunvip?token=c96bafbf0f8313288e2ce6be86d5839a"
+    url: ""
     type: http
     interval: 86400
     health-check:

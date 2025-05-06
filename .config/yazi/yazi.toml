@@ -20,8 +20,8 @@ title_format   = "Yazi: {cwd}"
 [preview]
 wrap            = "yes"
 tab_size        = 2
-max_width       = 600
-max_height      = 900
+max_width       = 1200
+max_height      = 1800
 cache_dir       = "~/.cache/yazi"
 image_filter    = "triangle"
 image_quality   = 75
@@ -73,7 +73,7 @@ rules = [
 	{ mime = "application/{json,x-ndjson}", use = ["edit", "reveal"] },
 	{ mime = "*/javascript", use = ["edit", "reveal"] },
 	# Empty file
-	{ mime = "inode/x-empty", use = ["edit", "reveal"] },
+	{ mime = "inode/empty", use = ["edit", "reveal"] },
 	# Fallback
 	{ name = "*", use = ["open", "reveal"] },
 ]

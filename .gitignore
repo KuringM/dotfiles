@@ -96,7 +96,6 @@
 !/.config/yazi/init.lua
 !/.config/yazi/plugins/
 /.config/yazi/plugins/*
-!/.config/yazi/plugins/smart-enter.yazi
 
 ### zathura
 !/.config/zathura/

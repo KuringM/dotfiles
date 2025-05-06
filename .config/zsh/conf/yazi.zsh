@@ -22,6 +22,7 @@ if [[  "$(ls -l $HOME/.config/yazi/plugins | grep "^d" | wc -l)" -le 1 ]]; then
 	ya pack -a llanosrocas/yaziline # Simple lualine-like status line for yazi.
 	ya pack -a h-hg/yamb # Yet another bookmarks plugins. It supports persistence, jumping by a key, jumping by fzf.
 	ya pack -a "Sonico98/exifaudio" # Preview audio files metadata on yazi
+	ya pack -a yazi-rs/plugins:smart-enter # Open files or enter directories all in one key!
 fi
 
 # auto install starship for yazi

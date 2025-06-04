@@ -1,0 +1,4 @@
+#!/bin/sh
+
+printf "%s🌞%.0f%s\n" "$SEP1" "$(xbacklight -getf)" "$SEP2"
+

@@ -1,5 +1,5 @@
--- md_to_html.lua
--- 用法: lua md_to_html.lua 输入.md
+-- mdt2html.lua
+-- 用法: lua md2html.lua 输入.md
 local input_file = arg[1]
 if not input_file then
 	print("用法: lua md_to_html.lua 文件.md")
@@ -28,10 +28,29 @@ local function escape_html(str)
 	return str:gsub("&", "&amp;"):gsub("<", "&lt;"):gsub(">", "&gt;")
 end
 
--- 处理行内数学公式：$...$ -> \(...\)
+-- 将 Markdown 中的数学公式转换为 MathJax 格式
 local function convert_inline_tex(text)
-	text = text:gsub("([^\\])%$(.-)%$", "%1\\(%2\\)")
-	text = text:gsub("^%$(.-)%$", "\\(%1\\)")
+	-- 保证是字符串
+	if not text or text == "" then
+		return ""
+	end
+
+	-- 转换 $$...$$ 为 \[...\]
+	-- 注意必须先转换 $$ 再处理 $，否则会嵌套错
+	text = text:gsub("%$%$(.-)%$%$", function(content)
+		return "\\[" .. content .. "\\]"
+	end)
+
+	-- 转换行内公式 $...$ 为 \(...\)，包括行首情况
+	text = text:gsub("()%$(.-)%$", function(pos, content)
+		-- 避免匹配含 $ 的内容（防止 $$ 嵌套或错误）
+		if content:find("%$") then
+			return "$" .. content .. "$"
+		else
+			return "\\(" .. content .. "\\)"
+		end
+	end)
+
 	return text
 end
 
@@ -192,8 +211,11 @@ local function convert_md(lines)
 				table.insert(html, "<" .. tag .. ">")
 				in_list, list_type = true, tag
 			end
+
+			-- ✅ 将列表项内容提取并进行数学公式转换
 			local content = line:gsub("^%s*[%-%*+%d%.]+%s+", "")
 			table.insert(html, "<li>" .. format_inline(content) .. "</li>")
+
 			i = i + 1
 
 		-- 行内公式 / 普通段落

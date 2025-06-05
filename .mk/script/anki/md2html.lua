@@ -263,21 +263,21 @@ if not out then
 	os.exit(1)
 end
 
-out:write([[
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Markdown</title>
-  <style>table,th,td{border:1px solid #ccc;border-collapse:collapse;padding:5px;}</style>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-]])
+-- out:write([[
+-- <!DOCTYPE html>
+-- <html>
+-- <head>
+--   <meta charset="UTF-8">
+--   <title>Markdown</title>
+--   <style>table,th,td{border:1px solid #ccc;border-collapse:collapse;padding:5px;}</style>
+--   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-- </head>
+-- <body>
+-- ]])
 for _, l in ipairs(html_body) do
 	out:write(l .. "\n")
 end
-out:write("</body>\n</html>\n")
+-- out:write("</body>\n</html>\n")
 out:close()
 
 print("✅ 转换完成：", output_file)

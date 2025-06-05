@@ -81,7 +81,7 @@ bindkey '^h' run-help
 # use of fzf's --preview option when using fzf-tab
 if  (! which eza > /dev/null 2>&1) brew install eza
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath' # remember to use single quote here!!!
-zstyle ':fzf-tab:complete:*:*' fzf-preview '$HOME/.config/zsh/conf/fzf/fzf-preview.sh $realpath'
+zstyle ':fzf-tab:complete:*:*' fzf-preview '$HOME/.config/zsh/scripts/fzf-preview.sh $realpath'
 zstyle ':fzf-tab:complete:git-(add|diff|restore):*' fzf-preview 'git diff $word | delta'
 zstyle ':fzf-tab:complete:git-log:*' fzf-preview 'git log --color=always $word'
 zstyle ':fzf-tab:complete:git-help:*' fzf-preview 'git help $word | bat -plman --color=always'

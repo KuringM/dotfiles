@@ -11,7 +11,7 @@ curl -s localhost:8765 -X POST -d "{
 }"
 
 # Convert md to html
-lua convert_md_to_html.lua front.md
+lua md2html.lua "$2"
 
 # Read back edited content
 UPDATED_FRONT=$(<front.html)

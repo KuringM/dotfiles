@@ -23,7 +23,7 @@ _fzf_default_opts=(
 	"--multi"
 	"--wrap"
 	"--info=inline-right"
-	"--preview='$HOME/.config/zsh/conf/fzf/fzf-preview.sh {}'"
+	"--preview='$HOME/.config/zsh/scripts/fzf-preview.sh {}'"
 	"--preview-window='right:60%:wrap'"
 	"--bind=change:top,ctrl-n:toggle,ctrl-u:up,ctrl-e:down,tab:down,ctrl-l:clear-query,ctrl-y:replace-query"
 	"--bind='f1:execute(man fzf),f2:toggle-preview,f3:execute(bat --style=numbers {} || less -f {}),f4:execute($EDITOR {})'"
@@ -103,9 +103,3 @@ bindkey '^f' fzf-text-in-file
 
 # Use \ as the trigger sequence instead of the default **
 export FZF_COMPLETION_TRIGGER='\'
-
-# load some scripts written with fzf
-_fzf_fpath=${0:h}/fzf
-fpath+=$_fzf_fpath
-autoload -U $_fzf_fpath/*(.:t)
-unset _fzf_fpath

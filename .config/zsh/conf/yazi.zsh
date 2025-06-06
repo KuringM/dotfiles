@@ -38,3 +38,14 @@ export STARSHIP_CACHE="$HOME/.cache/starship"
 
 ## Set up zsh to use starship "Theme"
 # eval "$(starship init zsh)"
+
+
+# Yazi 文件管理器：退出后 cd 到 Yazi 最后所在目录
+function yazi-cd() {
+  local tmpfile=$(mktemp)
+  yazi --cwd-file="$tmpfile" "$@"
+  if [[ -f "$tmpfile" ]] && [[ -s "$tmpfile" ]]; then
+    cd "$(cat "$tmpfile")"
+  fi
+  rm -f "$tmpfile"
+}

@@ -1,0 +1,200 @@
+:root {
+  /* Colors */
+  --color-black: rgb(44, 50, 59);
+  --color-tan: #f4c069;
+  --color-red: #fb4934;
+  --color-orange: #fe8019;
+  --color-yellow: #fabd2f;
+  --color-green: #50de60;
+  --color-blue: #49a0f0;
+  --color-purple: #c678dd;
+  --color-gray: #928374;
+  --color-gray_dark: #3c3836;
+  --color-gray_darker: #242a32;
+  --color-gray_light: #c0c0c0;
+  --color-foreground: #f8f8f2;
+  --color-background: #282a36;
+  --color-selection_foreground: #ffffff;
+  --color-selection_background: #44475a;
+
+  /* Main background color of the card */
+  --main-bg-color: var(--color-foreground);
+  --main-fg-color: var(--color-black);
+
+  /* Primary Accent Color, broken up into individual hsl values */
+  --colorPrimary-h: 260;
+  --colorPrimary-s: 60%;
+  --colorPrimary-l: 65%;
+  /* Set primary color variable from previously defined hsl values */
+  --primary-color: hsl(
+    var(--colorPrimary-h),
+    var(--colorPrimary-s),
+    var(--colorPrimary-l)
+  );
+  /* Calculate Secondary and Tertiary Colors from the hsl values of the Primary Color */
+  --secondary-color: hsl(
+    calc(var(--colorPrimary-h) + 240),
+    var(--colorPrimary-s),
+    var(--colorPrimary-l)
+  );
+  --tertiary-color: hsl(
+    calc(var(--colorPrimary-h) + 120),
+    var(--colorPrimary-s),
+    var(--colorPrimary-l)
+  );
+  /* How big the stripe at the top should be */
+  --stripe-height: 5px;
+  /* How far elements such as flags should be away from the stripe */
+  --margin-from-stripe: 5px;
+}
+
+u {
+  text-decoration-style: wavy;
+  text-underline-position: under;
+  color: white;
+  padding: 1px;
+}
+q {
+  color: var(--color-gray);
+  font-style: italic;
+}
+ol,
+li {
+  text-align: left;
+  list-style-position: inside;
+}
+
+h1 {
+  color: #282a36;
+  font-size: 1.6em;
+  font-weight: bold;
+}
+h2 {
+  color: #6272a4;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+h3 {
+  color: #0087cc;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+h4 {
+  color: #9370db;
+  font-size: 1em;
+  font-weight: bold;
+}
+h5 {
+  color: #fb4934;
+  font-size: 0.95em;
+  font-weight: bold;
+}
+h6 {
+  color: #888888;
+  font-size: 0.85em;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Stripe at the top of the card */
+.stripe {
+  height: var(--stripe-height);
+  background-color: var(--primary-color);
+}
+.divide {
+  height: 1px;
+  background-color: var(--main-fg-color);
+}
+
+/* Card css */
+
+.card {
+  word-wrap: break-word;
+  background-color: var(--main-bg-color);
+  color: var(--main-fg-color);
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.mac .front,
+.mac .back {
+  font-family: Noto Sans;
+  font-size: 36px;
+  padding: 30px 30px 30px;
+  border-radius: 0px 0px 0px 0px;
+  display: inline-block;
+  text-align: left;
+}
+
+.ipad .front,
+.ipad .back {
+  font-family: Noto Sans;
+  font-size: 20px;
+  padding: 10px 10px 10px;
+  border-radius: 0px 0px 0px 0px;
+  display: inline-block;
+  text-align: left;
+}
+
+.iphone .front,
+.iphone .back {
+  font-family: Noto Sans;
+  font-size: 12px;
+  padding: 10px 10px 10px;
+  border-radius: 0px 0px 0px 0px;
+  display: inline-block;
+  text-align: left;
+}
+
+.mac .deck {
+  font-family: Noto Sans;
+  font-size: 80px;
+  padding: 30px 30px 30px;
+  border-radius: 0px 0px 0px 0px;
+  display: inline-block;
+  text-align: left;
+}
+
+.iphone .deck,
+.ipad .deck {
+  font-family: Noto Sans;
+  font-size: 40px;
+  padding: 10px 10px 10px;
+  border-radius: 0px 0px 0px 0px;
+  display: inline-block;
+  text-align: left;
+}
+
+/* === MathJax v3 样式（用于 anki-mathjax 渲染）=== */
+
+/* 块级公式 */
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+  color: #282a36; /* 深灰色，适配浅色背景 */
+  margin: 1em 0;
+}
+
+/* 行内公式 */
+mjx-container[jax="SVG"][display="false"] {
+  font-size: 1.05em;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* 控制 SVG 内部颜色继承 */
+mjx-container svg {
+  fill: currentColor;
+}
+
+/* 设置 \text{} 的字体 */
+mjx-container [mathvariant="normal"] {
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}

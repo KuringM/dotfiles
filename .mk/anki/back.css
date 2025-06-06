@@ -1,0 +1,22 @@
+<div class="stripe"></div>
+<div class="card">
+	<div class="deck">{{Subdeck}}</div>
+	<div class="stripe"></div>
+	<div class="front">{{Front}}</div>
+	<div class="divide"></div>
+	<div class="back">{{Back}}</div>
+</div>
+
+<!--
+<script type="text/javascript">
+	if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) 
+	{
+		MathJax.config.chtml['displayAlign'] = 'left'
+		if (typeof is_already_run == 'undefined') {
+  		is_already_run = true
+  		MathJax.startup.getComponents();
+		}
+	} 
+</script>
+
+-->

@@ -6,7 +6,8 @@
 prepend_keymap = [
 	{ on = "i",         run = 'plugin smart-enter' },
 	{ on = "<Enter>",   run = 'plugin smart-enter' },
-	{ on = "S",         run = 'shell "$SHELL" --block' },
+	# { on = "S",         run = 'shell "$SHELL" --block' },
+	{ on = "S",         run = 'close --save-cwd' },
 	{ on = ["'", "a",], run = "plugin yamb save",          desc = "Add bookmark" },
 	{ on = ["'", "'",], run = "plugin yamb jump_by_fzf",   desc = "Jump bookmark by fzf" },
 	{ on = ["'", "r",], run = "plugin yamb delete_by_key", desc = "Delete bookmark by key" },

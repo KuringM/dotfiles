@@ -4,7 +4,9 @@ schema:
   version: "1.0"
   author: "MK"
   description: |
-    朙月拼音 + MK雙拼方(参考小双拼)
+    朙月拼音 + MK雙拼方(参考小鹤双拼)
+  dependencies:
+    - stroke
 
 switches:
   - name: ascii_mode
@@ -66,16 +68,16 @@ speller:
     - xform/ie$/D/
     - xform/iu$/N/
     - xform/[uv]e$/L/
-    - xform/(.)an$/$1A/
-    - xform/(.)en$/$1E/
+    - xform/(.)en$/$1P/
+    - xform/(.)eng$/$1G/
     - xform/in$/B/
     - xform/un$/Y/
-    - xform/(.)ang$/$1W/
-    - xform/(.)eng$/$1F/
+    - xform/(.)an$/$1W/
+    - xform/(.)ang$/$1F/
     - xform/ing$|uai$/K/
     - xform/i?ong$/S/
     - xform/ian$/M/
-    - xform/iang$/Q/
+    - xform/[iu]ang$/Q/
     - xform/iao$/J/
     - xform/uo$/O/
     - xform/uan[g]?$/R/
@@ -85,32 +87,32 @@ translator:
   dictionary: luna_pinyin     # 與[朙月拼音]共用詞典
   prism: double_pinyin_mk     # prism 要以本輸入方案的名稱來命名, 以免把朙月拼音的拼寫映射表覆蓋掉
   preedit_format:             # 這段代碼用來將輸入的雙拼碼反轉爲全拼顯示;待見雙拼碼的可以把這段拿掉
+    - xform/([jqxnl])q/$1iang/
+    - xform/(\w)q/$1uang/
+    - xform/(\w)w/$1an/
+    - xform/(\w)f/$1ang/
+    - xform/(\w)p/$1en/
+    - xform/(\w)g/$1eng/
     - xform/([bpmfdtnljqx])j/$1iao/
-    - xform/(\w)f/$1eng/
-    - xform/(\w)n/$1iu/
-    - xform/(\w)h/$1ei/
-    - xform/([dtnlgkhjqxyvuirzcs])r/$1uan/
-    - xform/(\w)t/$1ou/
+    - xform/(\w)l/$1ve/
     - xform/(\w)y/$1un/
-    - xform/([dtnlgkhvuirzcs])o/$1uo/
-    - xform/(\w)d/$1ie/
+    - xform/([dtnlgkhjqxyvuirzcs])r/$1uan/
     - xform/([jqx])s/$1iong/
     - xform/(\w)s/$1ong/
-    - xform/(\w)z/$1ai/
-    - xform/(\w)e/$1en/
-    - xform/(\w)w/$1ang/
-    - xform/(\w)a/$1an/
-    - xform/([gkhvuirzcs])k/$1uai/
-    - xform/(\w)k/$1ing/
-    - xform/([jqxnl])q/$1iang/
-    - xform/(\w)r/$1uang/ # t
     - xform/(\w)t/$1ou/
+    - xform/(\w)d/$1ie/
+    - xform/(\w)h/$1ei/
+    - xform/(\w)n/$1iu/
+    - xform/([dtnlgkhvuirzcs])o/$1uo/
+    - xform/(\w)z/$1ai/
     - xform/([gkhvuirzcs])x/$1ua/
     - xform/(\w)x/$1ia/
     - xform/(\w)c/$1ao/
-    - xform/([dtgkhvuirzcs])v/$1ui/
     - xform/(\w)b/$1in/
+    - xform/([gkhvuirzcs])k/$1uai/
+    - xform/(\w)k/$1ing/
     - xform/(\w)m/$1ian/
+    - xform/([dtgkhvuirzcs])v/$1ui/
     - xform/([aoe])\1(\w)/$1$2/
     - "xform/(^|[ '])v/$1zh/"
     - "xform/(^|[ '])i/$1ch/"

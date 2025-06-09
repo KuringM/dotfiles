@@ -21,19 +21,21 @@
   --color-selection_foreground: #ffffff;
   --color-selection_background: #44475a;
 
-  /* Main colors */
+  /* Main background color of the card */
   --main-bg-color: var(--color-foreground);
   --main-fg-color: var(--color-black);
 
-  /* Primary Accent Color */
+  /* Primary Accent Color, broken up into individual hsl values */
   --colorPrimary-h: 260;
   --colorPrimary-s: 60%;
   --colorPrimary-l: 65%;
+  /* Set primary color variable from previously defined hsl values */
   --primary-color: hsl(
     var(--colorPrimary-h),
     var(--colorPrimary-s),
     var(--colorPrimary-l)
   );
+  /* Calculate Secondary and Tertiary Colors from the hsl values of the Primary Color */
   --secondary-color: hsl(
     calc(var(--colorPrimary-h) + 240),
     var(--colorPrimary-s),
@@ -44,32 +46,28 @@
     var(--colorPrimary-s),
     var(--colorPrimary-l)
   );
-
-  /* Layout */
+  /* How big the stripe at the top should be */
   --stripe-height: 5px;
+  /* How far elements such as flags should be away from the stripe */
   --margin-from-stripe: 5px;
 }
 
-/* Text decorations */
 u {
   text-decoration-style: wavy;
   text-underline-position: under;
   color: white;
   padding: 1px;
 }
-
 q {
   color: var(--color-gray);
   font-style: italic;
 }
-
 ol,
 li {
   text-align: left;
   list-style-position: outside;
 }
 
-/* Headings */
 h1 {
   color: var(--color-background);
   font-size: 1.6em;
@@ -102,111 +100,107 @@ h6 {
   opacity: 0.9;
 }
 
-/* Images */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* Stripe */
+/* Stripe at the top of the card */
 .stripe {
   height: var(--stripe-height);
   background-color: var(--primary-color);
 }
-
 .divide {
   height: 1px;
   background-color: var(--main-fg-color);
 }
 
-/* Card base style */
+/* Card css */
+
 .card {
   background-color: var(--main-bg-color);
   color: var(--main-fg-color);
-  padding: 0;
-  margin: 0;
   text-align: center;
+  padding: 0px;
+  margin: 0px;
 }
 
-/* iPhone specific card styles */
 .iphone .card {
   background-color: var(--main-bg-color);
   color: var(--main-fg-color);
-  text-align: left;
-  padding: 0;
-  margin: 0;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
   white-space: normal;
   overflow-wrap: break-word;
   word-break: break-word;
-  word-wrap: break-word;
 }
 
-/* Device-specific fonts and sizes */
+.iphone .card {
+  word-wrap: break-word;
+  background-color: var(--main-bg-color);
+  color: var(--main-fg-color);
+  text-align: left;
+  padding: 0px;
+  margin: 0px;
+}
 .mac .title,
 .mac .front,
 .mac .back {
-  font-family: "Noto Sans";
+  font-family: Noto Sans;
   font-size: 36px;
-  padding: 30px;
-  border-radius: 0;
+  padding: 30px 30px 30px;
+  border-radius: 0px 0px 0px 0px;
   display: inline-block;
   text-align: left;
 }
 
-.ipad .title,
 .ipad .front,
 .ipad .back {
-  font-family: "Noto Sans";
+  font-family: Noto Sans;
   font-size: 20px;
-  padding: 10px;
-  border-radius: 0;
-  display: block;
-  text-align: left;
-}
-
-.iphone .title,
-.iphone .front,
-.iphone .back {
-  font-family: "Noto Sans";
-  font-size: 12px;
-  padding: 10px;
-  border-radius: 0;
+  padding: 10px 10px 10px;
+  border-radius: 0px 0px 0px 0px;
   display: inline-block;
   text-align: left;
 }
 
-/* Deck styling */
+.iphone .front,
+.iphone .back {
+  font-family: Noto Sans;
+  font-size: 12px;
+  padding: 10px 10px 10px;
+  border-radius: 0px 0px 0px 0px;
+  display: inline-block;
+  text-align: left;
+}
+
 .mac .deck {
-  font-family: "Noto Sans";
+  font-family: Noto Sans;
   font-size: 80px;
-  padding: 30px;
-  margin-bottom: 0.2em;
-  border-radius: 0;
+  padding: 30px 30px 30px;
+  border-radius: 0px 0px 0px 0px;
   display: block;
   text-align: center;
 }
 
 .ipad .deck {
-  font-family: "Noto Sans";
+  font-family: Noto Sans;
   font-size: 40px;
-  padding: 10px;
-  margin-bottom: 0.2em;
-  border-radius: 0;
-  display: block;
+  padding: 10px 10px 10px;
+  border-radius: 0px 0px 0px 0px;
+  display: inline-block;
   text-align: left;
 }
-
 .iphone .deck {
-  font-family: "Noto Sans";
+  font-family: Noto Sans;
   font-size: 20px;
-  padding: 10px;
-  margin-bottom: 0.2em;
-  border-radius: 0;
-  display: block;
+  padding: 10px 10px 10px;
+  border-radius: 0px 0px 0px 0px;
+  display: inline-block;
   text-align: left;
 }
 
-/* Mathjax overflow handling for iPhone */
 .iphone .math {
   overflow-x: auto;
   white-space: normal;

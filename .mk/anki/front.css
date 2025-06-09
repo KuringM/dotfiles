@@ -1,4 +1,12 @@
 <div class="stripe"></div>
 <div class="deck">{{Subdeck}}</div>
+<div class="title"><h2 style=" margin: 0; pading:0 ">{{Title}}</h2></div>
 <div class="stripe"></div>
 <div class="front">{{Front}}</div>
+<script>
+MathJax.config.chtml['displayAlign'] = 'left'
+if (typeof is_already_run == 'undefined') {
+  is_already_run = true
+  MathJax.startup.getComponents();
+}
+</script>

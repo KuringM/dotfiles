@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SRC_DIR="$(pwd)"
-TARGET_DIR="$HOME/Library/Rime.bak"
+TARGET_DIR="$HOME/Library/Rime"
 
 # 检查目标目录是否存在
 if [ ! -d "$TARGET_DIR" ]; then
@@ -29,3 +29,8 @@ done
 
 echo
 echo "全部处理完成 ✅"
+
+
+killall Squirrel
+open /Library/Input\ Methods/Squirrel.app
+echo "重新部署"

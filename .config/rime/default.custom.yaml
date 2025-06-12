@@ -6,7 +6,26 @@ patch:
     - { schema: luna_pinyin_simp }
     - { schema: double_pinyin_mk }
 
-  "switcher/hotkeys": # 这个列表里每项定义一个快捷键，使哪个都中
+  "switcher/hotkeys": # 这个列表里每项定义一个快捷键, 使哪个都中
     #- "Control+s"     # 添加 Ctrl+s
     - "Control+grave" # 你看写法并不是 Ctrl+` 而是与 IBus 一致的表示法
     - "Control+F3"
+
+  # 禁用 shifShift_L 禁用
+  ascii_composer/switch_key:
+    Shift_L: noop
+
+  # 分号上屏二候选词;引号上屏三候选词
+  # minus/减号, equal/等号, comma/逗号, period/句号, exclam/感叹号, numbersign/井号, percent/百分号, semicolon/分号, apostrophe/单引号, brcketleft/左中括号, bracketright/右中括号
+  key_binder:
+    bindings:
+      # - { when: always, accept: Control+space, toggle: ascii_mode }
+      - { when: has_menu, accept: semicolon, send: 2 }
+      - { when: has_menu, accept: apostrophe, send: 3 }
+      - { when: paging, accept: minus, send: Page_Up } # "-" 上一页
+      - { when: has_menu, accept: equal, send: Page_Down } # "=" 下一页
+      - { when: paging, accept: comma, send: Page_Up } # "," 上一页
+      - { when: has_menu, accept: period, send: Page_Down } # "." 下一页
+      - { when: paging, accept: bracketleft, send: Page_Up } # "[" 上一页
+      - { when: has_menu, accept: bracketright, send: Page_Down } # "]" 下一页
+

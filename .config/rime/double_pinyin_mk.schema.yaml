@@ -80,7 +80,7 @@ translator:
   dictionary: luna_pinyin
   prism: double_pinyin_mk
   preedit_format:
-    - xform/(\w)n/$1iu/
+    - xform/([qjldnxm])n/$1iu/
     - xform/(\w)g/$1eng/
     - xform/([bpmfdtnljqx])j/$1iao/
     - xform/([jqxnl])q/$1iang/

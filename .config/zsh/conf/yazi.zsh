@@ -16,13 +16,13 @@ fi
 # Install yazi plugins
 if [[  "$(ls -l $HOME/.config/yazi/plugins | grep "^d" | wc -l)" -le 1 ]]; then
 	rm -f ~/.config/yazi/package.toml
-	ya pack -a Rolv-Apneseth/starship # Starship prompt plugin for yazi
-	#  ya pack -a yazi-rs/plugins:git # Show the status of Git file changes as linemode in the file list.
+	ya pkg add Rolv-Apneseth/starship # Starship prompt plugin for yazi
+	#  ya pkg add yazi-rs/plugins:git # Show the status of Git file changes as linemode in the file list.
 	git clone https://gitee.com/DreamMaoMao/git.yazi.git ~/.config/yazi/plugins/git.yazi # git message prompt plugin for Yazi,
-	ya pack -a llanosrocas/yaziline # Simple lualine-like status line for yazi.
-	ya pack -a h-hg/yamb # Yet another bookmarks plugins. It supports persistence, jumping by a key, jumping by fzf.
-	ya pack -a "Sonico98/exifaudio" # Preview audio files metadata on yazi
-	ya pack -a yazi-rs/plugins:smart-enter # Open files or enter directories all in one key!
+	ya pkg add llanosrocas/yaziline # Simple lualine-like status line for yazi.
+	ya pkg add h-hg/yamb # Yet another bookmarks plugins. It supports persistence, jumping by a key, jumping by fzf.
+	ya pkg add "Sonico98/exifaudio" # Preview audio files metadata on yazi
+	ya pkg add yazi-rs/plugins:smart-enter # Open files or enter directories all in one key!
 fi
 
 # auto install starship for yazi

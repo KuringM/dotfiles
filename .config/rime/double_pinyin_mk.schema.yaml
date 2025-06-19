@@ -81,37 +81,37 @@ translator:
   prism: double_pinyin_mk
   preedit_format:
     - xform/([djlmnqx])n/$1iu/
-    - xform/([bcdfghklmnprsituvz])g/$1eng/
-    - xform/([bdfjlnmpqtx])j/$1iao/
+    - xform/([bcdfghiklmnprstuvz])g/$1eng/
+    - xform/([bdfjlmnpqtx])j/$1iao/
     - xform/([jlnqx])q/$1iang/
-    - xform/([cidghjklnqrsutxyzv])r/$1uan/
-    - xform/([dtnlgkhvuirzcs])o/$1uo/
+    - xform/([cdghijklnqrstuvxyz])r/$1uan/
+    - xform/([cdghiklnrstuvz])o/$1uo/
     - xform/([jqx])s/$1iong/
-    - xform/([gluyrstdnizcvk])s/$1ong/
-    - xform/([gkhvuirzcs])x/$1ua/
-    - xform/([qjdx])x/$1ia/
-    - xform/([guhivk])k/$1uai/
-    - xform/([qpjlytdnxbm])k/$1ing/
+    - xform/([cdgiklnrstuvyz])s/$1ong/
+    - xform/([cghikrsuvz])x/$1ua/
+    - xform/([djqx])x/$1ia/
+    - xform/([ghikuv])k/$1uai/
+    - xform/([bdjlmnpqtxy])k/$1ing/
     - xform/([ghkuv])q/$1uang/
-    - xform/([bcdfghklmnprustwyvz])w/$1an/
-    - xform/([bcidfghklmnprustwyvz])f/$1ang/
-    - xform/([wfpgurdhizcvbkm])p/$1en/
+    - xform/([bcdfghklmnprstuvwyz])w/$1an/
+    - xform/([bcdfghiklmnprstuvwyz])f/$1ang/
+    - xform/([bcdfghikmpruvwz])p/$1en/
     - xform/([ln])l/$1ve/
-    - xform/([cdghjklqrustxyvz])y/$1un/
-    - xform/([cdfghklmnprustyvz])t/$1ou/
+    - xform/([cdghjklqrstuvxyz])y/$1un/
+    - xform/([cdfghklmnprstuvyz])t/$1ou/
     - xform/([bdjlmnpqtx])d/$1ie/
-    - xform/([bdfghklmnpuwvz])h/$1ei/
-    - xform/([bcdghklmnpustwvz])z/$1ai/
-    - xform/([bcdghklmnprustyvz])c/$1ao/
+    - xform/([bdfghklmnpuvwz])h/$1ei/
+    - xform/([bcdghklmnpstuvwz])z/$1ai/
+    - xform/([bcdghklmnprstuvyz])c/$1ao/
     - xform/([bjlmnpqxy])b/$1in/
     - xform/([bdjlmnpqtx])m/$1ian/
-    - xform/([dtgkhvuirzcs])v/$1ui/
-    - xform/([aoe])\1(\w)/$1$2/
+    - xform/([cdghikrstuvz])v/$1ui/
+    - xform/([aeo])\1(\w)/$1$2/
     - "xform/(^|[ '])v/$1zh/"
     - "xform/(^|[ '])i/$1ch/"
     - "xform/(^|[ '])u/$1sh/"
     - xform/([jqxy])v/$1u/
-    - xform/([nl])v/$1ü/
+    - xform/([ln])v/$1ü/
 
 reverse_lookup:
   dictionary: stroke

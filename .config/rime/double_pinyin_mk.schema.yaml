@@ -80,31 +80,31 @@ translator:
   dictionary: luna_pinyin
   prism: double_pinyin_mk
   preedit_format:
-    - xform/([qjldnxm])n/$1iu/
-    - xform/(\w)g/$1eng/
-    - xform/([bpmfdtnljqx])j/$1iao/
-    - xform/([jqxnl])q/$1iang/
-    - xform/([dtnlgkhjqxyvuirzcs])r/$1uan/
+    - xform/([djlmnqx])n/$1iu/
+    - xform/([bcdfghklmnprsituvz])g/$1eng/
+    - xform/([bdfjlnmpqtx])j/$1iao/
+    - xform/([jlnqx])q/$1iang/
+    - xform/([cidghjklnqrsutxyzv])r/$1uan/
     - xform/([dtnlgkhvuirzcs])o/$1uo/
     - xform/([jqx])s/$1iong/
-    - xform/(\w)s/$1ong/
+    - xform/([gluyrstdnizcvk])s/$1ong/
     - xform/([gkhvuirzcs])x/$1ua/
-    - xform/(\w)x/$1ia/
-    - xform/([gkhvuirzcs])k/$1uai/
-    - xform/(\w)k/$1ing/
-    - xform/(\w)q/$1uang/
-    - xform/(\w)w/$1an/
-    - xform/(\w)f/$1ang/
-    - xform/(\w)p/$1en/
-    - xform/(\w)l/$1ve/
-    - xform/(\w)y/$1un/
-    - xform/(\w)t/$1ou/
-    - xform/(\w)d/$1ie/
-    - xform/(\w)h/$1ei/
-    - xform/(\w)z/$1ai/
-    - xform/(\w)c/$1ao/
-    - xform/(\w)b/$1in/
-    - xform/(\w)m/$1ian/
+    - xform/([qjdx])x/$1ia/
+    - xform/([guhivk])k/$1uai/
+    - xform/([qpjlytdnxbm])k/$1ing/
+    - xform/([ghkuv])q/$1uang/
+    - xform/([bcdfghklmnprustwyvz])w/$1an/
+    - xform/([bcidfghklmnprustwyvz])f/$1ang/
+    - xform/([wfpgurdhizcvbkm])p/$1en/
+    - xform/([ln])l/$1ve/
+    - xform/([cdghjklqrustxyvz])y/$1un/
+    - xform/([cdfghklmnprustyvz])t/$1ou/
+    - xform/([bdjlmnpqtx])d/$1ie/
+    - xform/([bdfghklmnpuwvz])h/$1ei/
+    - xform/([bcdghklmnpustwvz])z/$1ai/
+    - xform/([bcdghklmnprustyvz])c/$1ao/
+    - xform/([bjlmnpqxy])b/$1in/
+    - xform/([bdjlmnpqtx])m/$1ian/
     - xform/([dtgkhvuirzcs])v/$1ui/
     - xform/([aoe])\1(\w)/$1$2/
     - "xform/(^|[ '])v/$1zh/"

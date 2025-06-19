@@ -49,6 +49,7 @@ speller:
     - derive/^([jqxy])u$/$1v/
     - derive/^([aoe])([ioun])$/$1$1$2/
     - xform/^([aoe])(ng)?$/$1$1$2/
+    - xform/ing$|uai$/K/
     - xform/(.)ai$/$1Z/
     - xform/(.)ei$/$1H/
     - xform/(.)ui$/$1V/
@@ -68,7 +69,6 @@ speller:
     - xform/(.)an$/$1W/
     - xform/[iu]ang$/Q/
     - xform/(.)ang$/$1F/
-    - xform/ing$|uai$/K/
     - xform/i?ong$/S/
     - xform/uo$/O/
     - xform/^zh/V/

@@ -296,8 +296,8 @@ keymap = [
 	# Kill
 	{ on = "<C-u>", run = "kill bol",      desc = "Kill backwards to the BOL" },
 	{ on = "<C-k>", run = "kill eol",      desc = "Kill forwards to the EOL" },
-	{ on = "<C-l>", run = "kill backward", desc = "Kill backwards to the start of the current word" },
-	{ on = "<C-w>", run = "kill forward",  desc = "Kill forwards to the end of the current word" },
+	{ on = "<C-w>", run = "kill backward", desc = "Kill backwards to the start of the current word" },
+	{ on = "<C-l>", run = "kill forward",  desc = "Kill forwards to the end of the current word" },
 
 	# Cut/Yank/Paste
 	{ on = "d", run = "delete --cut",                            desc = "Cut the selected characters" },

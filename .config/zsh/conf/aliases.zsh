@@ -22,6 +22,8 @@ alias n='nvim'
 alias nu='nvim --headless "+Lazy! sync" +qa'
 alias cman="man -M ~/Workspaces/manpages-zh/build/zh_CN"
 alias icat="kitten icat"
+alias python="python3"
+alias pip="pip3"
 
 #######################################################################
 #                                 Git                                 #

@@ -38,8 +38,8 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 
 # python
-export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.10/bin
-export PATH=$PATH:$HOME/Library/Python/3.10/bin
+# export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.10/bin
+# export PATH=$PATH:$HOME/Library/Python/3.10/bin
 
 # lua
 export PATH="/opt/homebrew/opt/lua@5.3/bin:$PATH"

@@ -58,6 +58,8 @@ play = [
 
 [open]
 rules = [
+	# log
+	{ name = "*.log", use = ["edit", "reveal"] },
 	# Folder
 	{ name = "*/", use = ["edit", "open", "reveal"] },
 	# Text

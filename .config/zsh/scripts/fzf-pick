@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+
+rm -f /tmp/fzf-ctrlt-mode-{fzf,fd}
+
+local FD_CMD="fd --type f --hidden --exclude .git"
+local INITIAL_QUERY="${*:-}"
+
+fzf --ansi --multi --query "$INITIAL_QUERY" \
+    --bind 'ctrl-t:transform:
+	[[ ! $FZF_PROMPT =~ fzf ]] &&
+	echo "change-prompt(fzf mode> )+transform-query:echo \{q} > /tmp/fzf-ctrlt-mode-fd; cat /tmp/fzf-ctrlt-mode-fzf" ||
+echo "change-prompt(fd mode> )+transform-query:echo \{q} > /tmp/fzf-ctrlt-mode-fzf; cat /tmp/fzf-ctrlt-mode-fd"' \
+    --bind 'start:reload:'"$FD_CMD" \
+    --bind 'change:reload:sleep 0.1; '"$FD_CMD"' | grep -i {q}' \
+    --preview 'bat --color=always {} 2>/dev/null || cat {}' \
+    --prompt 'fd mode> ' \
+    --header 'ctrl-T: 切换 fzf / fd 模式' \
+    --bind 'enter:become(nvim {})'

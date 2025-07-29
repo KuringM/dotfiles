@@ -94,7 +94,8 @@ keymap = [
 	{ on = "f",        run = "filter --smart",          desc = "Filter files" },
 	
 	# Find
-	{ on = "<C-f>",    run = "shell --block ${XDG_CONFIG_HOME}/zsh/scripts/rfv",              desc = "Jump to a directory or reveal a file using fzf" },
+	{ on = "<C-f>",    run = "shell --block ${XDG_CONFIG_HOME}/zsh/scripts/fzf-rfv", desc = "Jump to a directory or reveal a file using fzf" },
+	{ on = "<C-t>",    run = "shell --block ${XDG_CONFIG_HOME}/zsh/scripts/fzf-pick",  desc = "Jump to a file or reveal a file using fzf" },
 	{ on = "<C-p>",    run = "plugin fzf",              desc = "Jump to a directory or reveal a file using fzf" },
 	{ on = ["z", "o"], run = "plugin zoxide",           desc = "Jump to a directory using zoxide" },
 	# { on = "f",      run = "search fd",               desc = "Search files by name using fd" },

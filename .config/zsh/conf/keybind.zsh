@@ -13,7 +13,7 @@ bindkey "^n" backward-kill-line
 
 # `bindkey -a` to show all vicmd keymap
 
-bindkey -v # Selects keymap ‘vicmd’ for any operations by the current command
+bindkey -v # Selects keymap 'vicmd' for any operations by the current command
 bindkey -M vicmd "k" vi-insert
 bindkey -M vicmd "K" vi-insert-bol
 bindkey -M vicmd "n" vi-backward-char
@@ -21,7 +21,7 @@ bindkey -M vicmd "i" vi-forward-char
 bindkey -M vicmd "N" vi-beginning-of-line
 bindkey -M vicmd "I" vi-end-of-line
 bindkey -M vicmd "e" down-line-or-history
-bindkey -M vicmd "u" up-line-or-history
+bindkey -M vicmd "u" up-line-or-history # kitty 中 cmd+u 触发向上翻9行历史, 是由其解析为\x1b[117;9u导致
 bindkey -M vicmd "l" vi-undo-change
 bindkey -M vicmd "L" undo
 bindkey -M vicmd "r" redo

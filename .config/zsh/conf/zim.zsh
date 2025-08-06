@@ -37,7 +37,7 @@ source ${ZIM_HOME}/init.zsh
 #######################################################################
 
 export HISTFILE=$ZSH_CACHE/zsh_history
-if [[ ! -f "$HISFILE" ]] touch $HISTFILE
+if [[ ! -f "$HISTFILE" ]] touch $HISTFILE
 HISTSIZE=20000
 SAVEHIST=10000
 # Remove older command from the history if a duplicate is to be added.

@@ -1,4 +1,8 @@
 # pyright: reportMissingImports=false
+import platform
+import subprocess
+import time
+import re
 from datetime import datetime
 from kitty.boss import get_boss
 from kitty.fast_data_types import Screen, add_timer, get_options
@@ -14,18 +18,22 @@ from kitty.tab_bar import (
 )
 
 opts = get_options()
+
+# ===== 配色定义 =====
 icon_fg = as_rgb(color_as_int(opts.color9))
 icon_bg = as_rgb(color_as_int(opts.color0))
 bat_text_color = as_rgb(color_as_int(opts.color10))
 clock_color = as_rgb(color_as_int(opts.color9))
 date_color = as_rgb(color_as_int(opts.color8))
+
 SEPARATOR_SYMBOL, SOFT_SEPARATOR_SYMBOL = ("", "")
 RIGHT_MARGIN = 1
 REFRESH_TIME = 1
 # ICON = "   "
 # ICON = " 梅 "
-ICON = " 🌕  "
+ICON = " 🌕 "
 
+# ===== 电池状态符号定义 =====
 UNPLUGGED_ICONS = {
     10: "",
     20: "",
@@ -38,9 +46,7 @@ UNPLUGGED_ICONS = {
     90: "",
     100: "",
 }
-PLUGGED_ICONS = {
-    1: "",
-}
+PLUGGED_ICONS = {1: ""}
 UNPLUGGED_COLORS = {
     15: as_rgb(color_as_int(opts.color1)),
     16: as_rgb(color_as_int(opts.color15)),
@@ -51,6 +57,83 @@ PLUGGED_COLORS = {
     99: as_rgb(color_as_int(opts.color6)),
     100: as_rgb(color_as_int(opts.color2)),
 }
+
+_last_battery_info = None
+_last_battery_time = 0
+
+
+# ===== 工具函数 =====
+def nearest_key(d: dict, value: int) -> int:
+    """找到最接近 value 的键"""
+    return min(d.keys(), key=lambda x: abs(x - value))
+
+
+# ===== 右侧模块: 电池电量、时间、日期 =====
+
+"""
+获取电池状态(缓存1秒)
+兼容 Linux/macOS, 使用正则匹配 macOS 电池百分比
+返回 [(颜色, 文本), (颜色, 图标)]
+"""
+
+
+def get_battery_cells() -> list:
+    global _last_battery_info, _last_battery_time
+    now = time.time()
+    if _last_battery_info and now - _last_battery_time < REFRESH_TIME:
+        return _last_battery_info
+
+    try:
+        sysname = platform.system()
+        if sysname == "Linux":
+            with open("/sys/class/power_supply/BAT0/status") as f:
+                status = f.read().strip()
+            with open("/sys/class/power_supply/BAT0/capacity") as f:
+                percent = int(f.read().strip())
+        elif sysname == "Darwin":
+            out = subprocess.check_output(["pmset", "-g", "batt"], text=True)
+            # 使用正则提取百分比
+            m = re.search(r"(\d+)%", out)
+            percent = int(m.group(1)) if m else 0
+            # 判断状态
+            if "discharging" in out.lower():
+                status = "Discharging"
+            elif "charging" in out.lower():
+                status = "Charging"
+            else:
+                status = "Full"
+        else:
+            return []
+
+        if status.lower().startswith("discharging"):
+            icon_color = UNPLUGGED_COLORS[nearest_key(UNPLUGGED_COLORS, percent)]
+            icon = UNPLUGGED_ICONS[nearest_key(UNPLUGGED_ICONS, percent)]
+        elif status.lower().startswith("not charging"):
+            icon_color = UNPLUGGED_COLORS[nearest_key(UNPLUGGED_COLORS, percent)]
+            icon = PLUGGED_ICONS[nearest_key(PLUGGED_ICONS, 1)]
+        else:
+            icon_color = PLUGGED_COLORS[nearest_key(PLUGGED_COLORS, percent)]
+            icon = PLUGGED_ICONS[nearest_key(PLUGGED_ICONS, 1)]
+
+        _last_battery_info = [(bat_text_color, f"{percent}% "), (icon_color, icon)]
+        _last_battery_time = now
+        return _last_battery_info
+    except Exception:
+        return []
+
+
+# 组合右侧状态栏元素, 返回[(fg, text), ...]
+def build_right_status_cells() -> list:
+    cells = []
+    cells.extend(get_battery_cells())
+    cells.append((clock_color, datetime.now().strftime(" %H:%M")))
+    cells.append((date_color, datetime.now().strftime(" %d.%m.%Y")))
+    return cells
+
+
+# ===== 绘制函数 =====
+timer_id = None
+right_status_length = -1
 
 
 def _draw_icon(screen: Screen, index: int) -> int:
@@ -65,7 +148,7 @@ def _draw_icon(screen: Screen, index: int) -> int:
     return screen.cursor.x
 
 
-def _draw_left_status(
+def _draw_tab_title(
     draw_data: DrawData,
     screen: Screen,
     tab: TabBarData,
@@ -111,12 +194,12 @@ def _draw_left_status(
     return end
 
 
+# 绘制右侧状态栏
 def _draw_right_status(screen: Screen, is_last: bool, cells: list) -> int:
     if not is_last:
         return 0
     draw_attributed_string(Formatter.reset, screen)
     screen.cursor.x = screen.columns - right_status_length
-    screen.cursor.fg = 0
     for color, status in cells:
         screen.cursor.fg = color
         screen.draw(status)
@@ -124,50 +207,14 @@ def _draw_right_status(screen: Screen, is_last: bool, cells: list) -> int:
     return screen.cursor.x
 
 
+# 定时刷新, 标记 Tab Bar 需要重绘
 def _redraw_tab_bar(_):
     tm = get_boss().active_tab_manager
-    if tm is not None:
+    if tm:
         tm.mark_tab_bar_dirty()
 
 
-def get_battery_cells() -> list:
-    try:
-        with open("/sys/class/power_supply/BAT0/status", "r") as f:
-            status = f.read()
-        with open("/sys/class/power_supply/BAT0/capacity", "r") as f:
-            percent = int(f.read())
-        if status == "Discharging\n":
-            # TODO: declare the lambda once and don't repeat the code
-            icon_color = UNPLUGGED_COLORS[
-                min(UNPLUGGED_COLORS.keys(), key=lambda x: abs(x - percent))
-            ]
-            icon = UNPLUGGED_ICONS[
-                min(UNPLUGGED_ICONS.keys(), key=lambda x: abs(x - percent))
-            ]
-        elif status == "Not charging\n":
-            icon_color = UNPLUGGED_COLORS[
-                min(UNPLUGGED_COLORS.keys(), key=lambda x: abs(x - percent))
-            ]
-            icon = PLUGGED_ICONS[
-                min(PLUGGED_ICONS.keys(), key=lambda x: abs(x - percent))
-            ]
-        else:
-            icon_color = PLUGGED_COLORS[
-                min(PLUGGED_COLORS.keys(), key=lambda x: abs(x - percent))
-            ]
-            icon = PLUGGED_ICONS[
-                min(PLUGGED_ICONS.keys(), key=lambda x: abs(x - percent))
-            ]
-        percent_cell = (bat_text_color, str(percent) + "% ")
-        icon_cell = (icon_color, icon)
-        return [percent_cell, icon_cell]
-    except FileNotFoundError:
-        return []
-
-
-timer_id = None
-right_status_length = -1
-
+# 主绘制入口
 def draw_tab(
     draw_data: DrawData,
     screen: Screen,
@@ -178,21 +225,18 @@ def draw_tab(
     is_last: bool,
     extra_data: ExtraData,
 ) -> int:
-    global timer_id
-    global right_status_length
+    global timer_id, right_status_length
     if timer_id is None:
         timer_id = add_timer(_redraw_tab_bar, REFRESH_TIME, True)
-    clock = datetime.now().strftime(" %H:%M")
-    date = datetime.now().strftime(" %d.%m.%Y")
-    cells = get_battery_cells()
-    cells.append((clock_color, clock))
-    cells.append((date_color, date))
-    right_status_length = RIGHT_MARGIN
-    for cell in cells:
-        right_status_length += len(str(cell[1]))
 
+    right_cells = build_right_status_cells()
+    right_status_length = RIGHT_MARGIN + sum(len(str(cell[1])) for cell in right_cells)
+
+    # 绘制 ICON
     _draw_icon(screen, index)
-    _draw_left_status(
+
+    # 绘制 Tab 标题
+    _draw_tab_title(
         draw_data,
         screen,
         tab,
@@ -202,9 +246,8 @@ def draw_tab(
         is_last,
         extra_data,
     )
-    _draw_right_status(
-        screen,
-        is_last,
-        cells,
-    )
+
+    # 绘制右侧
+    _draw_right_status(screen, is_last, right_cells)
+
     return screen.cursor.x

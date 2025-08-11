@@ -31,7 +31,7 @@ RIGHT_MARGIN = 1
 REFRESH_TIME = 1
 # ICON = "   "
 # ICON = " 梅 "
-ICON = " 🌕 "
+ICON = " 🌕  "
 
 # ===== 电池状态符号定义 =====
 UNPLUGGED_ICONS = {
@@ -125,7 +125,7 @@ def get_battery_cells() -> list:
 # 组合右侧状态栏元素, 返回[(fg, text), ...]
 def build_right_status_cells() -> list:
     cells = []
-    cells.extend(get_battery_cells())
+    # cells.extend(get_battery_cells())
     cells.append((clock_color, datetime.now().strftime(" %H:%M")))
     cells.append((date_color, datetime.now().strftime(" %d.%m.%Y")))
     return cells

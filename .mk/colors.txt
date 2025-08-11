@@ -1,0 +1,64 @@
+# black
+#242a32
+#666666
+#2c323b
+#36363a
+#888888
+#2c3e50
+#44475a
+#282a36
+
+# red
+#d54e53
+#ec3e45
+#fb4934
+#ff82b2
+
+# green
+#98c379
+#90c966
+#228B22
+#50de60
+#a0ff70
+
+# yellow
+#e5c07b
+#edbf69
+#f4c069 tan
+#ffe8c0
+#ff8c00
+#fe8019
+#fe8019
+#F29A39
+#f0af00
+#fabd2f
+
+# blue (purple and blue!)
+#83a598
+#73ba9f
+#89CFF0 babyblue
+#4169e1
+#1e90ff
+#49a0f0 ice
+
+# magenta (orange)
+#c678dd
+#c858e9
+#d5508f
+#bb0099
+#ffa6ff
+#ffb7b7
+#C678DD
+#A8D5E2
+#BD93BD
+#A7A2A9
+
+# cyan
+#70c0ba
+#2bcec2
+
+# white
+#eaeaea
+#f8f8ff
+#ffffff
+#f5f5dc Millkywhite

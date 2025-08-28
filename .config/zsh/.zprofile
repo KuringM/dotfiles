@@ -90,3 +90,13 @@ alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
 
 # prettierd
 # export PRETTIERD_DEFAULT_CONFIG="$XDG_CONFIG_HOME/prettierrc.yaml"
+
+# yazi
+# export YAZI_LOG=debug yazi
+
+# rime_ls
+# 用于编译
+export LIBRIME_LIB_DIR=/usr/local/lib
+export LIBRIME_INCLUDE_DIR=/usr/local/include
+# 用于运行
+export DYLD_LIBRARY_PATH=/usr/local/lib  # 最好放在~/.zshrc中, 记得修改~/.zshrc 后, source ~/.zshrc

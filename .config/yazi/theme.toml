@@ -10,7 +10,6 @@
 
 [mgr]
 # Tab
-tab_width = 12
 
 # Border
 border_symbol = " "
@@ -25,9 +24,6 @@ preview_hovered = { underline = true }
 
 
 [status]
-mode_normal = { bg = "blue", bold = true }
-mode_select = { bg = "red", bold = true }
-mode_unset  = { bg = "yellow", bold = true }
 
 [filetype]
 

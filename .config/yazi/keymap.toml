@@ -107,12 +107,12 @@ keymap = [
 	{ on = "-",        run = "find_arrow --previous",   desc = "Go to the previous found" },
 
 	# Sorting
-	{ on = ["o", "M"], run = ["sort modified --reverse=no", "linemode mtime"], desc = "Sort by modified time" },
-	{ on = ["o", "m"], run = ["sort modified --reverse", "linemode mtime"],    desc = "Sort by modified time (reverse)" },
-	{ on = ["o", "B"], run = ["sort btime --reverse=no", "linemode btime"],    desc = "Sort by birth time" },
-	{ on = ["o", "b"], run = ["sort btime --reverse", "linemode btime"],       desc = "Sort by birth time (reverse)" },
-	{ on = ["o", "E"], run = "sort extension --reverse=no",                    desc = "Sort by extension" },
-	{ on = ["o", "e"], run = "sort extension --reverse",                       desc = "Sort by extension (reverse)" },
+	{ on = ["o", "m"], run = ["sort modified --reverse=no", "linemode mtime"], desc = "Sort by modified time" },
+	{ on = ["o", "M"], run = ["sort modified --reverse", "linemode mtime"],    desc = "Sort by modified time (reverse)" },
+	{ on = ["o", "b"], run = ["sort btime --reverse=no", "linemode btime"],    desc = "Sort by birth time" },
+	{ on = ["o", "B"], run = ["sort btime --reverse", "linemode btime"],       desc = "Sort by birth time (reverse)" },
+	{ on = ["o", "e"], run = "sort extension --reverse=no",                    desc = "Sort by extension" },
+	{ on = ["o", "E"], run = "sort extension --reverse",                       desc = "Sort by extension (reverse)" },
 	{ on = ["o", "a"], run = "sort alphabetical --reverse=no",                 desc = "Sort alphabetically" },
 	{ on = ["o", "A"], run = "sort alphabetical --reverse",                    desc = "Sort alphabetically (reverse)" },
 	{ on = ["o", "n"], run = "sort natural --reverse=no",                      desc = "Sort naturally" },

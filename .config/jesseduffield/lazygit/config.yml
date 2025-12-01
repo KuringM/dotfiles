@@ -4,9 +4,9 @@ git:
   merging:
     manualcommit: false
   skiphookprefix: WIP
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never --24-bit-color=never --syntax-theme="OneHalfDark"
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never --24-bit-color=never --syntax-theme="OneHalfDark"
 gui:
   commitlength:
     show: true

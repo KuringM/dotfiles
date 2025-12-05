@@ -1,0 +1,15 @@
+# 机场订阅
+proxy-providers:
+  Airport1:
+    url: "https://..."
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 直连
+
+# 节点信息
+proxies:
+  - { name: 直连, type: direct }

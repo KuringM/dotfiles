@@ -1,0 +1,41 @@
+# 规则匹配
+rules:
+  # 1. 本地/私有
+  - RULE-SET,private_ip,直连,no-resolve
+  - RULE-SET,private_domain,直连
+
+  # 2. 精准域名规则(顺序随意)
+  - RULE-SET,ted_domain,🎥 TED
+  - RULE-SET,proxylite,🚀 默认代理
+  - RULE-SET,apple_domain,直连
+  - RULE-SET,ai,🤖 ChatGPT
+  - RULE-SET,github_domain,👨🏿‍💻 GitHub
+  - RULE-SET,youtube_domain,📹 YouTube
+  - RULE-SET,google_domain,🍀 Google
+  - RULE-SET,onedrive_domain,🐬 OneDrive
+  - RULE-SET,microsoft_domain,🪟 Microsoft
+  - RULE-SET,netflix_domain,🎥 NETFLIX
+  - RULE-SET,paypal_domain,💶 PayPal
+  - RULE-SET,speedtest_domain,✈️ Speedtest
+  - RULE-SET,steam_CN,直连
+  - RULE-SET,steam,👾 Steam
+  - RULE-SET,telegram_domain,📲 Telegram
+  - RULE-SET,tiktok_domain,🎵 TikTok
+
+  # 3. IP 规则(必须在域名规则后)
+  - RULE-SET,apple_ip,直连
+  - RULE-SET,google_ip,🍀 Google,no-resolve
+  - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
+  - RULE-SET,telegram_ip,📲 Telegram,no-resolve
+
+  # 4. 国外 IP/域名兜底
+  - RULE-SET,gfw_domain,🚀 默认代理
+  - RULE-SET,geolocation-!cn,🚀 默认代理
+
+  # 5. 国内兜底
+  - GEOIP,CN,🎯 直连
+  - RULE-SET,cn_domain,🎯 直连
+  - RULE-SET,cn_ip,🎯 直连
+
+  # 6. 最终兜底
+  - MATCH,🐟 漏网之鱼

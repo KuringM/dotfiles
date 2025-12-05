@@ -1,4 +1,3 @@
-
 config status 'status'
 
 config config 'config'
@@ -117,14 +116,17 @@ config router_access_control
 	list cgroup 'tailscale'
 	list cgroup 'zerotier'
 	option proxy '0'
+	option dns '0'
 
 config router_access_control
 	option enabled '1'
 	option proxy '1'
+    option dns '1'
 
 config lan_access_control
 	option enabled '1'
 	option proxy '1'
+	option dns '1'
 
 config authentication
 	option enabled '1'
@@ -203,4 +205,3 @@ config subscription
 	option url 'http://192.168.10.41:3001/NFsfkHeICpSNO4mvWzJt/download/collection/mihomo?target=ClashMeta'
 	option user_agent 'clash'
 	option prefer 'remote'
-

@@ -96,7 +96,6 @@ dns:
   nameserver:
     - https://8.8.8.8/dns-query#RULES&ecs=223.5.5.0/24
   fake-ip-filter:
-    - "*"
     - "+.lan"
     - "+.local"
     - "rule-set:private_domain,cn_domain,apple_domain"
@@ -541,7 +540,7 @@ rules:
   - RULE-SET,private_ip,直连,no-resolve
   - RULE-SET,private_domain,直连
 
-  # 2. 精准域名规则（顺序随意）
+  # 2. 精准域名规则(顺序随意)
   - RULE-SET,ted_domain,🎥 TED
   - RULE-SET,proxylite,🚀 默认代理
   - RULE-SET,apple_domain,直连
@@ -559,7 +558,7 @@ rules:
   - RULE-SET,telegram_domain,📲 Telegram
   - RULE-SET,tiktok_domain,🎵 TikTok
 
-  # 3. IP 规则（必须在域名规则后）
+  # 3. IP 规则(必须在域名规则后)
   - RULE-SET,apple_ip,直连
   - RULE-SET,google_ip,🍀 Google,no-resolve
   - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
@@ -570,6 +569,7 @@ rules:
   - RULE-SET,geolocation-!cn,🚀 默认代理
 
   # 5. 国内兜底
+  - GEOIP,CN,🎯 直连
   - RULE-SET,cn_domain,🎯 直连
   - RULE-SET,cn_ip,🎯 直连
 

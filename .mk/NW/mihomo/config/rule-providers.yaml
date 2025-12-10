@@ -6,6 +6,11 @@ rule-anchor:
     &class { type: http, interval: 86400, behavior: classical, format: text }
 
 rule-providers:
+  lol-cn:
+    {
+      <<: *class,
+      url: https://raw.githubusercontent.com/KuringM/dotfiles/refs/heads/master/.mk/NW/rule/lol-cn.list,
+    }
   fakeipfilter_domain:
     {
       <<: *domain,

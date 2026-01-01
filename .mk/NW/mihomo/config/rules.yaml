@@ -4,18 +4,6 @@ rules:
   - RULE-SET,private_ip,直连,no-resolve
   - RULE-SET,private_domain,直连
 
-  ## 1.1 LOL
-  - PROCESS-NAME,WeGame.exe,DIRECT
-  - PROCESS-NAME,TencentWeGame.exe,DIRECT
-  - PROCESS-NAME,LeagueClient.exe,DIRECT
-  - PROCESS-NAME,LeagueClientUx.exe,DIRECT
-  - PROCESS-NAME,LeagueClientUxRender.exe,DIRECT
-  - PROCESS-NAME,League of Legends.exe,DIRECT
-  - PROCESS-NAME,TencentAntiCheat.exe,DIRECT
-  - PROCESS-NAME,TclsClient.exe,DIRECT
-  - PROCESS-NAME,TclsService.exe,DIRECT
-  - RULE-SET,lol-cn,DIRECT
-
   # 2. 精准域名规则(顺序随意)
   - RULE-SET,ted_domain,🎥 TED
   - RULE-SET,proxylite,🚀 默认代理

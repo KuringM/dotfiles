@@ -44,7 +44,7 @@ sniffer:
 tun:
   enable: true
   # system/gvisor/mixed
-  stack: system
+  stack: mixed
   dns-hijack: ["any:53", "tcp://any:53"]
   #使用nikki，混入全部不修改的情况，开启接口指定为nikki
   #device: nikki

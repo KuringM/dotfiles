@@ -100,3 +100,8 @@ export LIBRIME_LIB_DIR=/usr/local/lib
 export LIBRIME_INCLUDE_DIR=/usr/local/include
 # 用于运行
 export DYLD_LIBRARY_PATH=/usr/local/lib  # 最好放在~/.zshrc中, 记得修改~/.zshrc 后, source ~/.zshrc
+
+
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/kuring/.docker/completions $fpath)
+# End of Docker CLI completions

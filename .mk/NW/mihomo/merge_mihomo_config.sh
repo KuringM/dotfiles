@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # a 目录：mihomo 配置
-A_DIR="$HOME/.mk/NW/mihomo/config"
+A_DIR="$HOME/.mk/NW/mihomo/config-nikki"
 
 # b 目录：proxy-providers.yaml 所在 & 输出目录
 B_DIR="$HOME/MK"

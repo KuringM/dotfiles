@@ -2,7 +2,7 @@
 
 ## for MACOS
 
-- use fakeip
-- need
+- use `fakeip`
+- DNS -> TUN
 
 ## for OpenWRT/momo

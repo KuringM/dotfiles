@@ -4,7 +4,7 @@
 A_DIR="$HOME/.mk/NW/mihomo/config-nikki"
 
 # b 目录：proxy-providers.yaml 所在 & 输出目录
-B_DIR="$HOME/MK"
+B_DIR="$HOME/MK/Nikki"
 
 # 输出文件前缀
 OUTPUT_PREFIX="mihomo_config"

@@ -1,9 +1,10 @@
-# print "export ZDOTDIR=${HOME}/.config/zsh" > /etc/zshenv
-# use `zsh --sourcetrace --verbose` check configuration
-# check 'Completion is not working'
-# autoload -Uz +X compinit
-# functions[compinit]=$'print -u2 \'compinit being called at \'${funcfiletrace[1]}
-# '${functions[compinit]}
+# 1. Reconstruct the ZSH configuration path
+## print "export ZDOTDIR=${HOME}/.config/zsh" > /etc/zshenv
+# 2. use `zsh --sourcetrace --verbose` check configuration
+# 3. check 'Completion is not working'
+## autoload -Uz +X compinit
+## functions[compinit]=$'print -u2 \'compinit being called at \'${funcfiletrace[1]}
+## '${functions[compinit]}
 
 #######################################################################
 #                       zsh builtin environment                       #
@@ -11,6 +12,7 @@
 
 export SHELL_SESSIONS_DISABLE=1
 export EDITOR=nvim
+export VISUAL="nvim"
 export MANPAGER="nvim +Man!"
 export TERM_ITALICS=true
 
